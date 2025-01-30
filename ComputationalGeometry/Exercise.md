@@ -1,0 +1,4 @@
+- Let S be a set of n disjoint line segments in the plane
+- let p be a point not on any of the line segments of S
+- We wish to determine all line segments of S that p can see, that is, all line segments of S that contain some point q so that the open segment pq doesn’t intersect any p not visible line segment of S
+- Give an O(n log n) time algorithm for this problem that uses a rotating half-line with its endpoint at p

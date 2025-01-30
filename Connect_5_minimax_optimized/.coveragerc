@@ -1,0 +1,6 @@
+[run]
+source = Connect_5_minimax_optimized
+omit =
+    *.venv/*
+    */test.py
+
