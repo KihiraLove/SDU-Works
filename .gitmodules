@@ -1,3 +1,4 @@
 [submodule "Mathematical Optimization/Resources"]
 	path = Mathematical Optimization/Resources
 	url = git@github.com:DM872/Resources.git
+    branch = main
