@@ -3,196 +3,288 @@ import numpy as np
 from gurobipy import Model, GRB, quicksum
 
 
-def time_to_minutes(time :str) -> int:
-    h, m = map(int, str(time).split(':'))
-    return h * 60 + m
+def time_to_minutes(time_str: str) -> int:
+    r"""
+    Convert a time string to minutes since midnight.
+
+    :param time_str: Time formatted as "HH:MM".
+    :return: Integer minutes since midnight.
+    """
+    hours, minutes = map(int, time_str.split(':'))
+    return hours * 60 + minutes
 
 
-# Load data
-df_coordinates = pd.read_csv('data/instance_coordinates.txt', sep=r'\s+', header=None, names=['id', 'x', 'y'])
-df_demands = pd.read_csv('data/instance_demand.txt', sep=r'\s+', header=None, names=['id', 'demand'])
-df_service_times = pd.read_csv('data/instance_service_time.txt', sep=r'\s+', header=None, names=['id', 'service'])
-df_time_windows_raw = pd.read_csv('data/instance_time_windows.txt', sep=r'\s+', header=None, names=['id', 'start', 'end'])
+def load_data() -> tuple:
+    r"""
+    Load data from text files.
+    :return: Tuple of DataFrames (coordinates, demands, service_times, time_windows_raw).
+    """
+    coord_path = 'data/instance_coordinates.txt'
+    demand_path = 'data/instance_demand.txt'
+    service_path = 'data/instance_service_time.txt'
+    tw_path = 'data/instance_time_windows.txt'
 
-df_time_windows_raw['start'] = df_time_windows_raw['start'].apply(time_to_minutes)
-df_time_windows_raw['end'] = df_time_windows_raw['end'].apply(time_to_minutes)
+    # Load coordinate and attribute files into DataFrames
+    df_coordinates = pd.read_csv(coord_path, sep=r'\s+', header=None, names=['id', 'x', 'y'])
+    df_demands = pd.read_csv(demand_path, sep=r'\s+', header=None, names=['id', 'demand'])
+    df_service_times = pd.read_csv(service_path, sep=r'\s+', header=None, names=['id', 'service'])
+    df_time_windows_raw = pd.read_csv(tw_path, sep=r'\s+', header=None, names=['id', 'start', 'end'])
 
-# Merge data
-data = df_coordinates.merge(df_demands, on='id').merge(df_service_times, on='id')
-data = data.sort_values(by='id').reset_index(drop=True)
-num_nodes = len(data)
+    # Normalize time window endpoints to integer minutes
+    df_time_windows_raw['start'] = df_time_windows_raw['start'].apply(time_to_minutes)
+    df_time_windows_raw['end'] = df_time_windows_raw['end'].apply(time_to_minutes)
 
-# Distance and travel time matrix
-locations = data[['x', 'y']].to_numpy()
-dist_matrix = np.linalg.norm(locations[:, None] - locations[None, :], axis=2)
-vehicle_speed = 1000 / 60  # units per minute
-travel_time_matrix = dist_matrix / vehicle_speed
+    return df_coordinates, df_demands, df_service_times, df_time_windows_raw
 
-# Time windows: merge all intervals into one (earliest start to latest end)
-raw_time_windows = {i: [] for i in data['id']}
-for _, row in df_time_windows_raw.iterrows():
-    raw_time_windows[int(row['id'])].append((int(row['start']), int(row['end'])))
 
-consolidated_time_windows = [
-    (min(tws, key=lambda x: x[0])[0], max(tws, key=lambda x: x[1])[1])
-    for i, tws in raw_time_windows.items()
-]
+def merge_data(df_coordinates: pd.DataFrame, df_demands: pd.DataFrame, df_service_times: pd.DataFrame) -> pd.DataFrame:
+    r"""
+    Merge coordinate, demand, and service time DataFrames into a single table.
 
-# Check for infeasible demands
-assert all(data['demand'] <= 12600), "Some customer demands exceed vehicle capacity"
+    :param df_coordinates: DataFrame of node coordinates.
+    :param df_demands: DataFrame of demands.
+    :param df_service_times: DataFrame of service times.
+    :return: Merged DataFrame sorted by node id.
+    """
+    df = (
+        df_coordinates
+        .merge(df_demands, on='id')
+        .merge(df_service_times, on='id')
+        .sort_values('id') # sort to ascending id order (0 is depot)
+        .reset_index(drop=True)
+    )
+    return df
 
-# Model
-model = Model('VRPTW')
-vehicle_capacity = 12600
-bigM = 1440
-penalty = 1e6
 
-arc_used = model.addVars(num_nodes, num_nodes, vtype=GRB.BINARY, name='x')
-arrival_time = model.addVars(num_nodes, vtype=GRB.CONTINUOUS, name='t')
-load_after_service = model.addVars(num_nodes, vtype=GRB.CONTINUOUS, name='load')
-mtz_order = model.addVars(num_nodes, vtype=GRB.CONTINUOUS, name='u')  # for subtour elimination (MTZ)
-served = model.addVars(range(1, num_nodes), vtype=GRB.BINARY, name='z')  # serve indicator
+def compute_matrices(df_instances: pd.DataFrame) -> tuple:
+    r"""
+    Compute pairwise distance and travel-time matrices.
+    - distance_matrix[i][j]: Euclidean distance between nodes i and j.
+    - travel_time_matrix: distance divided by constant vehicle speed.
+    :param df_instances: DataFrame with x,y columns.
+    :return: distance_matrix, travel_time_matrix.
+    """
+    coords = df_instances[['x', 'y']].to_numpy()
+    # Euclidean distance with numpy
+    distance_matrix = np.linalg.norm(coords[:, None] - coords[None, :], axis=2)
 
-# Objective: minimize total distance + penalty for skipping customers
-model.setObjective(
-    quicksum(dist_matrix[i][j] * arc_used[i, j] for i in range(num_nodes) for j in range(num_nodes) if i != j) +
-    penalty * quicksum(1 - served[i] for i in range(1, num_nodes)), GRB.MINIMIZE
-)
+    # Convert to travel times assuming uniform speed
+    speed = 1000 / 60
+    travel_time_matrix = distance_matrix / speed
+    return distance_matrix, travel_time_matrix
 
-# Routing constraints with serve indicator
-for i in range(1, num_nodes):
-    model.addConstr(quicksum(arc_used[j, i] for j in range(num_nodes) if j != i) == served[i])
-    model.addConstr(quicksum(arc_used[i, j] for j in range(num_nodes) if j != i) == served[i])
 
-model.addConstr(quicksum(arc_used[0, j] for j in range(1, num_nodes)) >= 1)
-model.addConstr(quicksum(arc_used[i, 0] for i in range(1, num_nodes)) >= 1)
+def consolidate_time_windows(df_time_windows_raw: pd.DataFrame, ids: np.ndarray) -> list:
+    r"""
+    Merge possibly multiple time window intervals into a single [earliest, latest] per node.
+    Some instances list disjoint intervals. For simplicity, we take the global min start and max end.
 
-# New: Ensure depot connections match inbound/outbound
-model.addConstr(quicksum(arc_used[0, j] for j in range(1, num_nodes)) <= num_nodes)
-model.addConstr(quicksum(arc_used[i, 0] for i in range(1, num_nodes)) <= num_nodes)
-for j in range(1, num_nodes):
-    model.addConstr(arc_used[0, j] <= quicksum(arc_used[j, k] for k in range(num_nodes) if k != j))
-    model.addConstr(arc_used[j, 0] <= quicksum(arc_used[i, j] for i in range(num_nodes) if i != j))
+    :param df_time_windows_raw: DataFrame with raw intervals.
+    :param ids: Array of node IDs.
+    :return: List of (earliest_start, latest_end) tuples.
+    """
+    raw = {int(i): [] for i in ids}
+    # Group all intervals by node id
+    for _, row in df_time_windows_raw.iterrows():
+        raw[int(row['id'])].append((row['start'], row['end']))
+    consolidated = []
+    for i in ids:
+        intervals = raw[int(i)]
+        # Determine the earliest possible start and latest end
+        start = min(intervals, key=lambda x: x[0])[0]
+        end = max(intervals, key=lambda x: x[1])[1]
+        consolidated.append((start, end))
+    return consolidated
 
-# Prevent depot self-loop
-arc_used[0, 0].ub = 0
 
-# Time window constraints
-for i in range(num_nodes):
-    start, end = consolidated_time_windows[i]
-    model.addConstr(arrival_time[i] >= start)
-    model.addConstr(arrival_time[i] <= end)
+def check_capacity(df_instances: pd.DataFrame, capacity: float) -> None:
+    r"""
+    Ensure all demands are within vehicle capacity.
 
-# Depot time and load initialization
-model.addConstr(arrival_time[0] >= 0)
-model.addConstr(arrival_time[0] <= 1440)
-model.addConstr(load_after_service[0] == 0)
+    :param df_instances: DataFrame with demand column.
+    :param capacity: Vehicle capacity.
+    :raises AssertionError: if any demand exceeds capacity.
+    """
+    assert (df_instances['demand'] <= capacity).all(), "Customer demand exceeds capacity"
 
-# Capacity constraints (skip depot)
-for i in range(1, num_nodes):
-    model.addConstr(load_after_service[i] >= data.loc[i, 'demand'] * served[i])
-    model.addConstr(load_after_service[i] <= vehicle_capacity)
 
-# ====== ONLY TIME PROPAGATION, SAFELY GUARDED ======
-for i in range(num_nodes):
-    for j in range(num_nodes):
-        if i != j:
-            # Only enforce if both i and j are to be served
-            if i > 0 and j > 0:
-                model.addConstr(
-                    arrival_time[j] >= arrival_time[i] + travel_time_matrix[i][j] + data.loc[i, 'service']
-                    - bigM * (1 - arc_used[i, j] + (1 - served[i]) + (1 - served[j]))
-                )
+def build_model(num_nodes: int,
+                distance_matrix: np.ndarray,
+                travel_time_matrix: np.ndarray,
+                df_instances: pd.DataFrame,
+                time_windows: list,
+                capacity: float,
+                big_M: float,
+                penalty: float) -> tuple:
+    r"""
+    Construct the Gurobi model with all decision variables and constraints.
 
-# ====== LOAD PROPAGATION, SAFELY GUARDED ======
-for i in range(num_nodes):
-    for j in range(num_nodes):
-        if i != j:
-            if i > 0 and j > 0:
-                model.addConstr(
-                    load_after_service[j] >= load_after_service[i] + data.loc[j, 'demand']
-                    - vehicle_capacity * (1 - arc_used[i, j] + (1 - served[i]) + (1 - served[j]))
-                )
+    Variables:
+    - arc_used[i,j]: Binary, whether vehicle travels from i to j.
+    - arrival[i]: Continuous, service start time at node i.
+    - load[i]: Continuous, cumulative load after servicing i.
+    - mtz[i]: Continuous, ordering index for subtour elimination.
+    - served[i]: Binary, whether customer i is visited.
 
-# Subtour elimination (MTZ) - skip depot
-for i in range(1, num_nodes):
-    model.addConstr(mtz_order[i] >= 1)
-    model.addConstr(mtz_order[i] <= num_nodes - 1)
-for i in range(1, num_nodes):
-    for j in range(1, num_nodes):
-        model.addConstr(mtz_order[i] - mtz_order[j] + (num_nodes - 1) * arc_used[i, j] <= num_nodes - 2 + (1 - served[i]) * num_nodes + (1 - served[j]) * num_nodes)
+    Constraints:
+    1. Routing continuity: in-degree = out-degree = served.
+    2. Depot must have at least one departure and arrival.
+    3. Time window adherence at each node.
+    4. Vehicle capacity: load bounds.
+    5. Time and load propagation using big-M conditioning.
+    6. Subtour elimination via Miller–Tucker–Zemlin.
 
-model.setParam('TimeLimit', 300)
-model.optimize()
+    :param num_nodes: Number of nodes.
+    :param distance_matrix: Matrix of distances.
+    :param travel_time_matrix: Matrix of travel times.
+    :param df_instances: DataFrame of instance data.
+    :param time_windows: List of (start, end) per node.
+    :param capacity: Vehicle capacity.
+    :param big_M: Big-M constant.
+    :param penalty: Penalty for skipping customers.
+    :return: Tuple (Model, arc_used variable dict).
+    """
+    model = Model('VRPTW')
 
-# Output solution or diagnose infeasibility
-if model.status == GRB.OPTIMAL or model.status == GRB.TIME_LIMIT:
-    print(f"Total distance (with penalties): {model.objVal:.2f}")
-    solution = model.getAttr('x', arc_used)
+    # Decision variables
+    arc_used = model.addVars(num_nodes, num_nodes, vtype=GRB.BINARY, name='arc_used')
+    arrival = model.addVars(num_nodes, vtype=GRB.CONTINUOUS, name='arrival_time')
+    load = model.addVars(num_nodes, vtype=GRB.CONTINUOUS, name='load_after')
+    mtz = model.addVars(num_nodes, vtype=GRB.CONTINUOUS, name='mtz_order')
+    served = model.addVars(range(1, num_nodes), vtype=GRB.BINARY, name='served')
+
+    # Objective: minimize travel distance + heavy penalty for each skipped customer
+    model.setObjective(
+        quicksum(distance_matrix[i][j] * arc_used[i,j]
+                 for i in range(num_nodes) for j in range(num_nodes) if i != j)
+        + penalty * quicksum(1 - served[i] for i in range(1, num_nodes)),
+        GRB.MINIMIZE
+    )
+
+    # Routing constraints: ensure served nodes have exactly one in/out arc
+    for i in range(1, num_nodes):
+        model.addConstr(quicksum(arc_used[j,i] for j in range(num_nodes) if j!=i) == served[i])
+        model.addConstr(quicksum(arc_used[i,j] for j in range(num_nodes) if j!=i) == served[i])
+
+    # Depot constraints: at least one departure and return, no self-loop
+    model.addConstr(quicksum(arc_used[0,j] for j in range(1,num_nodes)) >= 1)
+    model.addConstr(quicksum(arc_used[i,0] for i in range(1,num_nodes)) >= 1)
+    arc_used[0,0].ub = 0 # prevent trivial loop at depot
+
+    # Time window constraints for each node
     for i in range(num_nodes):
-        for j in range(num_nodes):
-            if i != j and solution[i, j] > 0.5:
-                print(f"Route: {i} -> {j}")
-elif model.status == GRB.INFEASIBLE:
-    print("Model infeasible. Computing IIS...")
-    model.computeIIS()
-    model.write("model.ilp")
-    print("IIS written to model.ilp")
-else:
-    print("Model could not be solved or no solution found.")
+        start, end = time_windows[i]
+        model.addConstr(arrival[i] <= end) # must start service before window closes
 
-# Assumptions:
-# - x[i, j]: binary, 1 if vehicle uses arc i->j
-# - t[i]: time of arrival/start at node i
-# - l[i]: load of vehicle after servicing node i
-# - s[i]: service time at node i
-# - dist[i][j]: distance from node i to node j
-# - n: number of nodes (including depot 0)
+    # Initialize depot time within day's horizon
+    model.addConstr(arrival[0] >= 0)
+    model.addConstr(arrival[0] <= big_M)
 
-routes = []
-route_distances = []
-visited_routes = set()
+    # Capacity constraints: initial load zero, then accumulate demands
+    model.addConstr(load[0] == 0)
+    for i in range(1, num_nodes):
+        model.addConstr(load[i] >= df_instances.loc[i,'demand'] * served[i])
+        model.addConstr(load[i] <= capacity)
 
-for start in range(num_nodes):
-    if start == 0:
-        for j in range(num_nodes):
-            try:
-                if arc_used[start, j].X > 0.5 and j != start:
-                    route = [start]
-                    times = [arrival_time[start].X]
-                    loads = [load_after_service[start].X]
-                    curr = j
-                    distance = dist_matrix[start][j]
-                    while curr != 0 and curr not in route:
-                        route.append(curr)
-                        times.append(arrival_time[curr].X)
-                        loads.append(load_after_service[curr].X)
-                        next_found = False
-                        for k in range(num_nodes):
-                            if arc_used[curr, k].X > 0.5 and k != curr:
-                                distance += dist_matrix[curr][k]
-                                curr = k
-                                next_found = True
-                                break
-                        if not next_found:
+    # Time and load propagation: ensure consistency along arcs when used
+    for i in range(1, num_nodes):
+        for j in range(1, num_nodes):
+            if i != j:
+                # Enforce arrival time consistency if arc is used and both served
+                model.addConstr(
+                    arrival[j] >= arrival[i] + travel_time_matrix[i][j] + df_instances.loc[i,'service']
+                    - big_M * (1 - arc_used[i,j] + 1 - served[i] + 1 - served[j])
+                )
+                # Enforce load accumulation under same conditions
+                model.addConstr(
+                    load[j] >= load[i] + df_instances.loc[j,'demand']
+                    - capacity * (1 - arc_used[i,j] + 1 - served[i] + 1 - served[j])
+                )
+
+    # MTZ subtour elimination constraints
+    for i in range(1, num_nodes):
+        model.addConstr(mtz[i] >= 1)
+        model.addConstr(mtz[i] <= num_nodes - 1)
+    for i in range(1, num_nodes):
+        for j in range(1, num_nodes):
+            model.addConstr(
+                mtz[i] - mtz[j] + (num_nodes - 1) * arc_used[i,j]
+                <= num_nodes - 2 + num_nodes * (1 - served[i]) + num_nodes * (1 - served[j])
+            )
+
+    return model, arc_used
+
+
+def solve_and_extract(model: Model, arc_used, distance_matrix: np.ndarray) -> None:
+    r"""
+    Execute optimization, handle infeasibility, and reconstruct routes from solution.
+
+    :param model: Gurobi Model.
+    :param arc_used: Gurobi tupledict of arc variables.
+    :param distance_matrix: Matrix of distances for output.
+    :return: None (prints results).
+    """
+    model.setParam('TimeLimit', 300) # cap solve time at 5 minutes
+    model.optimize()
+
+    if model.status in {GRB.OPTIMAL, GRB.TIME_LIMIT}:
+        print(f"Total distance (with penalties): {model.objVal:.2f}")
+        routes, visited = [], set()
+        num_nodes = distance_matrix.shape[0]
+
+        # Identify all routes by following arcs from depot
+        for j in range(1, num_nodes):
+            if arc_used[0,j].X > 0.5:
+                route, length = [0], distance_matrix[0,j]
+                curr = j
+                # Follow the path until returning to depot
+                while curr != 0:
+                    route.append(curr)
+                    for k in range(num_nodes):
+                        if arc_used[curr,k].X > 0.5:
+                            length += distance_matrix[curr,k]
+                            curr = k
                             break
-                    route.append(0)
-                    times.append(arrival_time[0].X)
-                    loads.append(load_after_service[0].X)
-                    if len(route) > 2 and tuple(route) not in visited_routes:
-                        routes.append((route, times, loads, df_service_times))
-                        route_distances.append(distance)
-                        visited_routes.add(tuple(route))
-            except Exception:
-                pass
+                    else:
+                        # Dead-end: no outgoing arc found
+                        break
 
-# Print all routes
-print(f"Number of vehicles used: {len(routes)}\n")
-total_distance = 0
-for idx, (route, times, loads, df_service_times) in enumerate(routes):
-    print(f"Vehicle {idx+1} route (Distance: {round(route_distances[idx], 2)}):")
-    total_distance += route_distances[idx]
-    for node, time, load_after_service, stime in zip(route, times, loads, df_service_times['service']):
-        print(f"  Node {node:3d}: Time={round(time,2):6.2f}, Load={round(load_after_service, 2):6.2f}, Service={round(int(stime), 2):6.2f}")
-    print()
-print(f"Total distance: {round(total_distance,2)}")
+                route.append(0)
+                tpl = tuple(route)
+
+                if tpl not in visited:
+                    visited.add(tpl)
+                    routes.append((route, length))
+
+        print(f"Number of vehicles: {len(routes)}")
+        for idx, (rt, ln) in enumerate(routes, 1):
+            print(f"Vehicle {idx} route (Distance: {ln:.2f}): {rt}")
+
+    elif model.status == GRB.INFEASIBLE:
+        print("Model infeasible. Computing IIS...")
+        model.computeIIS()
+        model.write("model.ilp")  # IIS file shows minimal constraint set
+        print("IIS written to model.ilp")
+    else:
+        print("No solution found.")
+
+# Load and preprocess data
+df_coords, df_demands, df_services, df_tw_raw = load_data()
+
+# Merge into single DataFrame of instances
+df_inst = merge_data(df_coords, df_demands, df_services)
+
+# Compute distance and travel time matrices
+dist_mat, tt_mat = compute_matrices(df_inst)
+
+# Consolidate time windows into single interval per node
+tw = consolidate_time_windows(df_tw_raw, df_inst['id'].to_numpy())
+
+# Verify no single customer exceeds vehicle capacity
+check_capacity(df_inst, 12600)
+
+# Build optimization model with all constraints
+model, arc_used = build_model(len(df_inst), dist_mat, tt_mat, df_inst, tw, capacity=12600, big_M=1440, penalty=1e6)
+
+# Solve model and display routes
+solve_and_extract(model, arc_used, dist_mat)
