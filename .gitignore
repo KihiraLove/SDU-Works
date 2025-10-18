@@ -9,3 +9,6 @@
 
 # editor folders in whole repository
 **/.idea
+
+# python caches
+**/__pycache__
