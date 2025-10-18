@@ -5,7 +5,7 @@ from output import create_output
 """
 author: doker24, Domonkos Kertész
 Computational geometry, fall 2025
-also available: https://github.com/KihiraLove/ComputationalGeometry
+also available: https://github.com/KihiraLove/SDU-Works/tree/main/ComputationalGeometry/2025/Assignment%201
 """
 
 
