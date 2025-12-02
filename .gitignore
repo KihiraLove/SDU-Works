@@ -18,3 +18,7 @@
 # personal data for RL parsing project
 /_smallPersonalProjects/rl_parsing/data/
 /_smallPersonalProjects/rl_parsing/*.txt
+
+# output files for assignments
+ComputationalGeometry/2025/Assignment 1/lines_visual*
+ComputationalGeometry/2025/Assignment 2/logs/
