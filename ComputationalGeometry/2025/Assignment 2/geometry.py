@@ -307,27 +307,36 @@ class Geometric:
     @staticmethod
     def segment_hits_obstacle(p: Point, q: Point, env: Environment) -> bool:
         """
-        Test whether segment ``pq`` intersects any obstacle edge in the environment.
-        Intersections that occur only at shared endpoints (when ``p`` or ``q``
-        coincide with an obstacle vertex) are ignored. This allows visibility  along polygon edges.
-        :param p: First segment endpoint.
+        Test whether segment ``pq`` intersects or passes through any obstacle.
+        We treat an obstacle as blocking visibility if either
+        - the segment properly intersects one of its edges
+        - a representative interior point of the segment lies inside the polygon.
+        Endpoint touches at shared vertices are ignored.
+        :param p: Query point.
         :type p: Point
-        :param q: Second segment endpoint.
+        :param q: Query point.
         :type q: Point
-        :param env: Polygonal environment.
+        :param env: Polygonal environment with obstacles.
         :type env: Environment
-        :return: ``True`` if the segment interior intersects any obstacle edge in a non-trivial way, ``False`` otherwise.
+        :return: ``True`` if ``pq``  intersects or passes through obstacle ``False`` otherwise.
         :rtype: bool
         """
         for poly in env.obstacles:
+            # First: boundary intersections, except at shared endpoints.
             for a, b in poly.edges():
-                # Skip edges that share at least one endpoint with pq.
-                # This allows visibility along polygon edges.
                 if (a == p) or (a == q) or (b == p) or (b == q):
+                    # Allow touching at obstacle vertices.
                     continue
 
                 if Geometric.segments_intersect(p, q, a, b):
                     return True
+
+            # Second: “goes through interior” check via midpoint sampling.
+            mid = Point(0.5 * (p.x + q.x), 0.5 * (p.y + q.y))
+            if Geometric.point_in_polygon(mid, poly.vertices):
+                # Midpoint is inside or on the boundary of this polygon,
+                # so the open segment passes through the obstacle.
+                return True
 
         return False
 

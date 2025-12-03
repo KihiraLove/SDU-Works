@@ -67,7 +67,7 @@ class Input:
 
         with open(self.config.input_file_path, "r", encoding="utf8") as file:
             lines = file.readlines()
-            self.logger.debug(f"Input file:\n".join(lines))
+            self.logger.debug(f"Input file:\n" + "".join(lines))
 
         i = 0
         n = len(lines)
