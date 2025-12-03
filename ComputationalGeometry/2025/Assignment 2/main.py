@@ -5,6 +5,29 @@ from Runner import Runner
 from Configuration import Configuration
 
 
+"""
+author: doker24, Domonkos Kertész
+Computational geometry, fall 2025
+also available: https://github.com/KihiraLove/SDU-Works/tree/main/ComputationalGeometry/2025/Assignment%202
+"""
+
+### Important ###
+# This program calls a subprocess on your terminal to generate a pdf,
+# it requires pdflatex to be available.
+# I only tested it on one machine, if it fails on yours, .tex file will be available to be used manually
+
+### Packages ###
+# Apart from standard packages, this program uses matplotlib.pyplot but can run without it
+# standard packages used:
+# - os
+# - subprocess
+# - typing
+# - math
+# - heapq
+# - collections
+# - dataclasses
+# - datetime
+
 def main():
     # Load running configuration
     config = Configuration()
