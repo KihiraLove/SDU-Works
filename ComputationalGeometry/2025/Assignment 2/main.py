@@ -1,10 +1,3 @@
-from Input import Input
-from Output import Output
-from Logger import Logger
-from Runner import Runner
-from Configuration import Configuration
-
-
 """
 author: doker24, Domonkos Kertész
 Computational geometry, fall 2025
@@ -28,6 +21,11 @@ also available: https://github.com/KihiraLove/SDU-Works/tree/main/ComputationalG
 # - dataclasses
 # - datetime
 
+
+from meta import Configuration, Logger
+from io_handler import Input, Output
+from planning import Runner
+
 def main():
     # Load running configuration
     config = Configuration()
@@ -38,11 +36,11 @@ def main():
     )
 
     # Create input reader and build or load environment
-    input = Input(
+    input_reader = Input(
         logger=logger,
         config=config
     )
-    problem = input.create_problem_from_file_or_demo()
+    problem = input_reader.create_problem_from_file_or_demo()
 
     # Create runner and run planners
     runner = Runner(
