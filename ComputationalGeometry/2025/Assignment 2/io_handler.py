@@ -9,6 +9,9 @@ from planning import PlanningResult
 
 
 class Input:
+    """
+    Manages input parsing and demo environment building
+    """
     def __init__(self, logger: Logger, config: Configuration):
         """
         :param logger: logger object
@@ -21,6 +24,7 @@ class Input:
 
     def create_problem_from_file_or_demo(self) -> Problem:
         """
+        Construct a Problem either from the configured input file or from a built-in demo environment.
         :return: object containing the environment, start, and goal
         :rtype: Problem
         """
@@ -38,9 +42,9 @@ class Input:
         Blank lines are ignored.
 
         The file have to contain:
-        A single ``START`` line.
-        A single ``GOAL`` line.
-        One or more obstacle definitions.
+        - A single ``START`` line.
+        - A single ``GOAL`` line.
+        - One or more obstacle definitions.
 
         The grammar is as follows (pseudo-BNF):
            file           ::= { comment | start | goal | obstacle | blank }*
@@ -51,7 +55,7 @@ class Input:
            obstacle       ::= 'OBSTACLE' newline vertex+ 'END'
            vertex         ::= x y
         where ``x`` and ``y`` are floating-point numbers.
-        
+
         :return: object containing the environment, start, and goal
         :rtype: Problem
         :raises ValueError: If the file is malformed or misses required elements.
@@ -63,9 +67,7 @@ class Input:
 
         with open(self.config.input_file_path, "r", encoding="utf8") as file:
             lines = file.readlines()
-            # Put file pointer back to file start for logging
-            file.seek(0)
-            self.logger.debug(f"Input file:\n{file.read()}")
+            self.logger.debug(f"Input file:\n".join(lines))
 
         i = 0
         n = len(lines)
@@ -145,24 +147,23 @@ class Input:
 
     def verify_start_and_goal(self, problem: Problem) -> None:
         """
-        Verify start and goal points
+        Verify start and goal points are valid
         :param problem: object containing environment, start, and goal
         :type problem: Problem
         :raises ValueError: if the start and goal points are equal, or either is inside an obstacle
         """
-        geom = Geometric()
         if problem.start == problem.goal:
             self.logger.value_error("Start and goal points cannot be the same.")
-        if geom.point_in_any_obstacle(problem.start, problem.env):
+        if Geometric.point_in_any_obstacle(problem.start, problem.env):
             self.logger.value_error("Start cannot be inside an obstacle.")
-        if geom.point_in_any_obstacle(problem.goal, problem.env):
+        if Geometric.point_in_any_obstacle(problem.goal, problem.env):
             self.logger.value_error("Goal cannot be inside an obstacle.")
 
 
     @staticmethod
     def build_demo_environment() -> Problem:
         """
-        Builds a small demo environment
+        Builds a small demo environment.
         The environment consists of two axis-aligned rectangular obstacles.
         A start and a goal point are placed on opposite sides of these obstacles.
         :return: Problem object containing the environment, start, and goal
@@ -196,7 +197,7 @@ class Input:
 
 class Output:
     """
-    Manages creating and saving of output
+    Manages creating and saving of enabled output formats
     """
     def __init__(self, logger: Logger, result: PlanningResult, config: Configuration) -> None:
         self.logger = logger
@@ -228,12 +229,12 @@ class Output:
 
     def create_latex_document(self) -> str:
         """
-        Generate a LaTeX document with representation of the environment and paths using Tikz
+        Generate a LaTeX document with representation of the environment and paths using TikZ
         The picture contains:
-        All obstacle polygons, filled in light gray and outlined in black
-        The visibility-graph shortest path, drawn as a thick blue polyline
-        The grid-based approximate path, drawn as a thick red dashed polyline
-        Start and goal points, drawn as small circles
+        - All obstacle polygons, filled in light gray and outlined in black
+        - The visibility-graph shortest path, drawn as a thick blue polyline
+        - The grid-based approximate path, drawn as a thick red dashed polyline
+        - Start and goal points, drawn as small circles
         :return: Assembled LaTeX document
         :rtype: str
         """
@@ -245,9 +246,9 @@ class Output:
             :rtype: str
             """
             return ("\\documentclass{standalone}\n"
-                    "\\usepackage{tikz}\n"
+                    "\\usepackage{TikZ}\n"
                     "\\begin{document}\n"
-                    "\\begin{tikzpicture}[scale=1.0]\n"
+                    "\\begin{TikZpicture}[scale=1.0]\n"
                     "\n% TikZ representation of the environment and paths\n")
 
         def latex_document_end() -> str:
@@ -256,7 +257,7 @@ class Output:
             :return: string of LaTeX document end
             :rtype: str
             """
-            return ("\\end{tikzpicture}\n"
+            return ("\\end{TikZpicture}\n"
                     "\\end{document}")
 
         # Assemble LaTeX document
@@ -308,7 +309,7 @@ class Output:
 
     def generate_pdf(self) -> None:
         """
-        Starts a subprocess and calls pdflatex on .tex file to generate .pdf
+        Calls ``pdflatex`` via subprocess on .tex file to generate .pdf
         :return: None
         """
         # Delete old .pdf before generating
@@ -332,12 +333,11 @@ class Output:
     def plot_paths_matplotlib(self) -> None:
         """
         Create a matplotlib figure showing environment and paths
-
         The plot contains:
-        Obstacle polygons, filled lightly and outlined
-        Visibility-graph shortest path as a blue polyline
-        Grid-based approximate path as a red dashed polyline
-        Start and goal points as markers
+        - Obstacle polygons, filled lightly and outlined
+        - Visibility-graph shortest path as a blue polyline
+        - Grid-based approximate path as a red dashed polyline
+        - Start and goal points as markers
         :return: None
         """
         try:
@@ -391,16 +391,16 @@ class Output:
 
     def construct_detailed_report(self) -> None:
         """
-        Construct a detailed explanation of the planning results
+        Construct a detailed explanation of the planning results.
         This function is intended to serve as a textual summary that explains
-        what the algorithms did and how to interpret the numerical outputs
+        what the algorithms did and how to interpret the numerical outputs.
 
         The report includes:
-        Basic environment statistics (number of obstacles, number of vertices)
-        Visibility-graph statistics (number of vertices, number of edges)
-        Shortest-path properties (length, number of segments, vertex sequence)
-        Grid-based planner parameters and path properties
-        A direct comparison between exact and approximate paths
+        - Basic environment statistics (number of obstacles, number of vertices)
+        - Visibility-graph statistics (number of vertices, number of edges)
+        - Shortest-path properties (length, number of segments, vertex sequence)
+        - Grid-based planner parameters and path properties
+        - A direct comparison between exact and approximate paths
         :return: None
         """
         def append_to_content(new_line: str) -> None:
@@ -499,7 +499,7 @@ class Output:
         :type content: str
         :param file_path: path of file
         :type file_path: str
-        :return:
+        :return: None
         """
         with open(file_path, "w", encoding="utf8") as file:
             file.write(content)
@@ -507,7 +507,7 @@ class Output:
 
     def delete_file(self, file_path: str) -> None:
         """
-        Deletes file if exists
+        Deletes file if exists.
         :param file_path: path of file to delete
         :type file_path: str
         :return: None

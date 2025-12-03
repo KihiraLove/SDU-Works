@@ -17,10 +17,9 @@ class VisibilityGraphPlanner:
     interior of any obstacle). Each edge is weighted by the Euclidean distance
     between its endpoints.
     Shortest paths are then computed using Dijkstra's algorithm.
-    This implementation uses a simple, naive O(n^2 m) visibility test,
-    where n is the number of vertices and m is the number of edges.
+    This implementation uses a simple, naive O(n^2) visibility test,
+    where n is the number of vertices in the graph.
     """
-
     def __init__(self, problem: Problem, config: Configuration, logger: Logger):
         """
         Initialize the planner with a given polygonal environment.
@@ -106,7 +105,6 @@ class VisibilityGraphPlanner:
         total_pairs = n * (n - 1) // 2
         self.logger.debug(f"Testing visibility for {total_pairs} vertex pairs (O(n^2) process).")
 
-        geom = Geometric()
         checked_pairs = 0
         visible_edges = 0
         # Test each pair of distinct vertices for visibility.
@@ -115,7 +113,7 @@ class VisibilityGraphPlanner:
             for j in range(i + 1, n):
                 q = self.vertices[j]
                 checked_pairs += 1
-                if not geom.segment_hits_obstacle(p, q, self.problem.env):
+                if not Geometric.segment_hits_obstacle(p, q, self.problem.env):
                     w = self._euclidean_distance(p, q)
                     self.adj[i].append((j, w))
                     self.adj[j].append((i, w))
@@ -249,15 +247,13 @@ class UniformGridPlanner:
         """
         Compute a square bounding box that contains all obstacles and
         the provided extra points (e.g., start and goal).
-
         The square is obtained by first computing the minimal axis-aligned
         bounding box of all points, then enlarging it by ``margin_ratio``
         on all sides, and finally making it a square by taking the larger
         of width and height.
-        The resulting square is described by self.left and
-        self.bottom (coordinates of the lower-left corner) and the
-        uniform cell size self.cell_size
-
+        The resulting square is described by ``self.left`` and
+        ``self.bottom`` (coordinates of the lower-left corner) and the
+        uniform cell size ``self.cell_size``.
         :param extra_points: Additional points to include (usually start/goal).
         :type extra_points: collections.abc.Iterable[Point]
         """
@@ -341,30 +337,24 @@ class UniformGridPlanner:
     def _classify_cells(self) -> None:
         """
         Build the grid of cells and classify each as free or blocked.
-
         A cell is considered blocked if its center lies inside or on the
         boundary of any obstacle polygon. This is a simple approximation:
         the BFS path will only visit cells whose centers lie in free space.
         However, the polyline obtained by connecting cell centers can still
         pass near or slightly through obstacles, especially if obstacles
         are small or thin relative to the cell size.
-
-        The result is stored in self.grid as a 2D list of GridCell
+        The result is stored in ``self.grid`` as a 2D list of class:``GridCell``
         objects.
         """
-        self.logger.debug(
-            f"Classifying {self.config.grid_size * self.config.grid_size} grid cells as "
-            "free or blocked."
-        )
+        self.logger.debug(f"Classifying {self.config.grid_size * self.config.grid_size} grid cells as free or blocked.")
         self.grid = []
-        geom = Geometric()
         free_count = 0
         blocked_count = 0
         for j in range(self.config.grid_size):
             row: List[GridCell] = []
             for i in range(self.config.grid_size):
                 center = self._cell_center(i, j)
-                blocked = geom.point_in_any_obstacle(center, self.problem.env)
+                blocked = Geometric.point_in_any_obstacle(center, self.problem.env)
                 if blocked:
                     blocked_count += 1
                 else:
@@ -383,6 +373,7 @@ class UniformGridPlanner:
         It first computes a bounding square that contains all obstacles,
         the start point, and the goal point, then overlays a uniform grid
         over this square and classifies each cell as free or blocked.
+        :return: None
         """
         self.logger.debug("Building uniform grid for grid-based planner.")
         self._compute_bounding_square(extra_points=[self.problem.start, self.problem.goal])
@@ -391,16 +382,14 @@ class UniformGridPlanner:
     def _neighbors(self, i: int, j: int) -> Iterable[Tuple[int, int]]:
         """
         Generate 4-connected neighbors of a given cell within the grid bounds.
-
         Only neighbors within the index range ``[0, grid_size - 1]`` are
         yielded; connectivity is restricted to horizontal and vertical moves.
-
         :param i: Column index of the current cell.
         :type i: int
         :param j: Row index of the current cell.
         :type j: int
         :return: Generator of neighbor index pairs ``(ni, nj)``.
-        :rtype: collections.abc.Iterable[tuple[int, int]]
+        :rtype: Iterable[tuple[int, int]]
         """
         if i > 0:
             yield i - 1, j
@@ -423,8 +412,7 @@ class UniformGridPlanner:
         containing cell center lies inside an obstacle), this function returns
         ``None`` to indicate that no path can be constructed at the chosen
         resolution.
-        :return: List of points representing the path (cell centers) from
-                 start to goal, or None if no path was found.
+        :return: List of points representing the path (cell centers) from start to goal, or None if no path was found.
         :rtype: list[Point] | None
         :raises RuntimeError: If build_grid has not been called.
         """
@@ -526,8 +514,8 @@ class PlanningResult:
 
     def vg_path_to_tikz(self) -> str:
         """
-        Tikz representation of visibility graph path
-        :return: tikz representation of visibility graph path
+        TikZ representation of visibility graph path
+        :return: TikZ representation of visibility graph path
         :rtype: str
         """
         tikz = ("% Visibility-graph shortest path\n"
@@ -540,6 +528,11 @@ class PlanningResult:
         return tikz
 
     def grid_path_to_tikz(self) -> str:
+        """
+        TikZ representation of grid path
+        :return: TikZ representation of grid path
+        :rtype: str
+        """
         tikz = ("% Grid-based approximate path\n"
                 "\\draw[very thick,red,dashed] ")
 
@@ -552,6 +545,9 @@ class PlanningResult:
 
 
 class Runner:
+    """
+    Coordinates running both planners on a given problem and returns their results.
+    """
     def __init__(self, problem: Problem, logger: Logger, config: Configuration):
         """
         :param problem: object containing environment, start, goal
@@ -570,7 +566,7 @@ class Runner:
         Run both planners (visibility graph and grid-based) on a given environment.
         The function builds the visibility graph, computes the shortest path, then
         builds the grid and computes the approximate path. All intermediate
-        objects and paths are returned in a PlanningResult object
+        objects and paths are returned in a PlanningResult object.
         :return: Planning results for subsequent analysis and visualization
         :rtype: PlanningResult
         """
@@ -581,7 +577,7 @@ class Runner:
         vg_planner.build_graph()
         vg_path = vg_planner.shortest_path()
 
-        # Grid / quadtree planner.
+        # Grid-based planner.
         self.logger.info("Building grid and computing approximate shortest path (BFS)")
         grid_planner = UniformGridPlanner(self.problem, self.config, self.logger)
         grid_planner.build_grid()

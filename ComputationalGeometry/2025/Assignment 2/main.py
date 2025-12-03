@@ -1,48 +1,56 @@
 """
 author: doker24, Domonkos Kertész
 Computational geometry, fall 2025
-also available: https://github.com/KihiraLove/SDU-Works/tree/main/ComputationalGeometry/2025/Assignment%202
-"""
+also available:
+https://github.com/KihiraLove/SDU-Works/tree/main/ComputationalGeometry/2025/Assignment%202
 
-### Important ###
-# This program calls a subprocess on your terminal to generate a pdf,
-# it requires pdflatex to be available.
-# I only tested it on one machine, if it fails on yours, .tex file will be available to be used manually
+### Info ###
+This program calls an external 'pdflatex' subprocess on your terminal to generate a PDF.
+If 'pdflatex' is not available, or the subprocess fails, .tex file will be available for manual use.
 
 ### Packages ###
-# Apart from standard packages, this program uses matplotlib.pyplot but can run without it
-# standard packages used:
-# - os
-# - subprocess
-# - typing
-# - math
-# - heapq
-# - collections
-# - dataclasses
-# - datetime
+Apart from standard packages, this program optionally uses matplotlib.pyplot to generate a .png,
+but can run without it, only outputting a LaTeX and a PDF document.
 
+standard packages used:
+- os
+- subprocess
+- typing
+- math
+- heapq
+- collections
+- dataclasses
+- datetime
+"""
 
 from meta import Configuration, Logger
 from io_handler import Input, Output
 from planning import Runner
 
 def main():
-    # Load running configuration
+    """
+    Top level driver. Pipeline:
+    - Load running configuration
+    - Create Logger
+    - Create input reader
+    - Build or load environment
+    - Create runner
+    - Run planners
+    - Create output writer
+    - Generate and save output
+    """
     config = Configuration()
 
-    # Create Logger
     logger = Logger(
         config=config
     )
 
-    # Create input reader and build or load environment
     input_reader = Input(
         logger=logger,
         config=config
     )
     problem = input_reader.create_problem_from_file_or_demo()
 
-    # Create runner and run planners
     runner = Runner(
         problem=problem,
         logger=logger,
@@ -50,7 +58,6 @@ def main():
     )
     result = runner.run_planners()
 
-    # Create output writer, generate and save output
     output = Output(
         result=result,
         logger=logger,

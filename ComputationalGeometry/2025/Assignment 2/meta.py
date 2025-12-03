@@ -36,14 +36,14 @@ class Configuration:
         self.enable_detailed_report: bool = True
         self.margin_ratio: float = 0.2
 
-        # create dirs if they don't exist
+        # Create output and log directories if they do not already exist.
         os.makedirs(self.output_dir, exist_ok=True)
         os.makedirs(self.log_dir, exist_ok=True)
 
 
 class Logger:
     """
-    Manages printing and logging
+    Manages printing and logging.
     """
     def __init__(self, config: Configuration) -> None:
         """
@@ -55,7 +55,7 @@ class Logger:
 
     def __del__(self) -> None:
         """
-        Write log string to log file at deconstruct time
+        Write log string to log file at deconstruct time.
         :return: None
         """
         with open(os.path.join(self.config.log_dir, f"{datetime.now().strftime(self.config.log_format)}.txt"), "w+") as file:
@@ -65,7 +65,7 @@ class Logger:
         """
         Print a debug message and append it to log if debug is enabled.
         Messages are prefixed with [DEBUG] so that they can be distinguished from higher-level explanatory prints.
-        :param msg: Message to print.
+        :param msg: Message to print
         :type msg: str
         :return: None
         """
@@ -77,7 +77,7 @@ class Logger:
 
     def append_log(self, msg: str) -> None:
         """
-        Append a log message to the log string
+        Append a log message to the log string.
         :param msg: message to append
         :type msg: str
         :return: None
@@ -86,9 +86,9 @@ class Logger:
 
     def info(self, msg: str) -> None:
         """
-        Print an INFO message and append it to log
-        Messages are prefixed with [INFO]
-        :param msg: Message to print.
+        Print an INFO message and append it to log.
+        Messages are prefixed with [INFO].
+        :param msg: Message to print
         :type msg: str
         :return: None
         """
@@ -98,11 +98,12 @@ class Logger:
 
     def value_error(self, msg: str) -> None:
         """
-        Print an ERROR message and append it to log
-        Messages are prefixed with [ERROR]
-        :param msg: Message to print.
+        Raise a ``ValueError`` and print its ERROR message and append it to log.
+        Messages are prefixed with [ERROR].
+        :param msg: Message to print
         :type msg: str
         :return: None
+        :raises: ValueError
         """
         message = f"[ERROR] {msg}"
         print(message)
@@ -111,23 +112,12 @@ class Logger:
 
     def warn(self, msg: str) -> None:
         """
-        Print an WARN message and append it to log
-        Messages are prefixed with [WARN]
-        :param msg: Message to print.
+        Print an WARN message and append it to log.
+        Messages are prefixed with [WARN].
+        :param msg: Message to print
         :type msg: str
         :return: None
         """
         message = f"[WARN] {msg}"
         print(message)
         self.append_log(message)
-
-
-class Singleton(type):
-    """
-    Metaclass for Singleton classes to inherit from
-    """
-    _instances = {}
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
