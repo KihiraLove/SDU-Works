@@ -1,0 +1,56 @@
+# central concave polygon plus surrounding obstacles
+
+START 1.0 9.0
+GOAL 19.0 1.0
+
+# Central star-like concave obstacle (simple, non-self-intersecting)
+OBSTACLE
+9.0 4.0
+11.0 4.5
+12.0 6.0
+11.0 7.5
+9.5 8.0
+8.0 7.5
+7.0 6.0
+8.0 4.5
+END
+
+# Upper-left elongated polygon near central star
+OBSTACLE
+4.0 7.0
+7.0 7.2
+7.5 8.2
+6.8 9.3
+4.5 9.4
+3.7 8.2
+END
+
+# Upper-right elongated polygon near central star
+OBSTACLE
+11.5 7.3
+15.0 7.4
+15.6 8.4
+14.6 9.6
+12.0 9.5
+11.2 8.2
+END
+
+# Lower-left polygon
+OBSTACLE
+3.0 2.0
+5.5 2.0
+6.3 3.0
+5.7 4.2
+3.5 4.3
+2.7 3.2
+END
+
+# Lower-right polygon
+OBSTACLE
+12.5 1.5
+15.5 1.6
+16.2 2.8
+15.7 4.0
+13.3 4.1
+12.2 2.9
+END

@@ -203,12 +203,11 @@ class Output:
         self.logger = logger
         self.config = config
         self.result = result
-        self.filepath = os.path.join(self.config.output_dir, self.config.output_file_name)
-        self.log_file_path = f"{self.filepath}.log"
-        self.aux_file_path = f"{self.filepath}.aux"
-        self.pdf_file_path = f"{self.filepath}.pdf"
-        self.tex_file_path = f"{self.filepath}.tex"
-        self.png_file_path = f"{self.filepath}.png"
+        self.log_file_path = f"{self.config.output_file_name}.log"
+        self.aux_file_path = f"{self.config.output_file_name}.aux"
+        self.pdf_file_path = f"{self.config.output_file_name}.pdf"
+        self.tex_file_path = f"{self.config.output_file_name}.tex"
+        self.png_file_path = f"{self.config.output_file_name}.png"
         self.report_content = ""
 
 
@@ -248,7 +247,7 @@ class Output:
             return ("\\documentclass{standalone}\n"
                     "\\usepackage{TikZ}\n"
                     "\\begin{document}\n"
-                    "\\begin{TikZpicture}[scale=1.0]\n"
+                    "\\begin{tikzpicture}[scale=1.0]\n"
                     "\n% TikZ representation of the environment and paths\n")
 
         def latex_document_end() -> str:
@@ -257,7 +256,7 @@ class Output:
             :return: string of LaTeX document end
             :rtype: str
             """
-            return ("\\end{TikZpicture}\n"
+            return ("\\end{tikzpicture}\n"
                     "\\end{document}")
 
         # Assemble LaTeX document
@@ -316,11 +315,7 @@ class Output:
         self.delete_file(self.pdf_file_path)
 
         self.logger.info(f"Calling pdflatex subprocess on {self.tex_file_path} to generate pdf")
-        result = subprocess.run(
-            ["pdflatex", self.tex_file_path],
-            capture_output=True,
-            text=True
-        )
+        result = subprocess.run(["pdflatex", self.tex_file_path], capture_output=True, text=True)
         if result.returncode != 0:
             self.logger.warn(f"pdflatex failed with return code {result.returncode}. PDF may not have been generated correctly.")
             self.logger.debug(f"pdflatex stdout:\n{result.stdout}")

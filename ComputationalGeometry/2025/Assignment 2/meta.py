@@ -21,10 +21,9 @@ class Configuration:
         :ivar enable_detailed_report: enable outputting detailed report to log and terminal
         :ivar margin_ratio: margin ratio for the bounding square in the grid
         """
-        self.input_file_path: str = "input.txt"
+        self.input_file_path: str = "cluster.txt"
         self.output_file_name: str = "result"
-        self.output_dir: str = "output"
-        self.demo_mode: bool = True
+        self.demo_mode: bool = False
         self.debug: bool = True
         self.grid_size: int = 64
         self.log_dir: str = "logs"
@@ -37,7 +36,6 @@ class Configuration:
         self.margin_ratio: float = 0.2
 
         # Create output and log directories if they do not already exist.
-        os.makedirs(self.output_dir, exist_ok=True)
         os.makedirs(self.log_dir, exist_ok=True)
 
 
