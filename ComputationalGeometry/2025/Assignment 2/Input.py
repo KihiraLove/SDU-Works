@@ -1,11 +1,11 @@
-from typing import List, Optional
-
+from typing import List
 from Point import Point
 from PolygonObstacle import PolygonObstacle
 from Environment import Environment
 from Logger import Logger
 from Problem import Problem
 from Configuration import Configuration
+
 
 class Input:
     def __init__(self, logger: Logger, config: Configuration):

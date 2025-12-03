@@ -148,7 +148,7 @@ class VisibilityGraphPlanner:
         with the same ``start`` and ``goal`` points, so that they exist
         as vertices in the internal graph.
         :return: List of points representing the path in order from
-                 start to goal (inclusive), or ``None`` if no path exists.
+                 start to goal (inclusive), or None if no path exists.
         :rtype: list[Point] | None
         """
         if not self.vertices:
@@ -159,10 +159,7 @@ class VisibilityGraphPlanner:
 
         start_idx = self.index_of[self.problem.start]
         goal_idx = self.index_of[self.problem.goal]
-        self.logger.debug(
-            f"Running Dijkstra's algorithm on visibility graph from vertex "
-            f"{start_idx} to {goal_idx}."
-        )
+        self.logger.debug(f"Running Dijkstra's algorithm on visibility graph from vertex {start_idx} to {goal_idx}.")
 
         n = len(self.vertices)
 
