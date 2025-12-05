@@ -1,0 +1,22 @@
+# A u turn in a concave polygon around a convex polygon
+
+START 9.5 14.0
+GOAL 15.0 14.0
+
+OBSTACLE
+6.0 13.0
+8.0 13.0
+8.0 7.0
+16.0 7.0
+16.0 13.0
+18.0 13.0
+18.0 5.0
+6.0 5.0
+END
+
+OBSTACLE
+11.4 21.3
+11.4 10.3
+13.4 10.3
+13.0 21.3
+END

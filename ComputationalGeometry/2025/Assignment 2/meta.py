@@ -21,7 +21,7 @@ class Configuration:
         :ivar enable_detailed_report: enable outputting detailed report to log and terminal
         :ivar margin_ratio: margin ratio for the bounding square in the grid
         """
-        self.input_file_path: str = "cluster.txt"
+        self.input_file_path: str = "envs/cluster.txt"
         self.output_file_name: str = "result"
         self.demo_mode: bool = False
         self.debug: bool = True
