@@ -350,11 +350,21 @@ class UniformGridPlanner:
         self.grid = []
         free_count = 0
         blocked_count = 0
+        # Pre-compute vertices that are shared by at least two obstacles.
+        shared_vertices = Geometric.shared_vertices(self.problem.env)
         for j in range(self.config.grid_size):
             row: List[GridCell] = []
             for i in range(self.config.grid_size):
                 center = self._cell_center(i, j)
+                # Basic classification by point-in-polygon test.
                 blocked = Geometric.point_in_any_obstacle(center, self.problem.env)
+                # Additional blocking: cells that contain a shared vertex
+                # single-point contacts between obstacles
+                if not blocked:
+                    for v in shared_vertices:
+                        if Geometric.cell_contains_point(center, v, self.cell_size):
+                            blocked = True
+                            break
                 if blocked:
                     blocked_count += 1
                 else:

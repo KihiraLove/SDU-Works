@@ -307,38 +307,166 @@ class Geometric:
     @staticmethod
     def segment_hits_obstacle(p: Point, q: Point, env: Environment) -> bool:
         """
-        Test whether segment ``pq`` intersects or passes through any obstacle.
-        We treat an obstacle as blocking visibility if either
-        - the segment properly intersects one of its edges
-        - a representative interior point of the segment lies inside the polygon.
-        Endpoint touches at shared vertices are ignored.
-        :param p: Query point.
+        Test whether segment pq intersects any obstacle in a blocking way.
+        Proper crossings and edge–interior intersections are blocking.
+        Touching a vertex is blocking if:
+              - that vertex is shared by multiple obstacles, or
+              - it is a concave vertex of the polygon.
+        Sliding exactly along a single obstacle edge is allowed.
+        :param p: Query point
         :type p: Point
-        :param q: Query point.
+        :param q: Query point
         :type q: Point
         :param env: Polygonal environment with obstacles.
         :type env: Environment
-        :return: ``True`` if ``pq``  intersects or passes through obstacle ``False`` otherwise.
+        :return: whether segment pq intersects any obstacle
         :rtype: bool
         """
         for poly in env.obstacles:
-            # First: boundary intersections, except at shared endpoints.
-            for a, b in poly.edges():
-                if (a == p) or (a == q) or (b == p) or (b == q):
-                    # Allow touching at obstacle vertices.
+            verts = poly.vertices
+            n = len(verts)
+            for i in range(n):
+                a = verts[i]
+                b = verts[(i + 1) % n]
+                if not Geometric.segments_intersect(p, q, a, b):
                     continue
-
-                if Geometric.segments_intersect(p, q, a, b):
-                    return True
-
-            # Second: “goes through interior” check via midpoint sampling.
-            mid = Point(0.5 * (p.x + q.x), 0.5 * (p.y + q.y))
-            if Geometric.point_in_polygon(mid, poly.vertices):
-                # Midpoint is inside or on the boundary of this polygon,
-                # so the open segment passes through the obstacle.
+                hit_at_p = (p == a or p == b)
+                hit_at_q = (q == a or q == b)
+                # Segment exactly coincides with this obstacle edge
+                if hit_at_p and hit_at_q and ((p == a and q == b) or (p == b and q == a)):
+                    continue
+                # Intersection only at one endpoint of pq, touching a vertex
+                if hit_at_p or hit_at_q:
+                    v = p if hit_at_p else q
+                    # Shared vertex of multiple obstacles
+                    if Geometric._vertex_is_shared(env, v):
+                        return True
+                    # Determine index of v in this polygon
+                    if v == a:
+                        idx = i
+                    else:
+                        idx = (i + 1) % n
+                    # Concave vertex touch is blocking, convex is allowed
+                    if Geometric._vertex_is_concave(verts, idx):
+                        return True
+                    # Convex vertex of a single polygon
+                    continue
+                # Intersection not at endpoints of pq, always blocking
                 return True
-
         return False
+
+    @staticmethod
+    def _vertex_is_concave(polygon: List[Point], idx: int) -> bool:
+        """
+        Determine whether vertex poly[idx] is concave.
+        Works for both CCW and CW polygons by comparing the local turn
+        with the global polygon orientation.
+        :param polygon: Polygon vertices
+        :type polygon: list[Point]
+        :param idx: Vertex index
+        :type idx: int
+        :return: ``True`` if vertex poly[idx] is concave, ``False`` otherwise
+        :rtype: bool
+        """
+        n = len(polygon)
+        prev = polygon[(idx - 1) % n]
+        cur = polygon[idx]
+        nxt = polygon[(idx + 1) % n]
+
+        turn = Geometric.orient(prev, cur, nxt)
+        orient_poly = Geometric._polygon_orientation(polygon)
+
+        if orient_poly > EPS:  # polygon CCW
+            return turn < -EPS  # right turn = concave
+        elif orient_poly < -EPS:  # polygon CW
+            return turn > EPS  # left turn = concave (orientation flipped)
+        else:
+            # Degenerate / almost collinear polygon
+            return False
+
+    @staticmethod
+    def _vertex_is_shared(env: Environment, v: Point) -> bool:
+        """
+        Checks if ``Point`` is shared vertex between polygons.
+        Used to block squeezing through single-point contacts between polygons.
+        :param env: Polygonal environment
+        :type env: Environment
+        :param v: Point
+        :type v: Point
+        :return: ``True`` if ``v`` is shared by at least two polygons ``False`` otherwise.
+        """
+        count = 0
+        for poly in env.obstacles:
+            for u in poly.vertices:
+                if u == v:
+                    count += 1
+                    if count >= 2:
+                        return True
+        return False
+
+    @staticmethod
+    def _polygon_orientation(polygon: List[Point]) -> float:
+        """
+        Signed area of polygon. > 0 for CCW, < 0 for CW.
+        :param polygon: Polygon vertices
+        :type polygon: list[Point]
+        :return: polygon orientation
+        :rtype: float
+        """
+        area = 0.0
+        n = len(polygon)
+        for i in range(n):
+            p = polygon[i]
+            q = polygon[(i + 1) % n]
+            area += p.x * q.y - q.x * p.y
+        return area
+
+    @staticmethod
+    def shared_vertices(env: Environment) -> List[Point]:
+        """
+        Collect all vertices that belong to at least two different obstacles.
+        :param env: Polygonal environment
+        :type env: Environment
+        :return: List of all vertices that belong to at least two different obstacles
+        :rtype: list[Point]
+        """
+        # Count how many times each (x, y) appears across all polygons
+        counts: dict[tuple[float, float], int] = {}
+        for poly in env.obstacles:
+            for v in poly.vertices:
+                key = (v.x, v.y)
+                counts[key] = counts.get(key, 0) + 1
+
+        shared: List[Point] = []
+        for poly in env.obstacles:
+            for v in poly.vertices:
+                key = (v.x, v.y)
+                if counts.get(key, 0) >= 2:
+                    # Avoid duplicates in the output list
+                    if all((sv.x != v.x or sv.y != v.y) for sv in shared):
+                        shared.append(v)
+        return shared
+
+    @staticmethod
+    def cell_contains_point(center: Point, q: Point, cell_size: float) -> bool:
+        """
+        Test whether point q lies inside the axis-aligned grid cell whose
+        center is ``center`` and whose side length is ``cell_size``.
+        We use an L∞ ball of radius cell_size / 2 around the center.
+        :param center: center of grid
+        :type center: Point
+        :param q: point to test
+        :type q: Point
+        :param cell_size: length of cells side
+        :type cell_size: float
+        :return: whether ``q`` lies inside of cell with ``cell_size`` around ``center``
+        :rtype: bool
+        """
+        half = 0.5 * cell_size + EPS
+        return (
+                abs(center.x - q.x) <= half
+                and abs(center.y - q.y) <= half
+        )
 
     @staticmethod
     def polyline_length(path: List[Point]) -> float:
