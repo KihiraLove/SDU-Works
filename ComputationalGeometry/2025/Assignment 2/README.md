@@ -346,7 +346,9 @@ These are not resolved due to time limit, or just to showcase the shortcomings o
 ### Problems not fixed
 
 1. **Visibility graph going through concave polygons**
-This problem appeared last minute, after fixing some other problems, and I had no time to debug and fix it.ú
+
+This problem appeared last minute, after fixing some other problems, and I had no time to debug and fix it.
+
 Current version:
 ![star_32.png](assets/problematic_runs/star_32.png)
 Older version:
