@@ -171,7 +171,7 @@ class VisibilityGraphPlanner:
 
         visited_count = 0
 
-        # Standard Dijkstra loop.
+        # Dijkstra
         while heap:
             d_u, u = heapq.heappop(heap)
             if d_u > dist[u] + 1e-12:
@@ -179,7 +179,7 @@ class VisibilityGraphPlanner:
                 continue
             visited_count += 1
             if u == goal_idx:
-                self.logger.info("Reached goal vertex during Dijkstra; stopping early.")
+                self.logger.info("Reached goal vertex during Dijkstra, stopping early.")
                 break
 
             for v, w_uv in self.adj.get(u, []):
@@ -379,7 +379,7 @@ class UniformGridPlanner:
     def build_grid(self) -> None:
         """
         Construct the bounding square and classify a uniform grid of cells.
-        This method must be called **before** attempting to plan a path.
+        This method must be called before attempting to plan a path.
         It first computes a bounding square that contains all obstacles,
         the start point, and the goal point, then overlays a uniform grid
         over this square and classifies each cell as free or blocked.

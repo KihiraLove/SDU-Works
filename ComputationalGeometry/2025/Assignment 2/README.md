@@ -2,12 +2,19 @@
 
 Comparing an **exact geometric method** vs. a **discretization-based planner**, with explicit complexity and accuracy trade-offs.
 
-## 1. High-Level Structure
+---
+## Table of contents
 
-The program compares two approaches for planning a path from a start point to a goal point in a polygonal environment with obstacles:
 
-* **Exact planner**: Visibility graph + Dijkstra
-* **Approximate planner**: Uniform grid + BFS
+
+---
+
+## High-Level Structure
+
+We compare two approaches for planning a path from a start point to a goal point in a polygonal environment with obstacles:
+
+- **Exact planner**: Visibility graph + Dijkstra
+- **Approximate planner**: Uniform grid + BFS
 
 Pipeline:
 
@@ -15,252 +22,404 @@ Pipeline:
 2. Run both planners via `Runner`
 3. Collect results in `PlanningResult`
 4. Produce:
+   - TikZ/LaTeX (+ optional PDF)
+   - Optional Matplotlib PNG
+   - Optional detailed numeric report
 
-   * TikZ/LaTeX (+ optional PDF)
-   * Optional Matplotlib PNG
-   * Optional detailed numeric report
+---
 
-## 2. Complexity Summary
+## Complexity
 
-Let:
+Let
+- `n_v` = number of obstacle vertices + start + goal
+- `E_obs` = number of obstacle edges (≈ `n_v` for simple polygons)
+- `G = grid_size²` = number of grid cells
 
-* `n_v` = number of obstacle vertices + start + goal
-* `E_obs` = number of obstacle edges (≈ `n_v` for simple polygons)
-* `G = grid_size²` = number of grid cells
-
-### 2.1 Visibility Graph Planner
+### Visibility Graph Planner
 
 **Graph construction**
 
-* Pairs of vertices: Θ(`n_v²`)
-* For each pair, `segment_hits_obstacle` checks all obstacle edges: O(`E_obs`)
-* Total complexity:
-  **O(n_v² · E_obs)** ≈ **O(n_v³)** when `E_obs = Θ(n_v)`
+- Pairs of vertices: Θ(`n_v²`)
+- For each pair, `segment_hits_obstacle` checks all obstacle edges: O(`E_obs`)
+- Total complexity: **O(n_v² · E_obs)** ≈ **O(n_v³)** when `E_obs = Θ(n_v)`
 
 Memory:
 
-* Vertices: O(`n_v`)
-* Adjacency list (possibly dense): up to O(`n_v²`) edges
+- Vertices: O(`n_v`)
+- Adjacency list: up to O(`n_v²`) edges in dense cases
 
 **Shortest path (Dijkstra)**
 
-* Complexity: **O((n_v + m_vg) log n_v)** with binary heap
-* In a dense visibility graph (`m_vg = Θ(n_v²)`): **O(n_v² log n_v)**
-* In practice, graph construction cost typically dominates for moderate sizes.
+- Complexity: **O((n_v + m_vg) log n_v)** with binary heap
+- In a dense visibility graph (`m_vg = Θ(n_v²)`): **O(n_v² log n_v)**
+- In practice, graph construction cost typically dominates for moderate sizes.
 
-### 2.2 Grid-Based Planner
+### Grid-Based Planner
 
 **Bounding square**
 
-* Single pass over all vertices and start/goal: **O(n_v)**
+- Single pass over all vertices and start/goal: **O(n_v)**
 
 **Cell classification**
 
-* For each of `G` cells:
-  * Call `point_in_any_obstacle` → O(`n_v`)
-* Total: **O(G · n_v)**
+- For each of `G` cells:
+  - Call `point_in_any_obstacle` → O(`n_v`)
+- Total: **O(G · n_v)**
 
 **BFS on the grid**
 
-* Nodes: `G` cells
-* Edges: O(`G`) (each cell has at most 4 neighbors)
-* BFS: **O(G)**
+- Nodes: `G` cells
+- Edges: O(`G`) (each cell has at most 4 neighbors)
+- BFS: **O(G)**
 
 Memory:
 
-* Grid: O(`G`)
-* BFS structures (`visited`, `parent`): O(`G`)
+- Grid: O(`G`)
+- BFS structures (`visited`, `parent`): O(`G`)
 
 In practice:
 
-* For small `n_v` and large `grid_size`, the grid part dominates runtime.
-* For large `n_v`, the visibility graph construction dominates.
+- For small `n_v` and large `grid_size`, the grid part dominates runtime.
+- For large `n_v`, the visibility graph construction dominates.
 
-## 3. Key Design Choices
+---
 
-### 3.1 Two Planners: Exact vs Approximate
+## Design Choices
 
-* **Visibility graph**: Classical exact solution for polygonal shortest paths.
+### Two Planners Exact vs Approximate
 
-  * Good for theory and for reference.
-  * Cubic worst-case complexity in this implementation.
+- **Visibility graph**:
+  - Classical exact solution for shortest paths around polygons.
+  - For optimistic environments (no degenerate vertex contacts and well-oriented polygons) the output is a high quality approximation to the true shortest path.
+  - Cubic worst-case complexity in this implementation.
 
-* **Uniform grid + BFS**: Conceptually close to occupancy grids in robotics.
+- **Uniform grid + BFS**:
+  - Close to occupancy-grid planning used in robotics.
+  - Path quality and correctness depend strongly on `grid_size`.
+  - BFS guarantees minimal number of grid steps, not Euclidean shortest path.
+  - Path can widely differ due to reduced directionality
 
-  * Simple to implement and reason about.
-  * Quality governed by resolution (`grid_size`).
-  * BFS guarantees minimal number of grid steps, not geometric shortest path.
+### Uniform Grid instead of Full Quadtree
 
-### 3.2 Uniform Grid instead of Full Quadtree
+- The grid corresponds to a full quadtree of fixed depth, but is stored as a 2D list of `GridCell`.
+- This keeps the implementation compact while still allowing the grid to be interpreted as a uniform quadtree:
+  - Leaves of a full quadtree can be indexed as `(i, j)` cells.
 
-* The grid corresponds to a full quadtree of fixed depth, but is stored explicitly as a 2D array of `GridCell`.
-* This avoids quadtree implementation overhead while still allowing discussion of quadtrees in the report:
-  * Leaves of a uniform quadtree can be indexed as `(i, j)` cells.
-* Trade-off: no adaptive refinement; resolution is uniform everywhere.
+### Bounding Square and Margin
 
-### 3.3 Bounding Square and Margin
+- The grid overlays a **square** that contains:
+  - All obstacle vertices
+  - Start and goal
 
-* The grid overlays a **square** (not a rectangle) that contains:
-  * All obstacle vertices
-  * Start and goal
+- `margin_ratio` defines how much extra space is added around the environment:
+  - Reduces clipping at boundaries.
+  - Helps keep start/goal and obstacles away from the grid border.
 
-* `margin_ratio` defines how much extra space is added around the environment:
-  * Reduces clipping at boundaries.
-  * Ensures that start/goal and obstacles are not too close to the grid border.
+### Discrete Free Space via Cell Centers
 
-### 3.4 Discrete Free Space via Cell Centers
+- Each cell is classified solely by its **center**:
+  - Center inside or on an obstacle → cell is **blocked**
+  - Center in free space → cell is **free**
 
-* A cell is considered **blocked** if its **center** is inside or on an obstacle.
-* This is intentionally simple and compatible with standard grid-based planning:
-  * The path is a polyline of cell centers.
-  * Very thin obstacles or narrow passages may be misrepresented if the grid is too coarse.
+- The grid path is a polyline of cell centers.
 
-### 3.5 Visibility Conditions
+This approach leads to some quirks/problems:
+- Very thin obstacles or narrow gaps may be lost when the grid is coarse.
+- A path may appear to “graze” an obstacle or cut a corner when only a few cells are available across a corridor.
 
-* `segment_hits_obstacle` **skips edges that share an endpoint** with either segment endpoint:
-  * This allows visibility along polygon edges and between a vertex and its adjacent vertices.
-  * Otherwise, segments that lie on polygon edges would be incorrectly flagged as blocked.
+### Visibility Conditions
 
-## 4. What Happens During a Run (Conceptual)
+The visibility test `segment_hits_obstacle(p, q, env)` is responsible for deciding whether a straight-line edge between `p` and `q` is allowed in the visibility graph.
 
-At a high level:
+- Intersections are found using `segments_intersect`.
 
-1. **Input stage**
-   * Either parse a file with `START`, `GOAL`, and `OBSTACLE` blocks, or construct a built-in demo environment.
-   * Validate start/goal (not equal, not inside obstacles).
+- Three kinds of contacts are distinguished:
 
-2. **Exact planning stage**
+  1. **Proper crossings / edge-interior intersections**
+     - If the segment crosses an obstacle edge at a non-endpoint of `pq`, the edge is **blocked**.
 
-   * Collect all obstacle vertices + start + goal as graph vertices.
-   * For every pair:
-     * Check if the straight segment between them intersects any obstacle edge (excluding shared endpoints).
-     * If not, add a weighted edge to the visibility graph.
-   
-   * Run Dijkstra from start vertex to goal vertex.
-   * If reachable, reconstruct the vertex sequence as the exact path.
+  2. **Touches at a vertex (endpoint of `pq`)**
+     - If the intersection is at `p` or `q`, we analyze that obstacle vertex:
 
-3. **Grid planning stage**
+       - If the vertex belongs to **multiple obstacles** (shared vertex), it is treated as a **blocking** contact.
+         - This prevents paths from squeezing through single-point contacts between polygons.
+         
+         ![squeezing through a shared vertice](assets/problematic_runs/narrow_32.png)
+         
+       - If the vertex is **concave** for that polygon:
+         - Touching it is considered **blocking**.
+         - This avoids the “jump” effect, when the graph connects to a vertice while going through the pocket of a concave polygon.
+         
+         ![jump effect](assets/problematic_runs/u_turn_64.png)
+         
+       - If the vertex is **convex** and belongs to exactly one obstacle:
+         - Touching it is **allowed**.
 
-   * Compute bounding square and derive `cell_size`.
-   * For each grid cell:
-     * Check if its center lies inside any obstacle.
-     * Mark as free/blocked.
-   
-   * Map start and goal to grid cells.
-   * If either mapped cell is blocked, the grid planner fails (for this resolution).
-   * Otherwise run BFS on free cells to find a 4-connected path.
-   * Convert the sequence of cells to a sequence of cell-center points.
+  3. **Sliding along a single obstacle edge**
+     - If the whole segment `pq` exactly coincides with one obstacle edge (possibly reversed), this is treated as **allowed** visibility.
+       - This permits paths that run along polygon edges.
 
-4. **Output stage**
+- Net effect:
+  - Visibility edges may:
+    - Start/end at convex vertices of a single polygon,
+    - Slide along edges of a single polygon,
+    - Connect vertices as long as they do not cross obstacle interiors.
 
-   * Draw:
-     * Obstacles (gray polygons)
-     * Visibility-graph path (blue polyline)
-     * Grid path (red dashed polyline)
-     * Start/goal markers
-   
-   * Optionally compile TikZ → PDF and optionally create a Matplotlib PNG.
-   * Print a numeric report (lengths, number of vertices/steps, length ratio).
+  - Visibility edges are forbidden from:
+    - Passing through shared vertices where two polygons touch,
+    - Using concave vertices as portals, which previously caused unrealistic shortcuts in U-shaped obstacles.
 
-## 5. Special Cases and Failure Modes
+These rules are tuned for **point robots** and environments where single-point polygon contacts should be treated as blocked.
 
-### 5.1 Invalid Start/Goal
+---
 
-* If `start == goal`: abort with error.
-* If start or goal lies inside any obstacle (including on its boundary): abort with error.
-* These checks are applied both for file input and the demo environment.
+## What Happens During a Run
 
-### 5.2 No Path in Visibility Graph
+### Input stage
+   - Either parse a file with `START`, `GOAL`, and `OBSTACLE` blocks, or construct a built-in demo environment.
 
-* After Dijkstra:
-  * If `dist[goal] = ∞`, the goal is unreachable in the visibility graph.
+Input format (pseudo BNF)
+```
+file           ::= { comment | start | goal | obstacle | blank }*
+comment        ::= '#' <rest of line>
+blank          ::= <empty line> | whitespace-only line
+start          ::= 'START' x y
+goal           ::= 'GOAL'  x y
+obstacle       ::= 'OBSTACLE' newline vertex+ newline 'END'
+vertex         ::= x y
+```
+where x and y are floating-point numbers.
 
-* Possible reasons:
-  * Obstacles form a true barrier in continuous space.
-  * Visibility graph is disconnected due to geometry.
+   - Validate start/goal.
+     - `start != goal`
+     - `start` and `goal` are not inside (or on) any obstacle.
+   - Expand by `margin_ratio` on each side.
 
-The report explicitly notes when no visibility-graph path exists.
+### Exact Planning Stage (Visibility Graph)
 
-### 5.3 No Path on the Grid
+_Algorithm_
 
-Reasons the grid planner can fail:
+1. Collect all obstacle vertices + start + goal into a list `vertices`.
+2. For each pair `(i, j)` of vertices with `i < j`:
+   - Let `p = vertices[i]`, `q = vertices[j]`.
+   - Test `segment_hits_obstacle(p, q, env)`:
+     - If it returns **False**, the segment is considered visible.
+       - Add an undirected edge `i ↔ j` with weight equal to Euclidean distance.
+3. Identify the indices `s` and `t` corresponding to start and goal.
+4. Run Dijkstra’s algorithm from `s`:
+     - Initialize `dist[s] = 0`, all others `∞`.
+     - Repeatedly extract the vertex with smallest tentative distance.
+     - Relax edges to its neighbors.
+     - Stop early if `t` is popped from the priority queue.
+5. Check `dist[t]
+   - If finite:
+     - Reconstruct the path by following predecessors back from `t` to `s`.
+     - Convert vertex indices back to `Point`s.
+   - If infinite:
+     - Visibility graph has no path from start to goal.
 
-1. **Start or goal maps to a blocked cell**:
+The resulting path is a polyline that goes through a subset of obstacle vertices while respecting the visibility rules above.
 
-   * At the chosen resolution, the cell center lies inside an obstacle.
-   
-2. **Grid disconnects free regions**:
+### Grid Planning Stage (Uniform Grid + BFS)
 
-   * Narrow passages may “disappear” at low resolution, even though a continuous path exists.
+_Algorithm_
 
-The report describes these reasons and suggests increasing `grid_size` if necessary.
+1. Compute a bounding square around:
+   - All obstacle vertices,
+   - Start and goal,
+   - Expanded by `margin_ratio` on each side.
+2. Derive `cell_size = side_length / grid_size`.
+3. For each pair of grid indices `(i, j)`:
+   - Compute the world-space center of the cell.
+   - Test whether this point is inside/on any obstacle polygon:
+     - If yes → `GridCell.blocked = True`
+     - If no → `GridCell.blocked = False`
+4. Map start and goal to their containing cells via `(x, y) → (i, j)`:
+   - Clamp indices into `[0, grid_size - 1]`.
+   - If either mapped cell is blocked → “no path” for this resolution.
+5. Otherwise, perform BFS:
+   - Initialize `queue = [start_cell]`, `visited = {start_cell}`.
+   - While `queue` not empty:
+     - Pop the front cell `(i, j)`.
+     - If `(i, j)` is the goal cell, stop and reconstruct the path.
+     - For each 4-neighbor `(ni, nj)` (up, down, left, right):
+       - Skip neighbors outside the grid.
+       - Skip neighbors whose cell is blocked.
+       - If not visited, mark visited, record parent, and push to queue.
+6. Check whether BFS reaches the goal:
+   - If yes:
+     - Recover the sequence of cells from goal back to start via the parent map.
+     - Reverse it and convert each cell index to its center point. ű
 
-### 5.4 Degenerate or Tiny Environments
+    
+### Output Stage
 
-* If all points have the same coordinates or there are too few points:
+Depending on configuration:
+- Generate TikZ code for:
+  - Obstacles (gray polygons)
+  - Visibility path (blue polyline, if any)
+  - Grid path (red dashed polyline, if any)
+  - Start (green circle) and goal (magenta circle)
+- Optionally run `pdflatex` on the `.tex` file.
+- Optionally build a Matplotlib figure and save to PNG.
+- Optionally print a numeric report:
+  - Environment statistics,
+  - Visibility-graph statistics,
+  - Exact path length and vertex sequence (if any),
+  - Grid path length and cell-center sequence (if any),
+  - Approx/exact length ratio (if both paths exist).
 
-  * `_compute_bounding_square` enforces a minimum side length of 1.0.
-  * This prevents division by zero and ensures a non-degenerate grid.
+---
 
-## 6. Geometric Tests: Subtle Points
+## Sources of Inaccuracy and Incorrect Output
 
-### 6.1 Epsilon (`EPS`)
+Even with exact geometry routines, the planners can produce results that are not the mathematically exact shortest path or are slightly misleading in some environments.
 
-* All collinearity checks use an absolute tolerance `EPS = 1e-9`:
-  * Reduce instability from rounding errors.
-  * Points extremely close to collinear are treated as collinear.
+1. **Design choices in visibility rules**
+   - Concave vertices and shared vertices are treated as **blocking** when touched.
+
+2. **Grid discretization**
+   - The grid planner only sees free/blocked at cell centers:
+     - Narrow passages smaller than `cell_size` may disappear entirely.
+     - A path may appear to cut across the exact location of an obstacle vertex or graze a polygon corner when the grid is coarse.
+   - The grid path is guaranteed only to be valid in the **discretized** world, not in the exact continuous geometry.
+
+    ![grid path cuts through shard vertices](assets/problematic_runs/corridor_32.png)
+
+3. **Floating-point robustness**
+   - All geometric predicates rely on floating-point computations with a small epsilon:
+     - Points very close to an edge may be classified inconsistently as inside or outside.
+     - Extremely thin or nearly collinear features are sensitive to numerical rounding.
+
+Visibility planner is **intentionally conservative** in degenerate configurations (single-point contacts, U-turns).
+
+---
+
+## Special Cases, Edge Cases, and Failure Modes
+
+### Cases Explicitly Handled
+
+1. **Invalid start/goal**
+  - `start == goal` → rejected before planning.
+  - Start or goal inside or on any obstacle → rejected as invalid.
+
+2. **Degenerate bounding boxes**
+  - If all geometry collapses to a point or line:
+    - The bounding square is enforced to have at least side length `1.0`,
+    - Prevents division by zero in grid construction.
+
+3. **Single-point contacts between obstacles (visibility graph)**
+  - If a vertex belongs to multiple obstacles, touching it is treated as a collision:
+    - The visibility planner will not create edges that use such a vertex as a portal.
+    - This avoids paths squeezing through zero-area gaps.
+
+4. **Concave corners (visibility graph)**
+  - Touching a concave vertex is also treated as a collision:
+    - Prevents paths from cutting across U-shaped obstacles by bouncing off the inner corner.
+    - Instead, the path must go around one of the “arms” of the U.
+
+### Cases Intentionally Not Fully Resolved
+
+These are not resolved due to time limit, or just to showcase the shortcomings of such approach.
+
+1. **Single-point contacts and narrow gaps (grid planner)**
+  - The grid planner still works purely on cell centers:
+    - At certain resolutions, a narrow gap or a single-point contact can appear as open space.
+    - The resulting BFS path may visually pass very close to or even through a vertex where two polygons meet.
+![narrow_128.png](assets/problematic_runs/narrow_128.png)
+2. **Very thin obstacles / features smaller than `cell_size`**
+  - Such obstacles can be entirely missed by the grid if no cell center falls inside them.
+  - The visibility graph will see them correctly, but the grid-based path might ignore them.
+![narrow_32.png](assets/narrow_32.png)
+3. **Robot with non-zero radius**
+  - The model assumes a point robot:
+    - A physical robot with thickness would need configuration-space obstacles inflated by the robot radius.
+
+4. **Polygons with self-intersections**
+  - Polygons are assumed simple:
+    - Self-intersecting polygons can cause incorrect inside/outside and concavity decisions.
+    - There is no automatic repair or pre-processing for such inputs.
+
+---
+
+## Subtle Points
+
+### Epsilon (`EPS`)
+
+- All collinearity and on-segment checks use an absolute tolerance `EPS = 1e-9`:
+  - Reduce instability from rounding errors.
+  - Points extremely close to collinear are treated as collinear.
 
 This affects:
-  * `orient`
-  * `on_segment`
-  * Intersection edge cases in `segments_intersect`
+  - `orient`
+  - `on_segment`
+  - `segments_intersect`
+  - Indirectly, concavity tests (since they use `orient`)
 
-### 6.2 Point-on-Boundary is “Inside”
+### Point-on-Boundary is “Inside”
 
-* `point_in_polygon` returns `True` if the point lies **on** any edge.
-* Consequences:
-  * Start/goal on an obstacle boundary are considered invalid.
-  * Grid cells with centers exactly on edges are treated as blocked.
+- `point_in_polygon` returns `True` if the point lies **on** any polygon edge.
+- Consequences:
+  - Start/goal on an obstacle boundary are considered invalid.
+  - Grid cells whose centers lie exactly on an obstacle edge are treated as blocked.
 
-Avoids paths grazing obstacle boundaries in ambiguous ways.
+This avoids ambiguous paths that run exactly along obstacle boundaries in the grid world.
 
-### 6.3 Ray Casting: Half-Open Interval
+### Ray Casting with Half-Open Interval
 
 In `point_in_polygon`:
+- In `point_in_polygon`, for each edge `(a, b)` oriented so `a.y ≤ b.y`, the ray is tested only if `p.y ∈ [a.y, b.y)`:
+  - Prevents double counting intersections at vertices.
+  - Ensures a consistent even–odd rule for deciding inside vs outside.
 
-* The edge is considered only if `p.y` lies in `[a.y, b.y)` (after ordering `a.y ≤ b.y`):
-  * Prevents double counting intersections at vertices.
-  * Ensures a stable parity rule for inside/outside classification.
+### Segment-Against-Obstacle Edges
 
-### 6.4 Segment-Against-Obstacle Edges
+- `segments_intersect` detects:
+  - Proper crossings
+  - Endpoint touches
+  - Collinear overlaps
 
-* `segment_hits_obstacle` skips any obstacle edge that shares an endpoint with the tested segment:
-  * This allows the visibility graph to include edges that follow polygon edges or connect adjacent vertices.
+- `segment_hits_obstacle` then classifies intersections:
+  - Crossing in the interior of `pq` → blocking
+  - Touch at an endpoint:
+    - Shared or concave vertex → blocking
+    - Convex vertex of a single obstacle → allowed
+  - Segment exactly along a single obstacle edge → allowed
 
-* For all other edges:
-  * Full intersection logic (`segments_intersect`) is used:
-    * Proper crossings, endpoint touches, and collinear overlaps all count as blocking.
+This layered logic is what enforces the special handling of shared and concave vertices described earlier.
 
-### 6.5 Polyline Length
+### Polyline Length
 
-* Both paths (visibility and grid) are compared via `polyline_length`:
-  * This uses Euclidean norm on consecutive pairs of points.
-  * The “approx / exact length ratio” in the report is computed as:
+- Both paths (visibility and grid) are compared via `polyline_length`:
+  - This uses Euclidean norm on consecutive pairs of points.
+  - The “approx / exact length ratio” in the report is computed as:
     `length(grid_path) / length(vg_path)` if `vg_path` exists.
 
-## 7. Results
+Values near 1 indicate that, for that environment and grid resolution, the grid path is a good approximation of the visibility-graph shortest path.
 
-* **Visibility path**:
-  * Should be as short as possible given the polygonal obstacles.
-  * Uses straight segments between obstacle vertices, start, and goal.
+---
 
-* **Grid path**:
-  * Longer due to:
-    * Manhattan-style stepping on the grid.
-    * Discretization error from finite resolution.
+## Results
 
-* **Length ratio**:
-  * Values close to 1 → high-quality approximation for this environment and `grid_size`.
-  * Larger values → indicate either:
-    * A coarse grid; or
-    * Complex geometry poorly captured by uniform discretization.
+- **Visibility path**:
+  - Represents a shortest path in the visibility graph, consistent with the geometric and degeneracy rules chosen:
+  - Straight-line segments between start, goal, and selected obstacle vertices.
+  - Does not pass through interiors of obstacles.
+
+- **Grid path**:
+  - Represents a shortest path in terms of 4-connected grid steps on the discretized map.
+  - Length is usually larger, sometimes significantly, depending on `grid_size` and obstacle layout.
+  - Manhattan-style stepping on the grid.
+  - Discretization error from finite resolution.
+  - Small `grid_size` may find route that is not the shortest, larger `grid_size` can lead to significantly more calculations.
+
+![cluster_32.png](assets/cluster_32.png)
+![cluster_64.png](assets/cluster_64.png)
+![cluster_128.png](assets/cluster_128.png)
+
+- **Length ratio**:
+  - Values close to 1 → high-quality approximation for this environment and `grid_size`.
+  - Larger values indicate either:
+    - A coarse grid
+    - Complex geometry poorly captured by uniform discretization.
+

@@ -21,11 +21,10 @@ class Configuration:
         :ivar enable_detailed_report: enable outputting detailed report to log and terminal
         :ivar margin_ratio: margin ratio for the bounding square in the grid
         """
-        self.input_file_path: str = "envs/cluster.txt"
-        self.output_file_name: str = "result"
+        self.input_file_path: str = "envs/u_turn.txt"
         self.demo_mode: bool = False
         self.debug: bool = True
-        self.grid_size: int = 64
+        self.grid_size: int = 128
         self.log_dir: str = "logs"
         self.log_format: str = "%Y%m%d_%H%M%S"
         self.log_timestamp_format: str = "%Y%m%d%H%M%S"
@@ -34,6 +33,7 @@ class Configuration:
         self.enable_interactive: bool = False
         self.enable_detailed_report: bool = True
         self.margin_ratio: float = 0.2
+        self.output_file_name: str = self.input_file_path.split("/")[1].split(".")[0] + "_" + str(self.grid_size)
 
         # Create output and log directories if they do not already exist.
         os.makedirs(self.log_dir, exist_ok=True)

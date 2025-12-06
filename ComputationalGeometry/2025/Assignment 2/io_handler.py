@@ -52,7 +52,7 @@ class Input:
            blank          ::= <empty line> | whitespace-only line
            start          ::= 'START' x y
            goal           ::= 'GOAL'  x y
-           obstacle       ::= 'OBSTACLE' newline vertex+ 'END'
+           obstacle       ::= 'OBSTACLE' newline vertex+ newline 'END'
            vertex         ::= x y
         where ``x`` and ``y`` are floating-point numbers.
 
