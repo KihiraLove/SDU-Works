@@ -2,6 +2,3 @@
 	path = Mathematical Optimization/Resources
 	url = git@github.com:DM872/Resources.git
     branch = main
-[submodule "MasterThesis"]
-	path = MasterThesis
-	url = https://github.com/KihiraLove/MasterThesis.git
