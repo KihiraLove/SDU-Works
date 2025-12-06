@@ -295,7 +295,7 @@ Visibility planner is **intentionally conservative** in degenerate configuration
 
 ---
 
-## Special Cases, Edge Cases, and Failure Modes
+## Special Cases, Edge Cases, and Failures
 
 ### Cases Explicitly Handled
 
@@ -327,10 +327,12 @@ These are not resolved due to time limit, or just to showcase the shortcomings o
     - At certain resolutions, a narrow gap or a single-point contact can appear as open space.
     - The resulting BFS path may visually pass very close to or even through a vertex where two polygons meet.
 ![narrow_128.png](assets/problematic_runs/narrow_128.png)
+
 2. **Very thin obstacles / features smaller than `cell_size`**
   - Such obstacles can be entirely missed by the grid if no cell center falls inside them.
   - The visibility graph will see them correctly, but the grid-based path might ignore them.
 ![narrow_32.png](assets/narrow_32.png)
+
 3. **Robot with non-zero radius**
   - The model assumes a point robot:
     - A physical robot with thickness would need configuration-space obstacles inflated by the robot radius.
@@ -339,6 +341,16 @@ These are not resolved due to time limit, or just to showcase the shortcomings o
   - Polygons are assumed simple:
     - Self-intersecting polygons can cause incorrect inside/outside and concavity decisions.
     - There is no automatic repair or pre-processing for such inputs.
+
+
+### Problems not fixed
+
+1. **Visibility graph going through concave polygons**
+This problem appeared last minute, after fixing some other problems, and I had no time to debug and fix it.ú
+Current version:
+![star_32.png](assets/problematic_runs/star_32.png)
+Older version:
+![star_64_old.png](assets/star_64_old.png)
 
 ---
 
