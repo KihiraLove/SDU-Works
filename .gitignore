@@ -15,11 +15,14 @@
 # python caches
 **/__pycache__
 
-# personal data for RL parsing project
+# personal data for RL projects
 /_smallPersonalProjects/rl_parsing/data/
 /_smallPersonalProjects/rl_parsing/*.txt
+/_smallPersonalProjects/get_from_temple/*.txt
 
 # output files for assignments
 ComputationalGeometry/2025/Assignment 1/lines_visual*
 ComputationalGeometry/2025/Assignment 2/logs/
 ComputationalGeometry/2025/Assignment 2/result*
+
+
