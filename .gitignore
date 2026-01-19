@@ -19,10 +19,23 @@
 /_smallPersonalProjects/rl_parsing/data/
 /_smallPersonalProjects/rl_parsing/*.txt
 /_smallPersonalProjects/get_from_temple/*.txt
+_smallPersonalProjects/get_from_temple/temple_stats_formatted.csv
 
 # output files for assignments
 ComputationalGeometry/2025/Assignment 1/lines_visual*
 ComputationalGeometry/2025/Assignment 2/logs/
 ComputationalGeometry/2025/Assignment 2/result*
 
-
+# Visualisation assignments data files
+Visualisation/DAGI_V1_Kommuneinddeling_TotalDownload_gpkg_Current_507.gpkg
+Visualisation/BM010.csv
+Visualisation/DAGI_V1_Kommuneinddeling_TotalDownload_json_Current_507.json
+Visualisation/HUS1.csv
+Visualisation/Huslejestatistik_2024_TABLE7.csv
+Visualisation/INDKF132.csv
+Visualisation/LABY32.csv
+Visualisation/LABY45.csv
+Visualisation/LIGELB1_residence.csv
+Visualisation/LIGELB1_workplace.csv
+Visualisation/make_figures.py
+Visualisation/PSKAT.csv

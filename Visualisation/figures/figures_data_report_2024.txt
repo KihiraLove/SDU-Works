@@ -1,0 +1,447 @@
+DATASET SUMMARY
+============================================================
+
+[HUS1] rows=5 cols=2
+  columns: region, rent_index_private_2021_100
+  head(5):
+                region  rent_index_private_2021_100
+    Region Hovedstaden                        108.7
+       Region Sjælland                        106.5
+     Region Syddanmark                        105.9
+    Region Midtjylland                        105.3
+    Region Nordjylland                        105.6
+  tail(5):
+                region  rent_index_private_2021_100
+    Region Hovedstaden                        108.7
+       Region Sjælland                        106.5
+     Region Syddanmark                        105.9
+    Region Midtjylland                        105.3
+    Region Nordjylland                        105.6
+
+[LABY32] rows=5 cols=2
+  columns: group, rent_index_2021_100
+  head(5):
+                          group  rent_index_2021_100
+         Capital municipalities                107.1
+    Metropolitan municipalities                106.5
+      Provincial municipalities                106.6
+        Commuter municipalities                106.5
+           Rural municipalities                105.6
+  tail(5):
+                          group  rent_index_2021_100
+         Capital municipalities                107.1
+    Metropolitan municipalities                106.5
+      Provincial municipalities                106.6
+        Commuter municipalities                106.5
+           Rural municipalities                105.6
+
+[LABY45] rows=5 cols=2
+  columns: group, share_renters_pct
+  head(5):
+                          group  share_renters_pct
+         Capital municipalities               57.4
+    Metropolitan municipalities               52.8
+      Provincial municipalities               38.0
+        Commuter municipalities               29.6
+           Rural municipalities               32.7
+  tail(5):
+                          group  share_renters_pct
+         Capital municipalities               57.4
+    Metropolitan municipalities               52.8
+      Provincial municipalities               38.0
+        Commuter municipalities               29.6
+           Rural municipalities               32.7
+
+[earnings_residence] rows=98 cols=3
+  columns: muni_key, municipality, earnings_residence_dkk
+  muni_key: missing=0, duplicates=0, unique=98
+  municipality: missing=0, unique=98
+  head(5):
+         muni_key  municipality  earnings_residence_dkk
+       koebenhavn    Copenhagen                 53753.0
+    frederiksberg Frederiksberg                 59317.0
+          dragoer        Dragør                 64427.0
+          taarnby        Tårnby                 52448.0
+      albertslund   Albertslund                 47528.0
+  tail(5):
+           muni_key    municipality  earnings_residence_dkk
+             morsoe           Morsø                 44179.0
+             rebild          Rebild                 49906.0
+            thisted         Thisted                 44249.0
+    vesthimmerlands Vesthimmerlands                 44598.0
+            aalborg         Aalborg                 47957.0
+
+[earnings_workplace] rows=98 cols=3
+  columns: muni_key, municipality, earnings_workplace_dkk
+  muni_key: missing=0, duplicates=0, unique=98
+  municipality: missing=0, unique=98
+  head(5):
+         muni_key  municipality  earnings_workplace_dkk
+       koebenhavn    Copenhagen                 56913.0
+    frederiksberg Frederiksberg                 51524.0
+          dragoer        Dragør                 44416.0
+          taarnby        Tårnby                 52518.0
+      albertslund   Albertslund                 50354.0
+  tail(5):
+           muni_key    municipality  earnings_workplace_dkk
+             morsoe           Morsø                 44022.0
+             rebild          Rebild                 45653.0
+            thisted         Thisted                 44267.0
+    vesthimmerlands Vesthimmerlands                 44113.0
+            aalborg         Aalborg                 48537.0
+
+[income] rows=98 cols=3
+  columns: muni_key, municipality, income_dkk
+  muni_key: missing=0, duplicates=0, unique=98
+  municipality: missing=0, unique=98
+  head(5):
+         muni_key  municipality  income_dkk
+       koebenhavn    Copenhagen    418327.0
+    frederiksberg Frederiksberg    501557.0
+          dragoer        Dragør    658859.0
+          taarnby        Tårnby    491958.0
+      albertslund   Albertslund    396974.0
+  tail(5):
+           muni_key    municipality  income_dkk
+             morsoe           Morsø    399611.0
+             rebild          Rebild    514521.0
+            thisted         Thisted    416392.0
+    vesthimmerlands Vesthimmerlands    413011.0
+            aalborg         Aalborg    411326.0
+
+[population] rows=104 cols=3
+  columns: muni_key, municipality, population
+  muni_key: missing=0, duplicates=0, unique=104
+  municipality: missing=0, unique=104
+  head(5):
+             muni_key       municipality  population
+    regionhovedstaden Region Hovedstaden   1918855.0
+           koebenhavn         Copenhagen    661831.0
+        frederiksberg      Frederiksberg    105196.0
+              dragoer             Dragør     14457.0
+              taarnby             Tårnby     43957.0
+  tail(5):
+           muni_key    municipality  population
+             morsoe           Morsø     19611.0
+             rebild          Rebild     30962.0
+            thisted         Thisted     42910.0
+    vesthimmerlands Vesthimmerlands     35864.0
+            aalborg         Aalborg    223041.0
+
+[property] rows=114 cols=3
+  columns: muni_key, municipality, property_price_dkk_m2
+  muni_key: missing=0, duplicates=0, unique=114
+  municipality: missing=0, unique=114
+  head(5):
+                   muni_key              municipality  property_price_dkk_m2
+          regionhovedstaden            Capital region                34660.0
+    subregioncopenhagencity Subregion Copenhagen City                50011.0
+                 koebenhavn                Copenhagen                53340.0
+              frederiksberg             Frederiksberg                77839.0
+                    dragoer                    Dragør                36617.0
+  tail(5):
+           muni_key    municipality  property_price_dkk_m2
+             morsoe           Morsø                 6646.0
+             rebild          Rebild                11808.0
+            thisted         Thisted                 8395.0
+    vesthimmerlands Vesthimmerlands                 7217.0
+            aalborg         Aalborg                16477.0
+
+[rent] rows=98 cols=3
+  columns: muni_key, municipality, rent_dkk_m2
+  muni_key: missing=0, duplicates=0, unique=98
+  municipality: missing=0, unique=98
+  head(5):
+       muni_key municipality  rent_dkk_m2
+    albertslund  Albertslund       1004.0
+       alleroed      Allerød       1009.0
+         assens       Assens        863.0
+       ballerup     Ballerup        955.0
+        billund      Billund        797.0
+  tail(5):
+       muni_key municipality  rent_dkk_m2
+    vordingborg  Vordingborg        872.0
+          aeroe          Ærø        882.0
+       aabenraa     Aabenraa        782.0
+        aalborg      Aalborg        843.0
+         aarhus       Aarhus        927.0
+
+[tax] rows=103 cols=3
+  columns: muni_key, municipality, tax_rate_pct
+  muni_key: missing=0, duplicates=0, unique=103
+  municipality: missing=0, unique=103
+  head(5):
+             muni_key       municipality  tax_rate_pct
+    regionhovedstaden Region Hovedstaden         24.39
+           koebenhavn         Copenhagen         23.60
+        frederiksberg      Frederiksberg         24.57
+              dragoer             Dragør         24.80
+              taarnby             Tårnby         24.10
+  tail(5):
+           muni_key    municipality  tax_rate_pct
+             morsoe           Morsø         25.80
+             rebild          Rebild         25.83
+            thisted         Thisted         25.50
+    vesthimmerlands Vesthimmerlands         26.30
+            aalborg         Aalborg         25.60
+
+
+MASTER TABLE SUMMARY
+============================================================
+rows=99 cols=12
+
+Non-null counts:
+  income_dkk: 98 / 99
+  population: 99 / 99
+  tax_rate_pct: 98 / 99
+  rent_dkk_m2: 99 / 99
+  property_price_dkk_m2: 99 / 99
+  earnings_residence_dkk: 98 / 99
+  earnings_workplace_dkk: 98 / 99
+  earnings_net_dkk: 98 / 99
+  income_to_rent: 98 / 99
+
+Summary statistics (n, min, p05, median, p95, max):
+  income_dkk: n=98, min=348,281, p05=377,492, median=443,720, p95=645,477, max=941,219
+  population: n=99, min=92, p05=11,524, median=44,033, p95=115,943, max=661,831
+  tax_rate_pct: n=98, min=23.36, p05=23.70, median=25.52, p95=26.30, max=26.30
+  rent_dkk_m2: n=99, min=727, p05=751, median=872, p95=1,048, max=1,159
+  property_price_dkk_m2: n=99, min=5,285, p05=7,160, median=13,698, p95=41,493, max=77,839
+  earnings_residence_dkk: n=98, min=42,528, p05=44,085, median=48,274, p95=64,299, max=72,290
+  earnings_workplace_dkk: n=98, min=39,863, p05=43,087, median=46,140, p95=57,204, max=62,920
+  earnings_net_dkk: n=98, min=-20,011, p05=-10,440, median=-1,208, p95=4,181, max=9,310
+  income_to_rent: n=98, min=394.88, p05=424.33, median=509.68, p95=645.19, max=949.06
+
+Sanity checks:
+  OK (no out-of-range values detected with the coarse thresholds).
+
+
+FIGURE DATA
+============================================================
+
+[hist_income_2024] Income (DKK)
+  summary: n=98, min=3.483e+05, median=4.437e+05, mean=4.675e+05, max=9.412e+05
+  histogram bins (edge_left, edge_right, count):
+    [3.483e+05, 3.812e+05): 7
+    [3.812e+05, 4.142e+05): 16
+    [4.142e+05, 4.471e+05): 30
+    [4.471e+05, 4.8e+05): 18
+    [4.8e+05, 5.13e+05): 10
+    [5.13e+05, 5.459e+05): 5
+    [5.459e+05, 5.789e+05): 3
+    [5.789e+05, 6.118e+05): 2
+    [6.118e+05, 6.448e+05): 2
+    [6.448e+05, 6.777e+05): 2
+    [6.777e+05, 7.106e+05): 0
+    [7.106e+05, 7.436e+05): 0
+    [7.436e+05, 7.765e+05): 1
+    [7.765e+05, 8.095e+05): 0
+    [8.095e+05, 8.424e+05): 0
+    [8.424e+05, 8.753e+05): 0
+    [8.753e+05, 9.083e+05): 0
+    [9.083e+05, 9.412e+05): 2
+
+[hist_rent_2024] Rent (DKK/m²)
+  summary: n=99, min=727, median=872, mean=893, max=1159
+  histogram bins (edge_left, edge_right, count):
+    [727, 751): 4
+    [751, 775): 7
+    [775, 799): 8
+    [799, 823): 8
+    [823, 847): 9
+    [847, 871): 12
+    [871, 895): 5
+    [895, 919): 8
+    [919, 943): 5
+    [943, 967): 7
+    [967, 991): 5
+    [991, 1015): 11
+    [1015, 1039): 3
+    [1039, 1063): 3
+    [1063, 1087): 1
+    [1087, 1111): 2
+    [1111, 1135): 0
+    [1135, 1159): 1
+
+[hist_property_price_2024] Property price (DKK/m²)
+  summary: n=99, min=5285, median=1.37e+04, mean=1.903e+04, max=7.784e+04
+  histogram bins (edge_left, edge_right, count):
+    [5285, 9316): 21
+    [9316, 1.335e+04): 26
+    [1.335e+04, 1.738e+04): 16
+    [1.738e+04, 2.141e+04): 5
+    [2.141e+04, 2.544e+04): 3
+    [2.544e+04, 2.947e+04): 8
+    [2.947e+04, 3.35e+04): 7
+    [3.35e+04, 3.753e+04): 6
+    [3.753e+04, 4.156e+04): 2
+    [4.156e+04, 4.559e+04): 1
+    [4.559e+04, 4.962e+04): 1
+    [4.962e+04, 5.365e+04): 1
+    [5.365e+04, 5.769e+04): 0
+    [5.769e+04, 6.172e+04): 1
+    [6.172e+04, 6.575e+04): 0
+    [6.575e+04, 6.978e+04): 0
+    [6.978e+04, 7.381e+04): 0
+    [7.381e+04, 7.784e+04): 1
+
+[hist_tax_rate_2024] Tax rate (%)
+  summary: n=98, min=23.36, median=25.52, mean=25.41, max=26.3
+  histogram bins (edge_left, edge_right, count):
+    [23.36, 23.52): 2
+    [23.52, 23.69): 2
+    [23.69, 23.85): 2
+    [23.85, 24.01): 1
+    [24.01, 24.18): 1
+    [24.18, 24.34): 2
+    [24.34, 24.5): 2
+    [24.5, 24.67): 5
+    [24.67, 24.83): 1
+    [24.83, 24.99): 2
+    [24.99, 25.16): 6
+    [25.16, 25.32): 8
+    [25.32, 25.48): 5
+    [25.48, 25.65): 16
+    [25.65, 25.81): 15
+    [25.81, 25.97): 4
+    [25.97, 26.14): 10
+    [26.14, 26.3): 14
+
+[hist_income_to_rent_2024] Income / Rent
+  summary: n=98, min=394.9, median=509.7, mean=524.7, max=949.1
+  histogram bins (edge_left, edge_right, count):
+    [394.9, 425.7): 5
+    [425.7, 456.5): 12
+    [456.5, 487.2): 20
+    [487.2, 518): 16
+    [518, 548.8): 17
+    [548.8, 579.6): 12
+    [579.6, 610.4): 6
+    [610.4, 641.2): 4
+    [641.2, 672): 2
+    [672, 702.8): 0
+    [702.8, 733.5): 1
+    [733.5, 764.3): 0
+    [764.3, 795.1): 0
+    [795.1, 825.9): 1
+    [825.9, 856.7): 0
+    [856.7, 887.5): 0
+    [887.5, 918.3): 1
+    [918.3, 949.1): 1
+
+[bar_income_to_rent_best20_2024] top-20 municipalities by income_to_rent:
+  - Gentofte: 949.058
+  - Rudersdal: 905.398
+  - Vejen: 796.968
+  - Hørsholm: 717.412
+  - Allerød: 651.680
+  - Dragør: 644.046
+  - Solrød: 639.611
+  - Furesø: 636.347
+  - Skanderborg: 634.252
+  - Lyngby-Taarbæk: 611.155
+  - Billund: 601.233
+  - Herning: 598.222
+  - Rebild: 595.510
+  - Fredensborg: 594.915
+  - Ikast-Brande: 591.230
+  - Lemvig: 590.831
+  - Esbjerg: 575.189
+  - Egedal: 575.024
+  - Hedensted: 571.877
+  - Middelfart: 571.754
+
+[bar_income_to_rent_worst20_2024] bottom-20 municipalities by income_to_rent:
+  - Ærø: 394.876
+  - Albertslund: 395.392
+  - København: 413.367
+  - Samsø: 413.522
+  - Læsø: 415.386
+  - Brøndby: 425.905
+  - Bornholm: 429.622
+  - Gribskov: 430.018
+  - Langeland: 432.105
+  - Halsnæs: 434.505
+  - Ishøj: 436.055
+  - Odsherred: 443.386
+  - Faxe: 443.850
+  - Hvidovre: 446.452
+  - Vordingborg: 448.842
+  - Høje-Taastrup: 451.344
+  - Aarhus: 454.454
+  - Rødovre: 457.286
+  - Lolland: 458.851
+  - Næstved: 459.546
+
+[scatter_income_vs_rent_2024] points=98
+  Pearson corr(income_dkk,rent_dkk_m2) = 0.4827
+  x range: 3.483e+05 .. 9.412e+05
+  y range: 727 .. 1159
+  top-5 highest y:
+    - Roskilde: x=5.346e+05, y=1159
+    - Gribskov: x=4.765e+05, y=1108
+    - Lejre: x=5.274e+05, y=1099
+    - Helsingør: x=4.979e+05, y=1068
+    - Hørsholm: x=7.583e+05, y=1057
+  top-5 lowest y:
+    - Sønderborg: x=4.133e+05, y=727
+    - Thisted: x=4.164e+05, y=737
+    - Hjørring: x=4.162e+05, y=743
+    - Tønder: x=4.046e+05, y=748
+    - Morsø: x=3.996e+05, y=751
+
+[scatter_income_vs_property_2024] points=98
+  Pearson corr(income_dkk,property_price_dkk_m2) = 0.6032
+  x range: 3.483e+05 .. 9.412e+05
+  y range: 5285 .. 7.784e+04
+  top-5 highest y:
+    - Frederiksberg: x=5.016e+05, y=7.784e+04
+    - Gentofte: x=9.412e+05, y=5.932e+04
+    - København: x=4.183e+05, y=5.334e+04
+    - Lyngby-Taarbæk: x=6.399e+05, y=4.834e+04
+    - Rudersdal: x=9.199e+05, y=4.398e+04
+  top-5 lowest y:
+    - Lolland: x=3.565e+05, y=5285
+    - Tønder: x=4.046e+05, y=5827
+    - Lemvig: x=4.555e+05, y=6217
+    - Skive: x=4.24e+05, y=6593
+    - Morsø: x=3.996e+05, y=6646
+
+
+Map scaling diagnostics (uses the same 5–95 percentile clipping as plotting):
+  [map_income_2024] income_dkk: n=98, vmin(p05)=3.775e+05, vmax(p95)=6.455e+05, min=3.483e+05, max=9.412e+05
+  [map_rent_2024] rent_dkk_m2: n=99, vmin(p05)=751, vmax(p95)=1048, min=727, max=1159
+  [map_property_price_2024] property_price_dkk_m2: n=99, vmin(p05)=7160, vmax(p95)=4.149e+04, min=5285, max=7.784e+04
+  [map_tax_rate_2024] tax_rate_pct: n=98, vmin(p05)=23.7, vmax(p95)=26.3, min=23.36, max=26.3
+  [map_income_to_rent_ratio_2024] income_to_rent: n=98, vmin(p05)=424.3, vmax(p95)=645.2, min=394.9, max=949.1
+  [map_earnings_residence_2024] earnings_residence_dkk: n=98, vmin(p05)=4.408e+04, vmax(p95)=6.43e+04, min=4.253e+04, max=7.229e+04
+  [map_earnings_workplace_2024] earnings_workplace_dkk: n=98, vmin(p05)=4.309e+04, vmax(p95)=5.72e+04, min=3.986e+04, max=6.292e+04
+  [map_earnings_net_2024] earnings_net_dkk: n=98, vmin(p05)=-1.044e+04, vmax(p95)=4181, min=-2.001e+04, max=9310
+
+
+GROUP / REGION FIGURES
+============================================================
+
+[LABY32] rows=5
+                      group  rent_index_2021_100
+     Capital municipalities                107.1
+Metropolitan municipalities                106.5
+  Provincial municipalities                106.6
+    Commuter municipalities                106.5
+       Rural municipalities                105.6
+
+[LABY45] rows=5
+                      group  share_renters_pct
+     Capital municipalities               57.4
+Metropolitan municipalities               52.8
+  Provincial municipalities               38.0
+    Commuter municipalities               29.6
+       Rural municipalities               32.7
+
+[HUS1] rows=5
+            region  rent_index_private_2021_100
+Region Hovedstaden                        108.7
+   Region Sjælland                        106.5
+ Region Syddanmark                        105.9
+Region Midtjylland                        105.3
+Region Nordjylland                        105.6

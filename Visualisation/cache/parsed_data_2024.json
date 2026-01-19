@@ -1,0 +1,5142 @@
+{
+  "meta": {
+    "generated_utc": "2026-01-09T12:16:25.724618+00:00",
+    "year": 2024
+  },
+  "muni_to_region": {
+    "koebenhavn": "Capital Region of Denmark",
+    "frederiksberg": "Capital Region of Denmark",
+    "dragoer": "Capital Region of Denmark",
+    "taarnby": "Capital Region of Denmark",
+    "albertslund": "Capital Region of Denmark",
+    "ballerup": "Capital Region of Denmark",
+    "broendby": "Capital Region of Denmark",
+    "gentofte": "Capital Region of Denmark",
+    "gladsaxe": "Capital Region of Denmark",
+    "glostrup": "Capital Region of Denmark",
+    "herlev": "Capital Region of Denmark",
+    "hvidovre": "Capital Region of Denmark",
+    "hoejetaastrup": "Capital Region of Denmark",
+    "ishoej": "Capital Region of Denmark",
+    "lyngbytaarbaek": "Capital Region of Denmark",
+    "roedovre": "Capital Region of Denmark",
+    "vallensbaek": "Capital Region of Denmark",
+    "alleroed": "Capital Region of Denmark",
+    "egedal": "Capital Region of Denmark",
+    "fredensborg": "Capital Region of Denmark",
+    "frederikssund": "Capital Region of Denmark",
+    "furesoe": "Capital Region of Denmark",
+    "gribskov": "Capital Region of Denmark",
+    "halsnaes": "Capital Region of Denmark",
+    "helsingoer": "Capital Region of Denmark",
+    "hilleroed": "Capital Region of Denmark",
+    "hoersholm": "Capital Region of Denmark",
+    "rudersdal": "Capital Region of Denmark",
+    "bornholm": "Capital Region of Denmark",
+    "christiansoe": "Capital Region of Denmark",
+    "greve": "Region Zealand",
+    "koege": "Region Zealand",
+    "lejre": "Region Zealand",
+    "roskilde": "Region Zealand",
+    "solroed": "Region Zealand",
+    "faxe": "Region Zealand",
+    "guldborgsund": "Region Zealand",
+    "holbaek": "Region Zealand",
+    "kalundborg": "Region Zealand",
+    "lolland": "Region Zealand",
+    "naestved": "Region Zealand",
+    "odsherred": "Region Zealand",
+    "ringsted": "Region Zealand",
+    "slagelse": "Region Zealand",
+    "soroe": "Region Zealand",
+    "stevns": "Region Zealand",
+    "vordingborg": "Region Zealand",
+    "assens": "Region of Southern Denmark",
+    "faaborgmidtfyn": "Region of Southern Denmark",
+    "kerteminde": "Region of Southern Denmark",
+    "langeland": "Region of Southern Denmark",
+    "middelfart": "Region of Southern Denmark",
+    "nordfyns": "Region of Southern Denmark",
+    "nyborg": "Region of Southern Denmark",
+    "odense": "Region of Southern Denmark",
+    "svendborg": "Region of Southern Denmark",
+    "aeroe": "Region of Southern Denmark",
+    "billund": "Region of Southern Denmark",
+    "esbjerg": "Region of Southern Denmark",
+    "fanoe": "Region of Southern Denmark",
+    "fredericia": "Region of Southern Denmark",
+    "haderslev": "Region of Southern Denmark",
+    "kolding": "Region of Southern Denmark",
+    "soenderborg": "Region of Southern Denmark",
+    "toender": "Region of Southern Denmark",
+    "varde": "Region of Southern Denmark",
+    "vejen": "Region of Southern Denmark",
+    "vejle": "Region of Southern Denmark",
+    "aabenraa": "Region of Southern Denmark",
+    "favrskov": "Central Denmark Region",
+    "hedensted": "Central Denmark Region",
+    "horsens": "Central Denmark Region",
+    "norddjurs": "Central Denmark Region",
+    "odder": "Central Denmark Region",
+    "randers": "Central Denmark Region",
+    "samsoe": "Central Denmark Region",
+    "silkeborg": "Central Denmark Region",
+    "skanderborg": "Central Denmark Region",
+    "syddjurs": "Central Denmark Region",
+    "aarhus": "Central Denmark Region",
+    "herning": "Central Denmark Region",
+    "holstebro": "Central Denmark Region",
+    "ikastbrande": "Central Denmark Region",
+    "lemvig": "Central Denmark Region",
+    "ringkoebingskjern": "Central Denmark Region",
+    "skive": "Central Denmark Region",
+    "struer": "Central Denmark Region",
+    "viborg": "Central Denmark Region",
+    "broenderslev": "North Denmark Region",
+    "frederikshavn": "North Denmark Region",
+    "hjoerring": "North Denmark Region",
+    "jammerbugt": "North Denmark Region",
+    "laesoe": "North Denmark Region",
+    "mariagerfjord": "North Denmark Region",
+    "morsoe": "North Denmark Region",
+    "rebild": "North Denmark Region",
+    "thisted": "North Denmark Region",
+    "vesthimmerlands": "North Denmark Region",
+    "aalborg": "North Denmark Region"
+  },
+  "muni_master": [
+    {
+      "muni_key": "aabenraa",
+      "municipality": "Aabenraa",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 424499.0,
+      "population": 58660.0,
+      "tax_rate_pct": 25.6,
+      "rent_dkk_m2": 782.0,
+      "property_price_dkk_m2": 8315.0,
+      "earnings_residence_dkk": 46088.0,
+      "earnings_workplace_dkk": 47760.0,
+      "earnings_net_dkk": 1672.0,
+      "income_to_rent": 542.8375959079284
+    },
+    {
+      "muni_key": "aalborg",
+      "municipality": "Aalborg",
+      "region": "North Denmark Region",
+      "income_dkk": 411326.0,
+      "population": 223041.0,
+      "tax_rate_pct": 25.6,
+      "rent_dkk_m2": 843.0,
+      "property_price_dkk_m2": 16477.0,
+      "earnings_residence_dkk": 47957.0,
+      "earnings_workplace_dkk": 48537.0,
+      "earnings_net_dkk": 580.0,
+      "income_to_rent": 487.9311981020166
+    },
+    {
+      "muni_key": "aarhus",
+      "municipality": "Aarhus",
+      "region": "Central Denmark Region",
+      "income_dkk": 421279.0,
+      "population": 368131.0,
+      "tax_rate_pct": 24.52,
+      "rent_dkk_m2": 927.0,
+      "property_price_dkk_m2": 28072.0,
+      "earnings_residence_dkk": 50674.0,
+      "earnings_workplace_dkk": 51518.0,
+      "earnings_net_dkk": 844.0,
+      "income_to_rent": 454.4541531823085
+    },
+    {
+      "muni_key": "aeroe",
+      "municipality": "Ærø",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 348281.0,
+      "population": 5919.0,
+      "tax_rate_pct": 26.1,
+      "rent_dkk_m2": 882.0,
+      "property_price_dkk_m2": 9594.0,
+      "earnings_residence_dkk": 43147.0,
+      "earnings_workplace_dkk": 41963.0,
+      "earnings_net_dkk": -1184.0,
+      "income_to_rent": 394.8764172335601
+    },
+    {
+      "muni_key": "albertslund",
+      "municipality": "Albertslund",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 396974.0,
+      "population": 27545.0,
+      "tax_rate_pct": 25.6,
+      "rent_dkk_m2": 1004.0,
+      "property_price_dkk_m2": 25238.0,
+      "earnings_residence_dkk": 47528.0,
+      "earnings_workplace_dkk": 50354.0,
+      "earnings_net_dkk": 2826.0,
+      "income_to_rent": 395.3924302788845
+    },
+    {
+      "muni_key": "alleroed",
+      "municipality": "Allerød",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 657545.0,
+      "population": 25977.0,
+      "tax_rate_pct": 25.3,
+      "rent_dkk_m2": 1009.0,
+      "property_price_dkk_m2": 31284.0,
+      "earnings_residence_dkk": 63562.0,
+      "earnings_workplace_dkk": 55608.0,
+      "earnings_net_dkk": -7954.0,
+      "income_to_rent": 651.6798810703667
+    },
+    {
+      "muni_key": "assens",
+      "municipality": "Assens",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 420124.0,
+      "population": 40577.0,
+      "tax_rate_pct": 26.1,
+      "rent_dkk_m2": 863.0,
+      "property_price_dkk_m2": 8444.0,
+      "earnings_residence_dkk": 46637.0,
+      "earnings_workplace_dkk": 44994.0,
+      "earnings_net_dkk": -1643.0,
+      "income_to_rent": 486.8180764774044
+    },
+    {
+      "muni_key": "ballerup",
+      "municipality": "Ballerup",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 456764.0,
+      "population": 52103.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 955.0,
+      "property_price_dkk_m2": 31012.0,
+      "earnings_residence_dkk": 53404.0,
+      "earnings_workplace_dkk": 61600.0,
+      "earnings_net_dkk": 8196.0,
+      "income_to_rent": 478.2869109947644
+    },
+    {
+      "muni_key": "billund",
+      "municipality": "Billund",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 479183.0,
+      "population": 27179.0,
+      "tax_rate_pct": 24.0,
+      "rent_dkk_m2": 797.0,
+      "property_price_dkk_m2": 12532.0,
+      "earnings_residence_dkk": 49545.0,
+      "earnings_workplace_dkk": 58855.0,
+      "earnings_net_dkk": 9310.0,
+      "income_to_rent": 601.2333751568382
+    },
+    {
+      "muni_key": "bornholm",
+      "municipality": "Bornholm",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 378067.0,
+      "population": 39257.0,
+      "tax_rate_pct": 26.2,
+      "rent_dkk_m2": 880.0,
+      "property_price_dkk_m2": 10386.0,
+      "earnings_residence_dkk": 43550.0,
+      "earnings_workplace_dkk": 42932.0,
+      "earnings_net_dkk": -618.0,
+      "income_to_rent": 429.6215909090909
+    },
+    {
+      "muni_key": "broendby",
+      "municipality": "Brøndby",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 395240.0,
+      "population": 39657.0,
+      "tax_rate_pct": 24.3,
+      "rent_dkk_m2": 928.0,
+      "property_price_dkk_m2": 30786.0,
+      "earnings_residence_dkk": 46544.0,
+      "earnings_workplace_dkk": 53687.0,
+      "earnings_net_dkk": 7143.0,
+      "income_to_rent": 425.9051724137931
+    },
+    {
+      "muni_key": "broenderslev",
+      "municipality": "Brønderslev",
+      "region": "North Denmark Region",
+      "income_dkk": 429222.0,
+      "population": 36602.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 784.0,
+      "property_price_dkk_m2": 8347.0,
+      "earnings_residence_dkk": 45908.0,
+      "earnings_workplace_dkk": 43803.0,
+      "earnings_net_dkk": -2105.0,
+      "income_to_rent": 547.4770408163265
+    },
+    {
+      "muni_key": "christiansoe",
+      "municipality": "Christiansø",
+      "region": "Capital Region of Denmark",
+      "income_dkk": null,
+      "population": 92.0,
+      "tax_rate_pct": null,
+      "rent_dkk_m2": 991.7407407407408,
+      "property_price_dkk_m2": 34210.93103448276,
+      "earnings_residence_dkk": null,
+      "earnings_workplace_dkk": null,
+      "earnings_net_dkk": null,
+      "income_to_rent": null
+    },
+    {
+      "muni_key": "dragoer",
+      "municipality": "Dragør",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 658859.0,
+      "population": 14457.0,
+      "tax_rate_pct": 24.8,
+      "rent_dkk_m2": 1023.0,
+      "property_price_dkk_m2": 36617.0,
+      "earnings_residence_dkk": 64427.0,
+      "earnings_workplace_dkk": 44416.0,
+      "earnings_net_dkk": -20011.0,
+      "income_to_rent": 644.0459433040078
+    },
+    {
+      "muni_key": "egedal",
+      "municipality": "Egedal",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 570275.0,
+      "population": 45547.0,
+      "tax_rate_pct": 25.7,
+      "rent_dkk_m2": 991.7407407407408,
+      "property_price_dkk_m2": 26359.0,
+      "earnings_residence_dkk": 56626.0,
+      "earnings_workplace_dkk": 51969.0,
+      "earnings_net_dkk": -4657.0,
+      "income_to_rent": 575.0242745639915
+    },
+    {
+      "muni_key": "esbjerg",
+      "municipality": "Esbjerg",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 440595.0,
+      "population": 115268.0,
+      "tax_rate_pct": 25.8,
+      "rent_dkk_m2": 766.0,
+      "property_price_dkk_m2": 14125.0,
+      "earnings_residence_dkk": 47283.0,
+      "earnings_workplace_dkk": 48241.0,
+      "earnings_net_dkk": 958.0,
+      "income_to_rent": 575.1892950391644
+    },
+    {
+      "muni_key": "faaborgmidtfyn",
+      "municipality": "Faaborg-Midtfyn",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 422791.0,
+      "population": 52282.0,
+      "tax_rate_pct": 26.1,
+      "rent_dkk_m2": 855.0,
+      "property_price_dkk_m2": 11457.15,
+      "earnings_residence_dkk": 46471.0,
+      "earnings_workplace_dkk": 44450.0,
+      "earnings_net_dkk": -2021.0,
+      "income_to_rent": 494.4923976608187
+    },
+    {
+      "muni_key": "fanoe",
+      "municipality": "Fanø",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 444715.0,
+      "population": 3327.0,
+      "tax_rate_pct": 25.77,
+      "rent_dkk_m2": 913.0,
+      "property_price_dkk_m2": 15873.0,
+      "earnings_residence_dkk": 49685.0,
+      "earnings_workplace_dkk": 39863.0,
+      "earnings_net_dkk": -9822.0,
+      "income_to_rent": 487.092004381161
+    },
+    {
+      "muni_key": "favrskov",
+      "municipality": "Favrskov",
+      "region": "Central Denmark Region",
+      "income_dkk": 508930.0,
+      "population": 49335.0,
+      "tax_rate_pct": 25.7,
+      "rent_dkk_m2": 951.0,
+      "property_price_dkk_m2": 13984.0,
+      "earnings_residence_dkk": 51065.0,
+      "earnings_workplace_dkk": 46695.0,
+      "earnings_net_dkk": -4370.0,
+      "income_to_rent": 535.1524710830705
+    },
+    {
+      "muni_key": "faxe",
+      "municipality": "Faxe",
+      "region": "Region Zealand",
+      "income_dkk": 424764.0,
+      "population": 37656.0,
+      "tax_rate_pct": 25.8,
+      "rent_dkk_m2": 957.0,
+      "property_price_dkk_m2": 12602.0,
+      "earnings_residence_dkk": 47628.0,
+      "earnings_workplace_dkk": 45065.0,
+      "earnings_net_dkk": -2563.0,
+      "income_to_rent": 443.84952978056424
+    },
+    {
+      "muni_key": "fredensborg",
+      "municipality": "Fredensborg",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 576473.0,
+      "population": 42042.0,
+      "tax_rate_pct": 25.3,
+      "rent_dkk_m2": 969.0,
+      "property_price_dkk_m2": 31517.0,
+      "earnings_residence_dkk": 56876.0,
+      "earnings_workplace_dkk": 51790.0,
+      "earnings_net_dkk": -5086.0,
+      "income_to_rent": 594.9153766769866
+    },
+    {
+      "muni_key": "fredericia",
+      "municipality": "Fredericia",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 428750.0,
+      "population": 52475.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 803.0,
+      "property_price_dkk_m2": 13698.0,
+      "earnings_residence_dkk": 49175.0,
+      "earnings_workplace_dkk": 52937.0,
+      "earnings_net_dkk": 3762.0,
+      "income_to_rent": 533.9352428393524
+    },
+    {
+      "muni_key": "frederiksberg",
+      "municipality": "Frederiksberg",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 501557.0,
+      "population": 105196.0,
+      "tax_rate_pct": 24.57,
+      "rent_dkk_m2": 996.0,
+      "property_price_dkk_m2": 77839.0,
+      "earnings_residence_dkk": 59317.0,
+      "earnings_workplace_dkk": 51524.0,
+      "earnings_net_dkk": -7793.0,
+      "income_to_rent": 503.5712851405622
+    },
+    {
+      "muni_key": "frederikshavn",
+      "municipality": "Frederikshavn",
+      "region": "North Denmark Region",
+      "income_dkk": 412554.0,
+      "population": 58312.0,
+      "tax_rate_pct": 26.2,
+      "rent_dkk_m2": 759.0,
+      "property_price_dkk_m2": 10212.0,
+      "earnings_residence_dkk": 45625.0,
+      "earnings_workplace_dkk": 45005.0,
+      "earnings_net_dkk": -620.0,
+      "income_to_rent": 543.5494071146245
+    },
+    {
+      "muni_key": "frederikssund",
+      "municipality": "Frederikssund",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 466593.0,
+      "population": 46856.0,
+      "tax_rate_pct": 25.8,
+      "rent_dkk_m2": 992.0,
+      "property_price_dkk_m2": 21200.0,
+      "earnings_residence_dkk": 52484.0,
+      "earnings_workplace_dkk": 47128.0,
+      "earnings_net_dkk": -5356.0,
+      "income_to_rent": 470.35584677419354
+    },
+    {
+      "muni_key": "furesoe",
+      "municipality": "Furesø",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 643347.0,
+      "population": 42553.0,
+      "tax_rate_pct": 24.88,
+      "rent_dkk_m2": 1011.0,
+      "property_price_dkk_m2": 37080.0,
+      "earnings_residence_dkk": 64276.0,
+      "earnings_workplace_dkk": 50233.0,
+      "earnings_net_dkk": -14043.0,
+      "income_to_rent": 636.3471810089021
+    },
+    {
+      "muni_key": "gentofte",
+      "municipality": "Gentofte",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 941219.0,
+      "population": 75053.0,
+      "tax_rate_pct": 24.34,
+      "rent_dkk_m2": 991.7407407407408,
+      "property_price_dkk_m2": 59317.0,
+      "earnings_residence_dkk": 72290.0,
+      "earnings_workplace_dkk": 62236.0,
+      "earnings_net_dkk": -10054.0,
+      "income_to_rent": 949.0575120439182
+    },
+    {
+      "muni_key": "gladsaxe",
+      "municipality": "Gladsaxe",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 496766.0,
+      "population": 70902.0,
+      "tax_rate_pct": 23.6,
+      "rent_dkk_m2": 962.0,
+      "property_price_dkk_m2": 41216.0,
+      "earnings_residence_dkk": 56626.0,
+      "earnings_workplace_dkk": 62920.0,
+      "earnings_net_dkk": 6294.0,
+      "income_to_rent": 516.3887733887734
+    },
+    {
+      "muni_key": "glostrup",
+      "municipality": "Glostrup",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 435277.0,
+      "population": 23899.0,
+      "tax_rate_pct": 24.6,
+      "rent_dkk_m2": 942.0,
+      "property_price_dkk_m2": 31099.0,
+      "earnings_residence_dkk": 51251.0,
+      "earnings_workplace_dkk": 51149.0,
+      "earnings_net_dkk": -102.0,
+      "income_to_rent": 462.0774946921444
+    },
+    {
+      "muni_key": "greve",
+      "municipality": "Greve",
+      "region": "Region Zealand",
+      "income_dkk": 525357.0,
+      "population": 52672.0,
+      "tax_rate_pct": 24.52,
+      "rent_dkk_m2": 950.0,
+      "property_price_dkk_m2": 27221.0,
+      "earnings_residence_dkk": 54584.0,
+      "earnings_workplace_dkk": 45991.0,
+      "earnings_net_dkk": -8593.0,
+      "income_to_rent": 553.0073684210527
+    },
+    {
+      "muni_key": "gribskov",
+      "municipality": "Gribskov",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 476460.0,
+      "population": 41958.0,
+      "tax_rate_pct": 25.4,
+      "rent_dkk_m2": 1108.0,
+      "property_price_dkk_m2": 19952.0,
+      "earnings_residence_dkk": 51509.0,
+      "earnings_workplace_dkk": 44186.0,
+      "earnings_net_dkk": -7323.0,
+      "income_to_rent": 430.01805054151623
+    },
+    {
+      "muni_key": "guldborgsund",
+      "municipality": "Guldborgsund",
+      "region": "Region Zealand",
+      "income_dkk": 379509.0,
+      "population": 59546.0,
+      "tax_rate_pct": 25.8,
+      "rent_dkk_m2": 784.0,
+      "property_price_dkk_m2": 8137.0,
+      "earnings_residence_dkk": 45182.0,
+      "earnings_workplace_dkk": 44207.0,
+      "earnings_net_dkk": -975.0,
+      "income_to_rent": 484.0676020408163
+    },
+    {
+      "muni_key": "haderslev",
+      "municipality": "Haderslev",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 406562.0,
+      "population": 55353.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 817.0,
+      "property_price_dkk_m2": 8908.0,
+      "earnings_residence_dkk": 45769.0,
+      "earnings_workplace_dkk": 43397.0,
+      "earnings_net_dkk": -2372.0,
+      "income_to_rent": 497.6279069767442
+    },
+    {
+      "muni_key": "halsnaes",
+      "municipality": "Halsnæs",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 426684.0,
+      "population": 31632.0,
+      "tax_rate_pct": 25.7,
+      "rent_dkk_m2": 982.0,
+      "property_price_dkk_m2": 17260.0,
+      "earnings_residence_dkk": 48645.0,
+      "earnings_workplace_dkk": 45075.0,
+      "earnings_net_dkk": -3570.0,
+      "income_to_rent": 434.5050916496945
+    },
+    {
+      "muni_key": "hedensted",
+      "municipality": "Hedensted",
+      "region": "Central Denmark Region",
+      "income_dkk": 475802.0,
+      "population": 47876.0,
+      "tax_rate_pct": 25.52,
+      "rent_dkk_m2": 832.0,
+      "property_price_dkk_m2": 10287.0,
+      "earnings_residence_dkk": 47354.0,
+      "earnings_workplace_dkk": 45800.0,
+      "earnings_net_dkk": -1554.0,
+      "income_to_rent": 571.8774038461538
+    },
+    {
+      "muni_key": "helsingoer",
+      "municipality": "Helsingør",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 497854.0,
+      "population": 64016.0,
+      "tax_rate_pct": 25.52,
+      "rent_dkk_m2": 1068.0,
+      "property_price_dkk_m2": 28304.0,
+      "earnings_residence_dkk": 54026.0,
+      "earnings_workplace_dkk": 46129.0,
+      "earnings_net_dkk": -7897.0,
+      "income_to_rent": 466.1554307116105
+    },
+    {
+      "muni_key": "herlev",
+      "municipality": "Herlev",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 465904.0,
+      "population": 30177.0,
+      "tax_rate_pct": 23.7,
+      "rent_dkk_m2": 984.0,
+      "property_price_dkk_m2": 32640.0,
+      "earnings_residence_dkk": 52254.0,
+      "earnings_workplace_dkk": 52461.0,
+      "earnings_net_dkk": 207.0,
+      "income_to_rent": 473.479674796748
+    },
+    {
+      "muni_key": "herning",
+      "municipality": "Herning",
+      "region": "Central Denmark Region",
+      "income_dkk": 453452.0,
+      "population": 90005.0,
+      "tax_rate_pct": 25.4,
+      "rent_dkk_m2": 758.0,
+      "property_price_dkk_m2": 11154.0,
+      "earnings_residence_dkk": 46852.0,
+      "earnings_workplace_dkk": 46109.0,
+      "earnings_net_dkk": -743.0,
+      "income_to_rent": 598.221635883905
+    },
+    {
+      "muni_key": "hilleroed",
+      "municipality": "Hillerød",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 530009.0,
+      "population": 54717.0,
+      "tax_rate_pct": 25.6,
+      "rent_dkk_m2": 1012.0,
+      "property_price_dkk_m2": 26467.0,
+      "earnings_residence_dkk": 55937.0,
+      "earnings_workplace_dkk": 54051.0,
+      "earnings_net_dkk": -1886.0,
+      "income_to_rent": 523.7243083003953
+    },
+    {
+      "muni_key": "hjoerring",
+      "municipality": "Hjørring",
+      "region": "North Denmark Region",
+      "income_dkk": 416201.0,
+      "population": 63570.0,
+      "tax_rate_pct": 26.21,
+      "rent_dkk_m2": 743.0,
+      "property_price_dkk_m2": 8183.0,
+      "earnings_residence_dkk": 45175.0,
+      "earnings_workplace_dkk": 44802.0,
+      "earnings_net_dkk": -373.0,
+      "income_to_rent": 560.1628532974428
+    },
+    {
+      "muni_key": "hoejetaastrup",
+      "municipality": "Høje-Taastrup",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 434644.0,
+      "population": 58465.0,
+      "tax_rate_pct": 24.6,
+      "rent_dkk_m2": 963.0,
+      "property_price_dkk_m2": 26321.0,
+      "earnings_residence_dkk": 48424.0,
+      "earnings_workplace_dkk": 53883.0,
+      "earnings_net_dkk": 5459.0,
+      "income_to_rent": 451.34371754932505
+    },
+    {
+      "muni_key": "hoersholm",
+      "municipality": "Hørsholm",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 758304.0,
+      "population": 24937.0,
+      "tax_rate_pct": 23.7,
+      "rent_dkk_m2": 1057.0,
+      "property_price_dkk_m2": 39607.0,
+      "earnings_residence_dkk": 69324.0,
+      "earnings_workplace_dkk": 52862.0,
+      "earnings_net_dkk": -16462.0,
+      "income_to_rent": 717.4115421002838
+    },
+    {
+      "muni_key": "holbaek",
+      "municipality": "Holbæk",
+      "region": "Region Zealand",
+      "income_dkk": 452029.0,
+      "population": 74260.0,
+      "tax_rate_pct": 25.3,
+      "rent_dkk_m2": 947.0,
+      "property_price_dkk_m2": 16450.0,
+      "earnings_residence_dkk": 49763.0,
+      "earnings_workplace_dkk": 45965.0,
+      "earnings_net_dkk": -3798.0,
+      "income_to_rent": 477.3273495248152
+    },
+    {
+      "muni_key": "holstebro",
+      "municipality": "Holstebro",
+      "region": "Central Denmark Region",
+      "income_dkk": 446229.0,
+      "population": 59064.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 832.0,
+      "property_price_dkk_m2": 11875.0,
+      "earnings_residence_dkk": 46302.0,
+      "earnings_workplace_dkk": 45418.0,
+      "earnings_net_dkk": -884.0,
+      "income_to_rent": 536.3329326923077
+    },
+    {
+      "muni_key": "horsens",
+      "municipality": "Horsens",
+      "region": "Central Denmark Region",
+      "income_dkk": 440312.0,
+      "population": 97517.0,
+      "tax_rate_pct": 25.69,
+      "rent_dkk_m2": 842.0,
+      "property_price_dkk_m2": 14059.0,
+      "earnings_residence_dkk": 48274.0,
+      "earnings_workplace_dkk": 47043.0,
+      "earnings_net_dkk": -1231.0,
+      "income_to_rent": 522.9358669833729
+    },
+    {
+      "muni_key": "hvidovre",
+      "municipality": "Hvidovre",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 455828.0,
+      "population": 53803.0,
+      "tax_rate_pct": 25.4,
+      "rent_dkk_m2": 1021.0,
+      "property_price_dkk_m2": 36176.0,
+      "earnings_residence_dkk": 52190.0,
+      "earnings_workplace_dkk": 51489.0,
+      "earnings_net_dkk": -701.0,
+      "income_to_rent": 446.45249755142015
+    },
+    {
+      "muni_key": "ikastbrande",
+      "municipality": "Ikast-Brande",
+      "region": "Central Denmark Region",
+      "income_dkk": 444014.0,
+      "population": 42954.0,
+      "tax_rate_pct": 25.1,
+      "rent_dkk_m2": 751.0,
+      "property_price_dkk_m2": 10153.0,
+      "earnings_residence_dkk": 46884.0,
+      "earnings_workplace_dkk": 50739.0,
+      "earnings_net_dkk": 3855.0,
+      "income_to_rent": 591.2303595206391
+    },
+    {
+      "muni_key": "ishoej",
+      "municipality": "Ishøj",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 398118.0,
+      "population": 23791.0,
+      "tax_rate_pct": 25.0,
+      "rent_dkk_m2": 913.0,
+      "property_price_dkk_m2": 25388.0,
+      "earnings_residence_dkk": 45740.0,
+      "earnings_workplace_dkk": 47931.0,
+      "earnings_net_dkk": 2191.0,
+      "income_to_rent": 436.05476451259585
+    },
+    {
+      "muni_key": "jammerbugt",
+      "municipality": "Jammerbugt",
+      "region": "North Denmark Region",
+      "income_dkk": 423113.0,
+      "population": 38170.0,
+      "tax_rate_pct": 25.7,
+      "rent_dkk_m2": 902.0,
+      "property_price_dkk_m2": 9861.0,
+      "earnings_residence_dkk": 45678.0,
+      "earnings_workplace_dkk": 41949.0,
+      "earnings_net_dkk": -3729.0,
+      "income_to_rent": 469.0831485587583
+    },
+    {
+      "muni_key": "kalundborg",
+      "municipality": "Kalundborg",
+      "region": "Region Zealand",
+      "income_dkk": 433552.0,
+      "population": 48273.0,
+      "tax_rate_pct": 24.2,
+      "rent_dkk_m2": 846.0,
+      "property_price_dkk_m2": 11429.0,
+      "earnings_residence_dkk": 51251.0,
+      "earnings_workplace_dkk": 55207.0,
+      "earnings_net_dkk": 3956.0,
+      "income_to_rent": 512.4728132387706
+    },
+    {
+      "muni_key": "kerteminde",
+      "municipality": "Kerteminde",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 440352.0,
+      "population": 23955.0,
+      "tax_rate_pct": 26.1,
+      "rent_dkk_m2": 858.0,
+      "property_price_dkk_m2": 12285.0,
+      "earnings_residence_dkk": 48166.0,
+      "earnings_workplace_dkk": 47695.0,
+      "earnings_net_dkk": -471.0,
+      "income_to_rent": 513.2307692307693
+    },
+    {
+      "muni_key": "koebenhavn",
+      "municipality": "København",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 418327.0,
+      "population": 661831.0,
+      "tax_rate_pct": 23.6,
+      "rent_dkk_m2": 1012.0,
+      "property_price_dkk_m2": 53340.0,
+      "earnings_residence_dkk": 53753.0,
+      "earnings_workplace_dkk": 56913.0,
+      "earnings_net_dkk": 3160.0,
+      "income_to_rent": 413.3666007905138
+    },
+    {
+      "muni_key": "koege",
+      "municipality": "Køge",
+      "region": "Region Zealand",
+      "income_dkk": 480197.0,
+      "population": 63003.0,
+      "tax_rate_pct": 25.26,
+      "rent_dkk_m2": 991.0,
+      "property_price_dkk_m2": 22917.0,
+      "earnings_residence_dkk": 51510.0,
+      "earnings_workplace_dkk": 48167.0,
+      "earnings_net_dkk": -3343.0,
+      "income_to_rent": 484.5580221997982
+    },
+    {
+      "muni_key": "kolding",
+      "municipality": "Kolding",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 451407.0,
+      "population": 95249.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 834.0,
+      "property_price_dkk_m2": 13111.0,
+      "earnings_residence_dkk": 49448.0,
+      "earnings_workplace_dkk": 49220.0,
+      "earnings_net_dkk": -228.0,
+      "income_to_rent": 541.2553956834532
+    },
+    {
+      "muni_key": "laesoe",
+      "municipality": "Læsø",
+      "region": "North Denmark Region",
+      "income_dkk": 358063.0,
+      "population": 1751.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 862.0,
+      "property_price_dkk_m2": 8737.0,
+      "earnings_residence_dkk": 42528.0,
+      "earnings_workplace_dkk": 43074.0,
+      "earnings_net_dkk": 546.0,
+      "income_to_rent": 415.3863109048724
+    },
+    {
+      "muni_key": "langeland",
+      "municipality": "Langeland",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 350437.0,
+      "population": 12147.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 811.0,
+      "property_price_dkk_m2": 7697.0,
+      "earnings_residence_dkk": 43246.0,
+      "earnings_workplace_dkk": 44128.0,
+      "earnings_net_dkk": 882.0,
+      "income_to_rent": 432.10480887792846
+    },
+    {
+      "muni_key": "lejre",
+      "municipality": "Lejre",
+      "region": "Region Zealand",
+      "income_dkk": 527387.0,
+      "population": 29439.0,
+      "tax_rate_pct": 25.31,
+      "rent_dkk_m2": 1099.0,
+      "property_price_dkk_m2": 17863.0,
+      "earnings_residence_dkk": 54098.0,
+      "earnings_workplace_dkk": 47332.0,
+      "earnings_net_dkk": -6766.0,
+      "income_to_rent": 479.8789808917197
+    },
+    {
+      "muni_key": "lemvig",
+      "municipality": "Lemvig",
+      "region": "Central Denmark Region",
+      "income_dkk": 455531.0,
+      "population": 18986.0,
+      "tax_rate_pct": 25.46,
+      "rent_dkk_m2": 771.0,
+      "property_price_dkk_m2": 6217.0,
+      "earnings_residence_dkk": 44655.0,
+      "earnings_workplace_dkk": 43932.0,
+      "earnings_net_dkk": -723.0,
+      "income_to_rent": 590.8313878080415
+    },
+    {
+      "muni_key": "lolland",
+      "municipality": "Lolland",
+      "region": "Region Zealand",
+      "income_dkk": 356527.0,
+      "population": 39453.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 777.0,
+      "property_price_dkk_m2": 5285.0,
+      "earnings_residence_dkk": 44544.0,
+      "earnings_workplace_dkk": 44661.0,
+      "earnings_net_dkk": 117.0,
+      "income_to_rent": 458.85070785070786
+    },
+    {
+      "muni_key": "lyngbytaarbaek",
+      "municipality": "Lyngby-Taarbæk",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 639879.0,
+      "population": 58530.0,
+      "tax_rate_pct": 24.38,
+      "rent_dkk_m2": 1047.0,
+      "property_price_dkk_m2": 48344.0,
+      "earnings_residence_dkk": 65200.0,
+      "earnings_workplace_dkk": 59657.0,
+      "earnings_net_dkk": -5543.0,
+      "income_to_rent": 611.1547277936962
+    },
+    {
+      "muni_key": "mariagerfjord",
+      "municipality": "Mariagerfjord",
+      "region": "North Denmark Region",
+      "income_dkk": 430526.0,
+      "population": 41844.0,
+      "tax_rate_pct": 25.9,
+      "rent_dkk_m2": 822.0,
+      "property_price_dkk_m2": 8828.0,
+      "earnings_residence_dkk": 46386.0,
+      "earnings_workplace_dkk": 46152.0,
+      "earnings_net_dkk": -234.0,
+      "income_to_rent": 523.7542579075425
+    },
+    {
+      "muni_key": "middelfart",
+      "municipality": "Middelfart",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 481989.0,
+      "population": 40351.0,
+      "tax_rate_pct": 25.8,
+      "rent_dkk_m2": 843.0,
+      "property_price_dkk_m2": 12417.0,
+      "earnings_residence_dkk": 50668.0,
+      "earnings_workplace_dkk": 47682.0,
+      "earnings_net_dkk": -2986.0,
+      "income_to_rent": 571.7544483985765
+    },
+    {
+      "muni_key": "morsoe",
+      "municipality": "Morsø",
+      "region": "North Denmark Region",
+      "income_dkk": 399611.0,
+      "population": 19611.0,
+      "tax_rate_pct": 25.8,
+      "rent_dkk_m2": 751.0,
+      "property_price_dkk_m2": 6646.0,
+      "earnings_residence_dkk": 44179.0,
+      "earnings_workplace_dkk": 44022.0,
+      "earnings_net_dkk": -157.0,
+      "income_to_rent": 532.1051930758988
+    },
+    {
+      "muni_key": "naestved",
+      "municipality": "Næstved",
+      "region": "Region Zealand",
+      "income_dkk": 421404.0,
+      "population": 84771.0,
+      "tax_rate_pct": 25.0,
+      "rent_dkk_m2": 917.0,
+      "property_price_dkk_m2": 13656.0,
+      "earnings_residence_dkk": 47790.0,
+      "earnings_workplace_dkk": 45519.0,
+      "earnings_net_dkk": -2271.0,
+      "income_to_rent": 459.546346782988
+    },
+    {
+      "muni_key": "norddjurs",
+      "municipality": "Norddjurs",
+      "region": "Central Denmark Region",
+      "income_dkk": 391348.0,
+      "population": 36694.0,
+      "tax_rate_pct": 26.0,
+      "rent_dkk_m2": 804.0,
+      "property_price_dkk_m2": 7579.0,
+      "earnings_residence_dkk": 44435.0,
+      "earnings_workplace_dkk": 44412.0,
+      "earnings_net_dkk": -23.0,
+      "income_to_rent": 486.7512437810945
+    },
+    {
+      "muni_key": "nordfyns",
+      "municipality": "Nordfyns",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 421132.0,
+      "population": 29592.0,
+      "tax_rate_pct": 26.0,
+      "rent_dkk_m2": 852.0,
+      "property_price_dkk_m2": 11457.15,
+      "earnings_residence_dkk": 46920.0,
+      "earnings_workplace_dkk": 45062.0,
+      "earnings_net_dkk": -1858.0,
+      "income_to_rent": 494.2863849765258
+    },
+    {
+      "muni_key": "nyborg",
+      "municipality": "Nyborg",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 415332.0,
+      "population": 32214.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 847.0,
+      "property_price_dkk_m2": 10812.0,
+      "earnings_residence_dkk": 47360.0,
+      "earnings_workplace_dkk": 44191.0,
+      "earnings_net_dkk": -3169.0,
+      "income_to_rent": 490.3565525383707
+    },
+    {
+      "muni_key": "odder",
+      "municipality": "Odder",
+      "region": "Central Denmark Region",
+      "income_dkk": 470995.0,
+      "population": 23971.0,
+      "tax_rate_pct": 25.1,
+      "rent_dkk_m2": 926.0,
+      "property_price_dkk_m2": 16037.0,
+      "earnings_residence_dkk": 49125.0,
+      "earnings_workplace_dkk": 44012.0,
+      "earnings_net_dkk": -5113.0,
+      "income_to_rent": 508.63390928725704
+    },
+    {
+      "muni_key": "odense",
+      "municipality": "Odense",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 394326.0,
+      "population": 209690.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 795.0,
+      "property_price_dkk_m2": 18301.0,
+      "earnings_residence_dkk": 48172.0,
+      "earnings_workplace_dkk": 48089.0,
+      "earnings_net_dkk": -83.0,
+      "income_to_rent": 496.00754716981135
+    },
+    {
+      "muni_key": "odsherred",
+      "municipality": "Odsherred",
+      "region": "Region Zealand",
+      "income_dkk": 386189.0,
+      "population": 32535.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 871.0,
+      "property_price_dkk_m2": 9677.0,
+      "earnings_residence_dkk": 45960.0,
+      "earnings_workplace_dkk": 43790.0,
+      "earnings_net_dkk": -2170.0,
+      "income_to_rent": 443.3857634902411
+    },
+    {
+      "muni_key": "randers",
+      "municipality": "Randers",
+      "region": "Central Denmark Region",
+      "income_dkk": 410722.0,
+      "population": 100248.0,
+      "tax_rate_pct": 25.8,
+      "rent_dkk_m2": 781.0,
+      "property_price_dkk_m2": 11269.0,
+      "earnings_residence_dkk": 47173.0,
+      "earnings_workplace_dkk": 46229.0,
+      "earnings_net_dkk": -944.0,
+      "income_to_rent": 525.8924455825864
+    },
+    {
+      "muni_key": "rebild",
+      "municipality": "Rebild",
+      "region": "North Denmark Region",
+      "income_dkk": 514521.0,
+      "population": 30962.0,
+      "tax_rate_pct": 25.83,
+      "rent_dkk_m2": 864.0,
+      "property_price_dkk_m2": 11808.0,
+      "earnings_residence_dkk": 49906.0,
+      "earnings_workplace_dkk": 45653.0,
+      "earnings_net_dkk": -4253.0,
+      "income_to_rent": 595.5104166666666
+    },
+    {
+      "muni_key": "ringkoebingskjern",
+      "municipality": "Ringkøbing-Skjern",
+      "region": "Central Denmark Region",
+      "income_dkk": 456920.0,
+      "population": 56019.0,
+      "tax_rate_pct": 25.0,
+      "rent_dkk_m2": 820.0,
+      "property_price_dkk_m2": 8328.0,
+      "earnings_residence_dkk": 45790.0,
+      "earnings_workplace_dkk": 46890.0,
+      "earnings_net_dkk": 1100.0,
+      "income_to_rent": 557.219512195122
+    },
+    {
+      "muni_key": "ringsted",
+      "municipality": "Ringsted",
+      "region": "Region Zealand",
+      "income_dkk": 449727.0,
+      "population": 36313.0,
+      "tax_rate_pct": 26.1,
+      "rent_dkk_m2": 906.0,
+      "property_price_dkk_m2": 15475.0,
+      "earnings_residence_dkk": 48874.0,
+      "earnings_workplace_dkk": 47890.0,
+      "earnings_net_dkk": -984.0,
+      "income_to_rent": 496.387417218543
+    },
+    {
+      "muni_key": "roedovre",
+      "municipality": "Rødovre",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 444025.0,
+      "population": 44637.0,
+      "tax_rate_pct": 25.7,
+      "rent_dkk_m2": 971.0,
+      "property_price_dkk_m2": 35638.0,
+      "earnings_residence_dkk": 51424.0,
+      "earnings_workplace_dkk": 45989.0,
+      "earnings_net_dkk": -5435.0,
+      "income_to_rent": 457.2863027806385
+    },
+    {
+      "muni_key": "roskilde",
+      "municipality": "Roskilde",
+      "region": "Region Zealand",
+      "income_dkk": 534625.0,
+      "population": 91360.0,
+      "tax_rate_pct": 25.2,
+      "rent_dkk_m2": 1159.0,
+      "property_price_dkk_m2": 26779.0,
+      "earnings_residence_dkk": 56723.0,
+      "earnings_workplace_dkk": 49957.0,
+      "earnings_net_dkk": -6766.0,
+      "income_to_rent": 461.281276962899
+    },
+    {
+      "muni_key": "rudersdal",
+      "municipality": "Rudersdal",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 919884.0,
+      "population": 57308.0,
+      "tax_rate_pct": 23.36,
+      "rent_dkk_m2": 1016.0,
+      "property_price_dkk_m2": 43982.0,
+      "earnings_residence_dkk": 70986.0,
+      "earnings_workplace_dkk": 56885.0,
+      "earnings_net_dkk": -14101.0,
+      "income_to_rent": 905.3976377952756
+    },
+    {
+      "muni_key": "samsoe",
+      "municipality": "Samsø",
+      "region": "Central Denmark Region",
+      "income_dkk": 374237.0,
+      "population": 3679.0,
+      "tax_rate_pct": 25.9,
+      "rent_dkk_m2": 905.0,
+      "property_price_dkk_m2": 12977.0,
+      "earnings_residence_dkk": 44780.0,
+      "earnings_workplace_dkk": 45039.0,
+      "earnings_net_dkk": 259.0,
+      "income_to_rent": 413.52154696132595
+    },
+    {
+      "muni_key": "silkeborg",
+      "municipality": "Silkeborg",
+      "region": "Central Denmark Region",
+      "income_dkk": 490775.0,
+      "population": 101264.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 865.0,
+      "property_price_dkk_m2": 17006.0,
+      "earnings_residence_dkk": 50453.0,
+      "earnings_workplace_dkk": 49169.0,
+      "earnings_net_dkk": -1284.0,
+      "income_to_rent": 567.3699421965318
+    },
+    {
+      "muni_key": "skanderborg",
+      "municipality": "Skanderborg",
+      "region": "Central Denmark Region",
+      "income_dkk": 550531.0,
+      "population": 65376.0,
+      "tax_rate_pct": 26.0,
+      "rent_dkk_m2": 868.0,
+      "property_price_dkk_m2": 20182.0,
+      "earnings_residence_dkk": 53732.0,
+      "earnings_workplace_dkk": 48305.0,
+      "earnings_net_dkk": -5427.0,
+      "income_to_rent": 634.2523041474655
+    },
+    {
+      "muni_key": "skive",
+      "municipality": "Skive",
+      "region": "Central Denmark Region",
+      "income_dkk": 423991.0,
+      "population": 44589.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 816.0,
+      "property_price_dkk_m2": 6593.0,
+      "earnings_residence_dkk": 45000.0,
+      "earnings_workplace_dkk": 45270.0,
+      "earnings_net_dkk": 270.0,
+      "income_to_rent": 519.5968137254902
+    },
+    {
+      "muni_key": "slagelse",
+      "municipality": "Slagelse",
+      "region": "Region Zealand",
+      "income_dkk": 402246.0,
+      "population": 80185.0,
+      "tax_rate_pct": 26.1,
+      "rent_dkk_m2": 848.0,
+      "property_price_dkk_m2": 12096.0,
+      "earnings_residence_dkk": 47171.0,
+      "earnings_workplace_dkk": 45918.0,
+      "earnings_net_dkk": -1253.0,
+      "income_to_rent": 474.34669811320754
+    },
+    {
+      "muni_key": "soenderborg",
+      "municipality": "Sønderborg",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 413284.0,
+      "population": 74017.0,
+      "tax_rate_pct": 25.7,
+      "rent_dkk_m2": 727.0,
+      "property_price_dkk_m2": 9799.0,
+      "earnings_residence_dkk": 48275.0,
+      "earnings_workplace_dkk": 47794.0,
+      "earnings_net_dkk": -481.0,
+      "income_to_rent": 568.4786795048143
+    },
+    {
+      "muni_key": "solroed",
+      "municipality": "Solrød",
+      "region": "Region Zealand",
+      "income_dkk": 591720.0,
+      "population": 24651.0,
+      "tax_rate_pct": 24.99,
+      "rent_dkk_m2": 925.125,
+      "property_price_dkk_m2": 27263.0,
+      "earnings_residence_dkk": 56567.0,
+      "earnings_workplace_dkk": 43938.0,
+      "earnings_net_dkk": -12629.0,
+      "income_to_rent": 639.6108633968382
+    },
+    {
+      "muni_key": "soroe",
+      "municipality": "Sorø",
+      "region": "Region Zealand",
+      "income_dkk": 452076.0,
+      "population": 30656.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 903.0,
+      "property_price_dkk_m2": 12425.0,
+      "earnings_residence_dkk": 49639.0,
+      "earnings_workplace_dkk": 46045.0,
+      "earnings_net_dkk": -3594.0,
+      "income_to_rent": 500.63787375415285
+    },
+    {
+      "muni_key": "stevns",
+      "municipality": "Stevns",
+      "region": "Region Zealand",
+      "income_dkk": 458300.0,
+      "population": 23646.0,
+      "tax_rate_pct": 26.0,
+      "rent_dkk_m2": 975.0,
+      "property_price_dkk_m2": 15112.0,
+      "earnings_residence_dkk": 50121.0,
+      "earnings_workplace_dkk": 43159.0,
+      "earnings_net_dkk": -6962.0,
+      "income_to_rent": 470.05128205128204
+    },
+    {
+      "muni_key": "struer",
+      "municipality": "Struer",
+      "region": "Central Denmark Region",
+      "income_dkk": 419298.0,
+      "population": 20409.0,
+      "tax_rate_pct": 25.3,
+      "rent_dkk_m2": 781.0,
+      "property_price_dkk_m2": 7436.0,
+      "earnings_residence_dkk": 45848.0,
+      "earnings_workplace_dkk": 45508.0,
+      "earnings_net_dkk": -340.0,
+      "income_to_rent": 536.8732394366198
+    },
+    {
+      "muni_key": "svendborg",
+      "municipality": "Svendborg",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 422118.0,
+      "population": 59835.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 858.0,
+      "property_price_dkk_m2": 15017.0,
+      "earnings_residence_dkk": 47708.0,
+      "earnings_workplace_dkk": 45886.0,
+      "earnings_net_dkk": -1822.0,
+      "income_to_rent": 491.97902097902096
+    },
+    {
+      "muni_key": "syddjurs",
+      "municipality": "Syddjurs",
+      "region": "Central Denmark Region",
+      "income_dkk": 453021.0,
+      "population": 44033.0,
+      "tax_rate_pct": 25.9,
+      "rent_dkk_m2": 887.0,
+      "property_price_dkk_m2": 13414.0,
+      "earnings_residence_dkk": 48914.0,
+      "earnings_workplace_dkk": 43672.0,
+      "earnings_net_dkk": -5242.0,
+      "income_to_rent": 510.7339346110485
+    },
+    {
+      "muni_key": "taarnby",
+      "municipality": "Tårnby",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 491958.0,
+      "population": 43957.0,
+      "tax_rate_pct": 24.1,
+      "rent_dkk_m2": 911.0,
+      "property_price_dkk_m2": 36665.0,
+      "earnings_residence_dkk": 52448.0,
+      "earnings_workplace_dkk": 52518.0,
+      "earnings_net_dkk": 70.0,
+      "income_to_rent": 540.0197585071351
+    },
+    {
+      "muni_key": "thisted",
+      "municipality": "Thisted",
+      "region": "North Denmark Region",
+      "income_dkk": 416392.0,
+      "population": 42910.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 737.0,
+      "property_price_dkk_m2": 8395.0,
+      "earnings_residence_dkk": 44249.0,
+      "earnings_workplace_dkk": 44267.0,
+      "earnings_net_dkk": 18.0,
+      "income_to_rent": 564.9823609226594
+    },
+    {
+      "muni_key": "toender",
+      "municipality": "Tønder",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 404584.0,
+      "population": 36536.0,
+      "tax_rate_pct": 25.3,
+      "rent_dkk_m2": 748.0,
+      "property_price_dkk_m2": 5827.0,
+      "earnings_residence_dkk": 43350.0,
+      "earnings_workplace_dkk": 43353.0,
+      "earnings_net_dkk": 3.0,
+      "income_to_rent": 540.8877005347593
+    },
+    {
+      "muni_key": "vallensbaek",
+      "municipality": "Vallensbæk",
+      "region": "Capital Region of Denmark",
+      "income_dkk": 506525.0,
+      "population": 17960.0,
+      "tax_rate_pct": 25.6,
+      "rent_dkk_m2": 1041.0,
+      "property_price_dkk_m2": 31083.0,
+      "earnings_residence_dkk": 53304.0,
+      "earnings_workplace_dkk": 55340.0,
+      "earnings_net_dkk": 2036.0,
+      "income_to_rent": 486.57540826128724
+    },
+    {
+      "muni_key": "varde",
+      "municipality": "Varde",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 453218.0,
+      "population": 49701.0,
+      "tax_rate_pct": 25.1,
+      "rent_dkk_m2": 810.0,
+      "property_price_dkk_m2": 10079.0,
+      "earnings_residence_dkk": 45592.0,
+      "earnings_workplace_dkk": 43089.0,
+      "earnings_net_dkk": -2503.0,
+      "income_to_rent": 559.5283950617284
+    },
+    {
+      "muni_key": "vejen",
+      "municipality": "Vejen",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 604102.0,
+      "population": 42885.0,
+      "tax_rate_pct": 25.33,
+      "rent_dkk_m2": 758.0,
+      "property_price_dkk_m2": 8223.0,
+      "earnings_residence_dkk": 45617.0,
+      "earnings_workplace_dkk": 45782.0,
+      "earnings_net_dkk": 165.0,
+      "income_to_rent": 796.9683377308708
+    },
+    {
+      "muni_key": "vejle",
+      "municipality": "Vejle",
+      "region": "Region of Southern Denmark",
+      "income_dkk": 483890.0,
+      "population": 122022.0,
+      "tax_rate_pct": 23.4,
+      "rent_dkk_m2": 860.0,
+      "property_price_dkk_m2": 14086.0,
+      "earnings_residence_dkk": 51031.0,
+      "earnings_workplace_dkk": 47784.0,
+      "earnings_net_dkk": -3247.0,
+      "income_to_rent": 562.6627906976744
+    },
+    {
+      "muni_key": "vesthimmerlands",
+      "municipality": "Vesthimmerlands",
+      "region": "North Denmark Region",
+      "income_dkk": 413011.0,
+      "population": 35864.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 842.0,
+      "property_price_dkk_m2": 7217.0,
+      "earnings_residence_dkk": 44598.0,
+      "earnings_workplace_dkk": 44113.0,
+      "earnings_net_dkk": -485.0,
+      "income_to_rent": 490.51187648456056
+    },
+    {
+      "muni_key": "viborg",
+      "municipality": "Viborg",
+      "region": "Central Denmark Region",
+      "income_dkk": 443426.0,
+      "population": 97659.0,
+      "tax_rate_pct": 25.5,
+      "rent_dkk_m2": 826.0,
+      "property_price_dkk_m2": 10631.0,
+      "earnings_residence_dkk": 47567.0,
+      "earnings_workplace_dkk": 47711.0,
+      "earnings_net_dkk": 144.0,
+      "income_to_rent": 536.8353510895884
+    },
+    {
+      "muni_key": "vordingborg",
+      "municipality": "Vordingborg",
+      "region": "Region Zealand",
+      "income_dkk": 391390.0,
+      "population": 45466.0,
+      "tax_rate_pct": 26.3,
+      "rent_dkk_m2": 872.0,
+      "property_price_dkk_m2": 9256.0,
+      "earnings_residence_dkk": 47305.0,
+      "earnings_workplace_dkk": 44982.0,
+      "earnings_net_dkk": -2323.0,
+      "income_to_rent": 448.841743119266
+    }
+  ],
+  "datasets": {
+    "income": [
+      {
+        "muni_key": "koebenhavn",
+        "municipality": "Copenhagen",
+        "income_dkk": 418327.0
+      },
+      {
+        "muni_key": "frederiksberg",
+        "municipality": "Frederiksberg",
+        "income_dkk": 501557.0
+      },
+      {
+        "muni_key": "dragoer",
+        "municipality": "Dragør",
+        "income_dkk": 658859.0
+      },
+      {
+        "muni_key": "taarnby",
+        "municipality": "Tårnby",
+        "income_dkk": 491958.0
+      },
+      {
+        "muni_key": "albertslund",
+        "municipality": "Albertslund",
+        "income_dkk": 396974.0
+      },
+      {
+        "muni_key": "ballerup",
+        "municipality": "Ballerup",
+        "income_dkk": 456764.0
+      },
+      {
+        "muni_key": "broendby",
+        "municipality": "Brøndby",
+        "income_dkk": 395240.0
+      },
+      {
+        "muni_key": "gentofte",
+        "municipality": "Gentofte",
+        "income_dkk": 941219.0
+      },
+      {
+        "muni_key": "gladsaxe",
+        "municipality": "Gladsaxe",
+        "income_dkk": 496766.0
+      },
+      {
+        "muni_key": "glostrup",
+        "municipality": "Glostrup",
+        "income_dkk": 435277.0
+      },
+      {
+        "muni_key": "herlev",
+        "municipality": "Herlev",
+        "income_dkk": 465904.0
+      },
+      {
+        "muni_key": "hvidovre",
+        "municipality": "Hvidovre",
+        "income_dkk": 455828.0
+      },
+      {
+        "muni_key": "hoejetaastrup",
+        "municipality": "Høje-Taastrup",
+        "income_dkk": 434644.0
+      },
+      {
+        "muni_key": "ishoej",
+        "municipality": "Ishøj",
+        "income_dkk": 398118.0
+      },
+      {
+        "muni_key": "lyngbytaarbaek",
+        "municipality": "Lyngby-Taarbæk",
+        "income_dkk": 639879.0
+      },
+      {
+        "muni_key": "roedovre",
+        "municipality": "Rødovre",
+        "income_dkk": 444025.0
+      },
+      {
+        "muni_key": "vallensbaek",
+        "municipality": "Vallensbæk",
+        "income_dkk": 506525.0
+      },
+      {
+        "muni_key": "alleroed",
+        "municipality": "Allerød",
+        "income_dkk": 657545.0
+      },
+      {
+        "muni_key": "egedal",
+        "municipality": "Egedal",
+        "income_dkk": 570275.0
+      },
+      {
+        "muni_key": "fredensborg",
+        "municipality": "Fredensborg",
+        "income_dkk": 576473.0
+      },
+      {
+        "muni_key": "frederikssund",
+        "municipality": "Frederikssund",
+        "income_dkk": 466593.0
+      },
+      {
+        "muni_key": "furesoe",
+        "municipality": "Furesø",
+        "income_dkk": 643347.0
+      },
+      {
+        "muni_key": "gribskov",
+        "municipality": "Gribskov",
+        "income_dkk": 476460.0
+      },
+      {
+        "muni_key": "halsnaes",
+        "municipality": "Halsnæs",
+        "income_dkk": 426684.0
+      },
+      {
+        "muni_key": "helsingoer",
+        "municipality": "Helsingør",
+        "income_dkk": 497854.0
+      },
+      {
+        "muni_key": "hilleroed",
+        "municipality": "Hillerød",
+        "income_dkk": 530009.0
+      },
+      {
+        "muni_key": "hoersholm",
+        "municipality": "Hørsholm",
+        "income_dkk": 758304.0
+      },
+      {
+        "muni_key": "rudersdal",
+        "municipality": "Rudersdal",
+        "income_dkk": 919884.0
+      },
+      {
+        "muni_key": "bornholm",
+        "municipality": "Bornholm",
+        "income_dkk": 378067.0
+      },
+      {
+        "muni_key": "greve",
+        "municipality": "Greve",
+        "income_dkk": 525357.0
+      },
+      {
+        "muni_key": "koege",
+        "municipality": "Køge",
+        "income_dkk": 480197.0
+      },
+      {
+        "muni_key": "lejre",
+        "municipality": "Lejre",
+        "income_dkk": 527387.0
+      },
+      {
+        "muni_key": "roskilde",
+        "municipality": "Roskilde",
+        "income_dkk": 534625.0
+      },
+      {
+        "muni_key": "solroed",
+        "municipality": "Solrød",
+        "income_dkk": 591720.0
+      },
+      {
+        "muni_key": "faxe",
+        "municipality": "Faxe",
+        "income_dkk": 424764.0
+      },
+      {
+        "muni_key": "guldborgsund",
+        "municipality": "Guldborgsund",
+        "income_dkk": 379509.0
+      },
+      {
+        "muni_key": "holbaek",
+        "municipality": "Holbæk",
+        "income_dkk": 452029.0
+      },
+      {
+        "muni_key": "kalundborg",
+        "municipality": "Kalundborg",
+        "income_dkk": 433552.0
+      },
+      {
+        "muni_key": "lolland",
+        "municipality": "Lolland",
+        "income_dkk": 356527.0
+      },
+      {
+        "muni_key": "naestved",
+        "municipality": "Næstved",
+        "income_dkk": 421404.0
+      },
+      {
+        "muni_key": "odsherred",
+        "municipality": "Odsherred",
+        "income_dkk": 386189.0
+      },
+      {
+        "muni_key": "ringsted",
+        "municipality": "Ringsted",
+        "income_dkk": 449727.0
+      },
+      {
+        "muni_key": "slagelse",
+        "municipality": "Slagelse",
+        "income_dkk": 402246.0
+      },
+      {
+        "muni_key": "soroe",
+        "municipality": "Sorø",
+        "income_dkk": 452076.0
+      },
+      {
+        "muni_key": "stevns",
+        "municipality": "Stevns",
+        "income_dkk": 458300.0
+      },
+      {
+        "muni_key": "vordingborg",
+        "municipality": "Vordingborg",
+        "income_dkk": 391390.0
+      },
+      {
+        "muni_key": "assens",
+        "municipality": "Assens",
+        "income_dkk": 420124.0
+      },
+      {
+        "muni_key": "faaborgmidtfyn",
+        "municipality": "Faaborg-Midtfyn",
+        "income_dkk": 422791.0
+      },
+      {
+        "muni_key": "kerteminde",
+        "municipality": "Kerteminde",
+        "income_dkk": 440352.0
+      },
+      {
+        "muni_key": "langeland",
+        "municipality": "Langeland",
+        "income_dkk": 350437.0
+      },
+      {
+        "muni_key": "middelfart",
+        "municipality": "Middelfart",
+        "income_dkk": 481989.0
+      },
+      {
+        "muni_key": "nordfyns",
+        "municipality": "Nordfyns",
+        "income_dkk": 421132.0
+      },
+      {
+        "muni_key": "nyborg",
+        "municipality": "Nyborg",
+        "income_dkk": 415332.0
+      },
+      {
+        "muni_key": "odense",
+        "municipality": "Odense",
+        "income_dkk": 394326.0
+      },
+      {
+        "muni_key": "svendborg",
+        "municipality": "Svendborg",
+        "income_dkk": 422118.0
+      },
+      {
+        "muni_key": "aeroe",
+        "municipality": "Ærø",
+        "income_dkk": 348281.0
+      },
+      {
+        "muni_key": "billund",
+        "municipality": "Billund",
+        "income_dkk": 479183.0
+      },
+      {
+        "muni_key": "esbjerg",
+        "municipality": "Esbjerg",
+        "income_dkk": 440595.0
+      },
+      {
+        "muni_key": "fanoe",
+        "municipality": "Fanø",
+        "income_dkk": 444715.0
+      },
+      {
+        "muni_key": "fredericia",
+        "municipality": "Fredericia",
+        "income_dkk": 428750.0
+      },
+      {
+        "muni_key": "haderslev",
+        "municipality": "Haderslev",
+        "income_dkk": 406562.0
+      },
+      {
+        "muni_key": "kolding",
+        "municipality": "Kolding",
+        "income_dkk": 451407.0
+      },
+      {
+        "muni_key": "soenderborg",
+        "municipality": "Sønderborg",
+        "income_dkk": 413284.0
+      },
+      {
+        "muni_key": "toender",
+        "municipality": "Tønder",
+        "income_dkk": 404584.0
+      },
+      {
+        "muni_key": "varde",
+        "municipality": "Varde",
+        "income_dkk": 453218.0
+      },
+      {
+        "muni_key": "vejen",
+        "municipality": "Vejen",
+        "income_dkk": 604102.0
+      },
+      {
+        "muni_key": "vejle",
+        "municipality": "Vejle",
+        "income_dkk": 483890.0
+      },
+      {
+        "muni_key": "aabenraa",
+        "municipality": "Aabenraa",
+        "income_dkk": 424499.0
+      },
+      {
+        "muni_key": "favrskov",
+        "municipality": "Favrskov",
+        "income_dkk": 508930.0
+      },
+      {
+        "muni_key": "hedensted",
+        "municipality": "Hedensted",
+        "income_dkk": 475802.0
+      },
+      {
+        "muni_key": "horsens",
+        "municipality": "Horsens",
+        "income_dkk": 440312.0
+      },
+      {
+        "muni_key": "norddjurs",
+        "municipality": "Norddjurs",
+        "income_dkk": 391348.0
+      },
+      {
+        "muni_key": "odder",
+        "municipality": "Odder",
+        "income_dkk": 470995.0
+      },
+      {
+        "muni_key": "randers",
+        "municipality": "Randers",
+        "income_dkk": 410722.0
+      },
+      {
+        "muni_key": "samsoe",
+        "municipality": "Samsø",
+        "income_dkk": 374237.0
+      },
+      {
+        "muni_key": "silkeborg",
+        "municipality": "Silkeborg",
+        "income_dkk": 490775.0
+      },
+      {
+        "muni_key": "skanderborg",
+        "municipality": "Skanderborg",
+        "income_dkk": 550531.0
+      },
+      {
+        "muni_key": "syddjurs",
+        "municipality": "Syddjurs",
+        "income_dkk": 453021.0
+      },
+      {
+        "muni_key": "aarhus",
+        "municipality": "Aarhus",
+        "income_dkk": 421279.0
+      },
+      {
+        "muni_key": "herning",
+        "municipality": "Herning",
+        "income_dkk": 453452.0
+      },
+      {
+        "muni_key": "holstebro",
+        "municipality": "Holstebro",
+        "income_dkk": 446229.0
+      },
+      {
+        "muni_key": "ikastbrande",
+        "municipality": "Ikast-Brande",
+        "income_dkk": 444014.0
+      },
+      {
+        "muni_key": "lemvig",
+        "municipality": "Lemvig",
+        "income_dkk": 455531.0
+      },
+      {
+        "muni_key": "ringkoebingskjern",
+        "municipality": "Ringkøbing-Skjern",
+        "income_dkk": 456920.0
+      },
+      {
+        "muni_key": "skive",
+        "municipality": "Skive",
+        "income_dkk": 423991.0
+      },
+      {
+        "muni_key": "struer",
+        "municipality": "Struer",
+        "income_dkk": 419298.0
+      },
+      {
+        "muni_key": "viborg",
+        "municipality": "Viborg",
+        "income_dkk": 443426.0
+      },
+      {
+        "muni_key": "broenderslev",
+        "municipality": "Brønderslev",
+        "income_dkk": 429222.0
+      },
+      {
+        "muni_key": "frederikshavn",
+        "municipality": "Frederikshavn",
+        "income_dkk": 412554.0
+      },
+      {
+        "muni_key": "hjoerring",
+        "municipality": "Hjørring",
+        "income_dkk": 416201.0
+      },
+      {
+        "muni_key": "jammerbugt",
+        "municipality": "Jammerbugt",
+        "income_dkk": 423113.0
+      },
+      {
+        "muni_key": "laesoe",
+        "municipality": "Læsø",
+        "income_dkk": 358063.0
+      },
+      {
+        "muni_key": "mariagerfjord",
+        "municipality": "Mariagerfjord",
+        "income_dkk": 430526.0
+      },
+      {
+        "muni_key": "morsoe",
+        "municipality": "Morsø",
+        "income_dkk": 399611.0
+      },
+      {
+        "muni_key": "rebild",
+        "municipality": "Rebild",
+        "income_dkk": 514521.0
+      },
+      {
+        "muni_key": "thisted",
+        "municipality": "Thisted",
+        "income_dkk": 416392.0
+      },
+      {
+        "muni_key": "vesthimmerlands",
+        "municipality": "Vesthimmerlands",
+        "income_dkk": 413011.0
+      },
+      {
+        "muni_key": "aalborg",
+        "municipality": "Aalborg",
+        "income_dkk": 411326.0
+      }
+    ],
+    "population": [
+      {
+        "muni_key": "regionhovedstaden",
+        "municipality": "Region Hovedstaden",
+        "population": 1918855.0
+      },
+      {
+        "muni_key": "koebenhavn",
+        "municipality": "Copenhagen",
+        "population": 661831.0
+      },
+      {
+        "muni_key": "frederiksberg",
+        "municipality": "Frederiksberg",
+        "population": 105196.0
+      },
+      {
+        "muni_key": "dragoer",
+        "municipality": "Dragør",
+        "population": 14457.0
+      },
+      {
+        "muni_key": "taarnby",
+        "municipality": "Tårnby",
+        "population": 43957.0
+      },
+      {
+        "muni_key": "albertslund",
+        "municipality": "Albertslund",
+        "population": 27545.0
+      },
+      {
+        "muni_key": "ballerup",
+        "municipality": "Ballerup",
+        "population": 52103.0
+      },
+      {
+        "muni_key": "broendby",
+        "municipality": "Brøndby",
+        "population": 39657.0
+      },
+      {
+        "muni_key": "gentofte",
+        "municipality": "Gentofte",
+        "population": 75053.0
+      },
+      {
+        "muni_key": "gladsaxe",
+        "municipality": "Gladsaxe",
+        "population": 70902.0
+      },
+      {
+        "muni_key": "glostrup",
+        "municipality": "Glostrup",
+        "population": 23899.0
+      },
+      {
+        "muni_key": "herlev",
+        "municipality": "Herlev",
+        "population": 30177.0
+      },
+      {
+        "muni_key": "hvidovre",
+        "municipality": "Hvidovre",
+        "population": 53803.0
+      },
+      {
+        "muni_key": "hoejetaastrup",
+        "municipality": "Høje-Taastrup",
+        "population": 58465.0
+      },
+      {
+        "muni_key": "ishoej",
+        "municipality": "Ishøj",
+        "population": 23791.0
+      },
+      {
+        "muni_key": "lyngbytaarbaek",
+        "municipality": "Lyngby-Taarbæk",
+        "population": 58530.0
+      },
+      {
+        "muni_key": "roedovre",
+        "municipality": "Rødovre",
+        "population": 44637.0
+      },
+      {
+        "muni_key": "vallensbaek",
+        "municipality": "Vallensbæk",
+        "population": 17960.0
+      },
+      {
+        "muni_key": "alleroed",
+        "municipality": "Allerød",
+        "population": 25977.0
+      },
+      {
+        "muni_key": "egedal",
+        "municipality": "Egedal",
+        "population": 45547.0
+      },
+      {
+        "muni_key": "fredensborg",
+        "municipality": "Fredensborg",
+        "population": 42042.0
+      },
+      {
+        "muni_key": "frederikssund",
+        "municipality": "Frederikssund",
+        "population": 46856.0
+      },
+      {
+        "muni_key": "furesoe",
+        "municipality": "Furesø",
+        "population": 42553.0
+      },
+      {
+        "muni_key": "gribskov",
+        "municipality": "Gribskov",
+        "population": 41958.0
+      },
+      {
+        "muni_key": "halsnaes",
+        "municipality": "Halsnæs",
+        "population": 31632.0
+      },
+      {
+        "muni_key": "helsingoer",
+        "municipality": "Helsingør",
+        "population": 64016.0
+      },
+      {
+        "muni_key": "hilleroed",
+        "municipality": "Hillerød",
+        "population": 54717.0
+      },
+      {
+        "muni_key": "hoersholm",
+        "municipality": "Hørsholm",
+        "population": 24937.0
+      },
+      {
+        "muni_key": "rudersdal",
+        "municipality": "Rudersdal",
+        "population": 57308.0
+      },
+      {
+        "muni_key": "bornholm",
+        "municipality": "Bornholm",
+        "population": 39257.0
+      },
+      {
+        "muni_key": "christiansoe",
+        "municipality": "Christiansø",
+        "population": 92.0
+      },
+      {
+        "muni_key": "regionsjaelland",
+        "municipality": "Region Sjælland",
+        "population": 853885.0
+      },
+      {
+        "muni_key": "greve",
+        "municipality": "Greve",
+        "population": 52672.0
+      },
+      {
+        "muni_key": "koege",
+        "municipality": "Køge",
+        "population": 63003.0
+      },
+      {
+        "muni_key": "lejre",
+        "municipality": "Lejre",
+        "population": 29439.0
+      },
+      {
+        "muni_key": "roskilde",
+        "municipality": "Roskilde",
+        "population": 91360.0
+      },
+      {
+        "muni_key": "solroed",
+        "municipality": "Solrød",
+        "population": 24651.0
+      },
+      {
+        "muni_key": "faxe",
+        "municipality": "Faxe",
+        "population": 37656.0
+      },
+      {
+        "muni_key": "guldborgsund",
+        "municipality": "Guldborgsund",
+        "population": 59546.0
+      },
+      {
+        "muni_key": "holbaek",
+        "municipality": "Holbæk",
+        "population": 74260.0
+      },
+      {
+        "muni_key": "kalundborg",
+        "municipality": "Kalundborg",
+        "population": 48273.0
+      },
+      {
+        "muni_key": "lolland",
+        "municipality": "Lolland",
+        "population": 39453.0
+      },
+      {
+        "muni_key": "naestved",
+        "municipality": "Næstved",
+        "population": 84771.0
+      },
+      {
+        "muni_key": "odsherred",
+        "municipality": "Odsherred",
+        "population": 32535.0
+      },
+      {
+        "muni_key": "ringsted",
+        "municipality": "Ringsted",
+        "population": 36313.0
+      },
+      {
+        "muni_key": "slagelse",
+        "municipality": "Slagelse",
+        "population": 80185.0
+      },
+      {
+        "muni_key": "soroe",
+        "municipality": "Sorø",
+        "population": 30656.0
+      },
+      {
+        "muni_key": "stevns",
+        "municipality": "Stevns",
+        "population": 23646.0
+      },
+      {
+        "muni_key": "vordingborg",
+        "municipality": "Vordingborg",
+        "population": 45466.0
+      },
+      {
+        "muni_key": "regionsyddanmark",
+        "municipality": "Region Syddanmark",
+        "population": 1239234.0
+      },
+      {
+        "muni_key": "assens",
+        "municipality": "Assens",
+        "population": 40577.0
+      },
+      {
+        "muni_key": "faaborgmidtfyn",
+        "municipality": "Faaborg-Midtfyn",
+        "population": 52282.0
+      },
+      {
+        "muni_key": "kerteminde",
+        "municipality": "Kerteminde",
+        "population": 23955.0
+      },
+      {
+        "muni_key": "langeland",
+        "municipality": "Langeland",
+        "population": 12147.0
+      },
+      {
+        "muni_key": "middelfart",
+        "municipality": "Middelfart",
+        "population": 40351.0
+      },
+      {
+        "muni_key": "nordfyns",
+        "municipality": "Nordfyns",
+        "population": 29592.0
+      },
+      {
+        "muni_key": "nyborg",
+        "municipality": "Nyborg",
+        "population": 32214.0
+      },
+      {
+        "muni_key": "odense",
+        "municipality": "Odense",
+        "population": 209690.0
+      },
+      {
+        "muni_key": "svendborg",
+        "municipality": "Svendborg",
+        "population": 59835.0
+      },
+      {
+        "muni_key": "aeroe",
+        "municipality": "Ærø",
+        "population": 5919.0
+      },
+      {
+        "muni_key": "billund",
+        "municipality": "Billund",
+        "population": 27179.0
+      },
+      {
+        "muni_key": "esbjerg",
+        "municipality": "Esbjerg",
+        "population": 115268.0
+      },
+      {
+        "muni_key": "fanoe",
+        "municipality": "Fanø",
+        "population": 3327.0
+      },
+      {
+        "muni_key": "fredericia",
+        "municipality": "Fredericia",
+        "population": 52475.0
+      },
+      {
+        "muni_key": "haderslev",
+        "municipality": "Haderslev",
+        "population": 55353.0
+      },
+      {
+        "muni_key": "kolding",
+        "municipality": "Kolding",
+        "population": 95249.0
+      },
+      {
+        "muni_key": "soenderborg",
+        "municipality": "Sønderborg",
+        "population": 74017.0
+      },
+      {
+        "muni_key": "toender",
+        "municipality": "Tønder",
+        "population": 36536.0
+      },
+      {
+        "muni_key": "varde",
+        "municipality": "Varde",
+        "population": 49701.0
+      },
+      {
+        "muni_key": "vejen",
+        "municipality": "Vejen",
+        "population": 42885.0
+      },
+      {
+        "muni_key": "vejle",
+        "municipality": "Vejle",
+        "population": 122022.0
+      },
+      {
+        "muni_key": "aabenraa",
+        "municipality": "Aabenraa",
+        "population": 58660.0
+      },
+      {
+        "muni_key": "regionmidtjylland",
+        "municipality": "Region Midtjylland",
+        "population": 1367809.0
+      },
+      {
+        "muni_key": "favrskov",
+        "municipality": "Favrskov",
+        "population": 49335.0
+      },
+      {
+        "muni_key": "hedensted",
+        "municipality": "Hedensted",
+        "population": 47876.0
+      },
+      {
+        "muni_key": "horsens",
+        "municipality": "Horsens",
+        "population": 97517.0
+      },
+      {
+        "muni_key": "norddjurs",
+        "municipality": "Norddjurs",
+        "population": 36694.0
+      },
+      {
+        "muni_key": "odder",
+        "municipality": "Odder",
+        "population": 23971.0
+      },
+      {
+        "muni_key": "randers",
+        "municipality": "Randers",
+        "population": 100248.0
+      },
+      {
+        "muni_key": "samsoe",
+        "municipality": "Samsø",
+        "population": 3679.0
+      },
+      {
+        "muni_key": "silkeborg",
+        "municipality": "Silkeborg",
+        "population": 101264.0
+      },
+      {
+        "muni_key": "skanderborg",
+        "municipality": "Skanderborg",
+        "population": 65376.0
+      },
+      {
+        "muni_key": "syddjurs",
+        "municipality": "Syddjurs",
+        "population": 44033.0
+      },
+      {
+        "muni_key": "aarhus",
+        "municipality": "Aarhus",
+        "population": 368131.0
+      },
+      {
+        "muni_key": "herning",
+        "municipality": "Herning",
+        "population": 90005.0
+      },
+      {
+        "muni_key": "holstebro",
+        "municipality": "Holstebro",
+        "population": 59064.0
+      },
+      {
+        "muni_key": "ikastbrande",
+        "municipality": "Ikast-Brande",
+        "population": 42954.0
+      },
+      {
+        "muni_key": "lemvig",
+        "municipality": "Lemvig",
+        "population": 18986.0
+      },
+      {
+        "muni_key": "ringkoebingskjern",
+        "municipality": "Ringkøbing-Skjern",
+        "population": 56019.0
+      },
+      {
+        "muni_key": "skive",
+        "municipality": "Skive",
+        "population": 44589.0
+      },
+      {
+        "muni_key": "struer",
+        "municipality": "Struer",
+        "population": 20409.0
+      },
+      {
+        "muni_key": "viborg",
+        "municipality": "Viborg",
+        "population": 97659.0
+      },
+      {
+        "muni_key": "regionnordjylland",
+        "municipality": "Region Nordjylland",
+        "population": 592637.0
+      },
+      {
+        "muni_key": "broenderslev",
+        "municipality": "Brønderslev",
+        "population": 36602.0
+      },
+      {
+        "muni_key": "frederikshavn",
+        "municipality": "Frederikshavn",
+        "population": 58312.0
+      },
+      {
+        "muni_key": "hjoerring",
+        "municipality": "Hjørring",
+        "population": 63570.0
+      },
+      {
+        "muni_key": "jammerbugt",
+        "municipality": "Jammerbugt",
+        "population": 38170.0
+      },
+      {
+        "muni_key": "laesoe",
+        "municipality": "Læsø",
+        "population": 1751.0
+      },
+      {
+        "muni_key": "mariagerfjord",
+        "municipality": "Mariagerfjord",
+        "population": 41844.0
+      },
+      {
+        "muni_key": "morsoe",
+        "municipality": "Morsø",
+        "population": 19611.0
+      },
+      {
+        "muni_key": "rebild",
+        "municipality": "Rebild",
+        "population": 30962.0
+      },
+      {
+        "muni_key": "thisted",
+        "municipality": "Thisted",
+        "population": 42910.0
+      },
+      {
+        "muni_key": "vesthimmerlands",
+        "municipality": "Vesthimmerlands",
+        "population": 35864.0
+      },
+      {
+        "muni_key": "aalborg",
+        "municipality": "Aalborg",
+        "population": 223041.0
+      }
+    ],
+    "tax": [
+      {
+        "muni_key": "regionhovedstaden",
+        "municipality": "Region Hovedstaden",
+        "tax_rate_pct": 24.39
+      },
+      {
+        "muni_key": "koebenhavn",
+        "municipality": "Copenhagen",
+        "tax_rate_pct": 23.6
+      },
+      {
+        "muni_key": "frederiksberg",
+        "municipality": "Frederiksberg",
+        "tax_rate_pct": 24.57
+      },
+      {
+        "muni_key": "dragoer",
+        "municipality": "Dragør",
+        "tax_rate_pct": 24.8
+      },
+      {
+        "muni_key": "taarnby",
+        "municipality": "Tårnby",
+        "tax_rate_pct": 24.1
+      },
+      {
+        "muni_key": "albertslund",
+        "municipality": "Albertslund",
+        "tax_rate_pct": 25.6
+      },
+      {
+        "muni_key": "ballerup",
+        "municipality": "Ballerup",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "broendby",
+        "municipality": "Brøndby",
+        "tax_rate_pct": 24.3
+      },
+      {
+        "muni_key": "gentofte",
+        "municipality": "Gentofte",
+        "tax_rate_pct": 24.34
+      },
+      {
+        "muni_key": "gladsaxe",
+        "municipality": "Gladsaxe",
+        "tax_rate_pct": 23.6
+      },
+      {
+        "muni_key": "glostrup",
+        "municipality": "Glostrup",
+        "tax_rate_pct": 24.6
+      },
+      {
+        "muni_key": "herlev",
+        "municipality": "Herlev",
+        "tax_rate_pct": 23.7
+      },
+      {
+        "muni_key": "hvidovre",
+        "municipality": "Hvidovre",
+        "tax_rate_pct": 25.4
+      },
+      {
+        "muni_key": "hoejetaastrup",
+        "municipality": "Høje-Taastrup",
+        "tax_rate_pct": 24.6
+      },
+      {
+        "muni_key": "ishoej",
+        "municipality": "Ishøj",
+        "tax_rate_pct": 25.0
+      },
+      {
+        "muni_key": "lyngbytaarbaek",
+        "municipality": "Lyngby-Taarbæk",
+        "tax_rate_pct": 24.38
+      },
+      {
+        "muni_key": "roedovre",
+        "municipality": "Rødovre",
+        "tax_rate_pct": 25.7
+      },
+      {
+        "muni_key": "vallensbaek",
+        "municipality": "Vallensbæk",
+        "tax_rate_pct": 25.6
+      },
+      {
+        "muni_key": "alleroed",
+        "municipality": "Allerød",
+        "tax_rate_pct": 25.3
+      },
+      {
+        "muni_key": "egedal",
+        "municipality": "Egedal",
+        "tax_rate_pct": 25.7
+      },
+      {
+        "muni_key": "fredensborg",
+        "municipality": "Fredensborg",
+        "tax_rate_pct": 25.3
+      },
+      {
+        "muni_key": "frederikssund",
+        "municipality": "Frederikssund",
+        "tax_rate_pct": 25.8
+      },
+      {
+        "muni_key": "furesoe",
+        "municipality": "Furesø",
+        "tax_rate_pct": 24.88
+      },
+      {
+        "muni_key": "gribskov",
+        "municipality": "Gribskov",
+        "tax_rate_pct": 25.4
+      },
+      {
+        "muni_key": "halsnaes",
+        "municipality": "Halsnæs",
+        "tax_rate_pct": 25.7
+      },
+      {
+        "muni_key": "helsingoer",
+        "municipality": "Helsingør",
+        "tax_rate_pct": 25.52
+      },
+      {
+        "muni_key": "hilleroed",
+        "municipality": "Hillerød",
+        "tax_rate_pct": 25.6
+      },
+      {
+        "muni_key": "hoersholm",
+        "municipality": "Hørsholm",
+        "tax_rate_pct": 23.7
+      },
+      {
+        "muni_key": "rudersdal",
+        "municipality": "Rudersdal",
+        "tax_rate_pct": 23.36
+      },
+      {
+        "muni_key": "bornholm",
+        "municipality": "Bornholm",
+        "tax_rate_pct": 26.2
+      },
+      {
+        "muni_key": "regionsjaelland",
+        "municipality": "Region Sjælland",
+        "tax_rate_pct": 25.47
+      },
+      {
+        "muni_key": "greve",
+        "municipality": "Greve",
+        "tax_rate_pct": 24.52
+      },
+      {
+        "muni_key": "koege",
+        "municipality": "Køge",
+        "tax_rate_pct": 25.26
+      },
+      {
+        "muni_key": "lejre",
+        "municipality": "Lejre",
+        "tax_rate_pct": 25.31
+      },
+      {
+        "muni_key": "roskilde",
+        "municipality": "Roskilde",
+        "tax_rate_pct": 25.2
+      },
+      {
+        "muni_key": "solroed",
+        "municipality": "Solrød",
+        "tax_rate_pct": 24.99
+      },
+      {
+        "muni_key": "faxe",
+        "municipality": "Faxe",
+        "tax_rate_pct": 25.8
+      },
+      {
+        "muni_key": "guldborgsund",
+        "municipality": "Guldborgsund",
+        "tax_rate_pct": 25.8
+      },
+      {
+        "muni_key": "holbaek",
+        "municipality": "Holbæk",
+        "tax_rate_pct": 25.3
+      },
+      {
+        "muni_key": "kalundborg",
+        "municipality": "Kalundborg",
+        "tax_rate_pct": 24.2
+      },
+      {
+        "muni_key": "lolland",
+        "municipality": "Lolland",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "naestved",
+        "municipality": "Næstved",
+        "tax_rate_pct": 25.0
+      },
+      {
+        "muni_key": "odsherred",
+        "municipality": "Odsherred",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "ringsted",
+        "municipality": "Ringsted",
+        "tax_rate_pct": 26.1
+      },
+      {
+        "muni_key": "slagelse",
+        "municipality": "Slagelse",
+        "tax_rate_pct": 26.1
+      },
+      {
+        "muni_key": "soroe",
+        "municipality": "Sorø",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "stevns",
+        "municipality": "Stevns",
+        "tax_rate_pct": 26.0
+      },
+      {
+        "muni_key": "vordingborg",
+        "municipality": "Vordingborg",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "regionsyddanmark",
+        "municipality": "Region Syddanmark",
+        "tax_rate_pct": 25.44
+      },
+      {
+        "muni_key": "assens",
+        "municipality": "Assens",
+        "tax_rate_pct": 26.1
+      },
+      {
+        "muni_key": "faaborgmidtfyn",
+        "municipality": "Faaborg-Midtfyn",
+        "tax_rate_pct": 26.1
+      },
+      {
+        "muni_key": "kerteminde",
+        "municipality": "Kerteminde",
+        "tax_rate_pct": 26.1
+      },
+      {
+        "muni_key": "langeland",
+        "municipality": "Langeland",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "middelfart",
+        "municipality": "Middelfart",
+        "tax_rate_pct": 25.8
+      },
+      {
+        "muni_key": "nordfyns",
+        "municipality": "Nordfyns",
+        "tax_rate_pct": 26.0
+      },
+      {
+        "muni_key": "nyborg",
+        "municipality": "Nyborg",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "odense",
+        "municipality": "Odense",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "svendborg",
+        "municipality": "Svendborg",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "aeroe",
+        "municipality": "Ærø",
+        "tax_rate_pct": 26.1
+      },
+      {
+        "muni_key": "billund",
+        "municipality": "Billund",
+        "tax_rate_pct": 24.0
+      },
+      {
+        "muni_key": "esbjerg",
+        "municipality": "Esbjerg",
+        "tax_rate_pct": 25.8
+      },
+      {
+        "muni_key": "fanoe",
+        "municipality": "Fanø",
+        "tax_rate_pct": 25.77
+      },
+      {
+        "muni_key": "fredericia",
+        "municipality": "Fredericia",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "haderslev",
+        "municipality": "Haderslev",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "kolding",
+        "municipality": "Kolding",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "soenderborg",
+        "municipality": "Sønderborg",
+        "tax_rate_pct": 25.7
+      },
+      {
+        "muni_key": "toender",
+        "municipality": "Tønder",
+        "tax_rate_pct": 25.3
+      },
+      {
+        "muni_key": "varde",
+        "municipality": "Varde",
+        "tax_rate_pct": 25.1
+      },
+      {
+        "muni_key": "vejen",
+        "municipality": "Vejen",
+        "tax_rate_pct": 25.33
+      },
+      {
+        "muni_key": "vejle",
+        "municipality": "Vejle",
+        "tax_rate_pct": 23.4
+      },
+      {
+        "muni_key": "aabenraa",
+        "municipality": "Aabenraa",
+        "tax_rate_pct": 25.6
+      },
+      {
+        "muni_key": "regionmidtjylland",
+        "municipality": "Region Midtjylland",
+        "tax_rate_pct": 25.27
+      },
+      {
+        "muni_key": "favrskov",
+        "municipality": "Favrskov",
+        "tax_rate_pct": 25.7
+      },
+      {
+        "muni_key": "hedensted",
+        "municipality": "Hedensted",
+        "tax_rate_pct": 25.52
+      },
+      {
+        "muni_key": "horsens",
+        "municipality": "Horsens",
+        "tax_rate_pct": 25.69
+      },
+      {
+        "muni_key": "norddjurs",
+        "municipality": "Norddjurs",
+        "tax_rate_pct": 26.0
+      },
+      {
+        "muni_key": "odder",
+        "municipality": "Odder",
+        "tax_rate_pct": 25.1
+      },
+      {
+        "muni_key": "randers",
+        "municipality": "Randers",
+        "tax_rate_pct": 25.8
+      },
+      {
+        "muni_key": "samsoe",
+        "municipality": "Samsø",
+        "tax_rate_pct": 25.9
+      },
+      {
+        "muni_key": "silkeborg",
+        "municipality": "Silkeborg",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "skanderborg",
+        "municipality": "Skanderborg",
+        "tax_rate_pct": 26.0
+      },
+      {
+        "muni_key": "syddjurs",
+        "municipality": "Syddjurs",
+        "tax_rate_pct": 25.9
+      },
+      {
+        "muni_key": "aarhus",
+        "municipality": "Aarhus",
+        "tax_rate_pct": 24.52
+      },
+      {
+        "muni_key": "herning",
+        "municipality": "Herning",
+        "tax_rate_pct": 25.4
+      },
+      {
+        "muni_key": "holstebro",
+        "municipality": "Holstebro",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "ikastbrande",
+        "municipality": "Ikast-Brande",
+        "tax_rate_pct": 25.1
+      },
+      {
+        "muni_key": "lemvig",
+        "municipality": "Lemvig",
+        "tax_rate_pct": 25.46
+      },
+      {
+        "muni_key": "ringkoebingskjern",
+        "municipality": "Ringkøbing-Skjern",
+        "tax_rate_pct": 25.0
+      },
+      {
+        "muni_key": "skive",
+        "municipality": "Skive",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "struer",
+        "municipality": "Struer",
+        "tax_rate_pct": 25.3
+      },
+      {
+        "muni_key": "viborg",
+        "municipality": "Viborg",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "regionnordjylland",
+        "municipality": "Region Nordjylland",
+        "tax_rate_pct": 25.85
+      },
+      {
+        "muni_key": "broenderslev",
+        "municipality": "Brønderslev",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "frederikshavn",
+        "municipality": "Frederikshavn",
+        "tax_rate_pct": 26.2
+      },
+      {
+        "muni_key": "hjoerring",
+        "municipality": "Hjørring",
+        "tax_rate_pct": 26.21
+      },
+      {
+        "muni_key": "jammerbugt",
+        "municipality": "Jammerbugt",
+        "tax_rate_pct": 25.7
+      },
+      {
+        "muni_key": "laesoe",
+        "municipality": "Læsø",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "mariagerfjord",
+        "municipality": "Mariagerfjord",
+        "tax_rate_pct": 25.9
+      },
+      {
+        "muni_key": "morsoe",
+        "municipality": "Morsø",
+        "tax_rate_pct": 25.8
+      },
+      {
+        "muni_key": "rebild",
+        "municipality": "Rebild",
+        "tax_rate_pct": 25.83
+      },
+      {
+        "muni_key": "thisted",
+        "municipality": "Thisted",
+        "tax_rate_pct": 25.5
+      },
+      {
+        "muni_key": "vesthimmerlands",
+        "municipality": "Vesthimmerlands",
+        "tax_rate_pct": 26.3
+      },
+      {
+        "muni_key": "aalborg",
+        "municipality": "Aalborg",
+        "tax_rate_pct": 25.6
+      }
+    ],
+    "rent": [
+      {
+        "muni_key": "albertslund",
+        "municipality": "Albertslund",
+        "rent_dkk_m2": 1004.0
+      },
+      {
+        "muni_key": "alleroed",
+        "municipality": "Allerød",
+        "rent_dkk_m2": 1009.0
+      },
+      {
+        "muni_key": "assens",
+        "municipality": "Assens",
+        "rent_dkk_m2": 863.0
+      },
+      {
+        "muni_key": "ballerup",
+        "municipality": "Ballerup",
+        "rent_dkk_m2": 955.0
+      },
+      {
+        "muni_key": "billund",
+        "municipality": "Billund",
+        "rent_dkk_m2": 797.0
+      },
+      {
+        "muni_key": "bornholm",
+        "municipality": "Bornholm",
+        "rent_dkk_m2": 880.0
+      },
+      {
+        "muni_key": "broendby",
+        "municipality": "Brøndby",
+        "rent_dkk_m2": 928.0
+      },
+      {
+        "muni_key": "broenderslev",
+        "municipality": "Brønderslev",
+        "rent_dkk_m2": 784.0
+      },
+      {
+        "muni_key": "dragoer",
+        "municipality": "Dragør",
+        "rent_dkk_m2": 1023.0
+      },
+      {
+        "muni_key": "egedal",
+        "municipality": "Egedal",
+        "rent_dkk_m2": null
+      },
+      {
+        "muni_key": "esbjerg",
+        "municipality": "Esbjerg",
+        "rent_dkk_m2": 766.0
+      },
+      {
+        "muni_key": "fanoe",
+        "municipality": "Fanø",
+        "rent_dkk_m2": 913.0
+      },
+      {
+        "muni_key": "favrskov",
+        "municipality": "Favrskov",
+        "rent_dkk_m2": 951.0
+      },
+      {
+        "muni_key": "faxe",
+        "municipality": "Faxe",
+        "rent_dkk_m2": 957.0
+      },
+      {
+        "muni_key": "fredensborg",
+        "municipality": "Fredensborg",
+        "rent_dkk_m2": 969.0
+      },
+      {
+        "muni_key": "fredericia",
+        "municipality": "Fredericia",
+        "rent_dkk_m2": 803.0
+      },
+      {
+        "muni_key": "frederiksberg",
+        "municipality": "Frederiksberg",
+        "rent_dkk_m2": 996.0
+      },
+      {
+        "muni_key": "frederikshavn",
+        "municipality": "Frederikshavn",
+        "rent_dkk_m2": 759.0
+      },
+      {
+        "muni_key": "frederikssund",
+        "municipality": "Frederikssund",
+        "rent_dkk_m2": 992.0
+      },
+      {
+        "muni_key": "furesoe",
+        "municipality": "Furesø",
+        "rent_dkk_m2": 1011.0
+      },
+      {
+        "muni_key": "faaborgmidtfyn",
+        "municipality": "Faaborg-Midtfyn",
+        "rent_dkk_m2": 855.0
+      },
+      {
+        "muni_key": "gentofte",
+        "municipality": "Gentofte",
+        "rent_dkk_m2": null
+      },
+      {
+        "muni_key": "gladsaxe",
+        "municipality": "Gladsaxe",
+        "rent_dkk_m2": 962.0
+      },
+      {
+        "muni_key": "glostrup",
+        "municipality": "Glostrup",
+        "rent_dkk_m2": 942.0
+      },
+      {
+        "muni_key": "greve",
+        "municipality": "Greve",
+        "rent_dkk_m2": 950.0
+      },
+      {
+        "muni_key": "gribskov",
+        "municipality": "Gribskov",
+        "rent_dkk_m2": 1108.0
+      },
+      {
+        "muni_key": "guldborgsund",
+        "municipality": "Guldborgsund",
+        "rent_dkk_m2": 784.0
+      },
+      {
+        "muni_key": "haderslev",
+        "municipality": "Haderslev",
+        "rent_dkk_m2": 817.0
+      },
+      {
+        "muni_key": "halsnaes",
+        "municipality": "Halsnæs",
+        "rent_dkk_m2": 982.0
+      },
+      {
+        "muni_key": "hedensted",
+        "municipality": "Hedensted",
+        "rent_dkk_m2": 832.0
+      },
+      {
+        "muni_key": "helsingoer",
+        "municipality": "Helsingør",
+        "rent_dkk_m2": 1068.0
+      },
+      {
+        "muni_key": "herlev",
+        "municipality": "Herlev",
+        "rent_dkk_m2": 984.0
+      },
+      {
+        "muni_key": "herning",
+        "municipality": "Herning",
+        "rent_dkk_m2": 758.0
+      },
+      {
+        "muni_key": "hilleroed",
+        "municipality": "Hillerød",
+        "rent_dkk_m2": 1012.0
+      },
+      {
+        "muni_key": "hjoerring",
+        "municipality": "Hjørring",
+        "rent_dkk_m2": 743.0
+      },
+      {
+        "muni_key": "holbaek",
+        "municipality": "Holbæk",
+        "rent_dkk_m2": 947.0
+      },
+      {
+        "muni_key": "holstebro",
+        "municipality": "Holstebro",
+        "rent_dkk_m2": 832.0
+      },
+      {
+        "muni_key": "horsens",
+        "municipality": "Horsens",
+        "rent_dkk_m2": 842.0
+      },
+      {
+        "muni_key": "hvidovre",
+        "municipality": "Hvidovre",
+        "rent_dkk_m2": 1021.0
+      },
+      {
+        "muni_key": "hoejetaastrup",
+        "municipality": "Høje-Taastrup",
+        "rent_dkk_m2": 963.0
+      },
+      {
+        "muni_key": "hoersholm",
+        "municipality": "Hørsholm",
+        "rent_dkk_m2": 1057.0
+      },
+      {
+        "muni_key": "ikastbrande",
+        "municipality": "Ikast-Brande",
+        "rent_dkk_m2": 751.0
+      },
+      {
+        "muni_key": "ishoej",
+        "municipality": "Ishøj",
+        "rent_dkk_m2": 913.0
+      },
+      {
+        "muni_key": "jammerbugt",
+        "municipality": "Jammerbugt",
+        "rent_dkk_m2": 902.0
+      },
+      {
+        "muni_key": "kalundborg",
+        "municipality": "Kalundborg",
+        "rent_dkk_m2": 846.0
+      },
+      {
+        "muni_key": "kerteminde",
+        "municipality": "Kerteminde",
+        "rent_dkk_m2": 858.0
+      },
+      {
+        "muni_key": "kolding",
+        "municipality": "Kolding",
+        "rent_dkk_m2": 834.0
+      },
+      {
+        "muni_key": "koebenhavn",
+        "municipality": "København",
+        "rent_dkk_m2": 1012.0
+      },
+      {
+        "muni_key": "koege",
+        "municipality": "Køge",
+        "rent_dkk_m2": 991.0
+      },
+      {
+        "muni_key": "langeland",
+        "municipality": "Langeland",
+        "rent_dkk_m2": 811.0
+      },
+      {
+        "muni_key": "lejre",
+        "municipality": "Lejre",
+        "rent_dkk_m2": 1099.0
+      },
+      {
+        "muni_key": "lemvig",
+        "municipality": "Lemvig",
+        "rent_dkk_m2": 771.0
+      },
+      {
+        "muni_key": "lolland",
+        "municipality": "Lolland",
+        "rent_dkk_m2": 777.0
+      },
+      {
+        "muni_key": "lyngbytaarbaek",
+        "municipality": "Lyngby-Taarbæk",
+        "rent_dkk_m2": 1047.0
+      },
+      {
+        "muni_key": "laesoe",
+        "municipality": "Læsø",
+        "rent_dkk_m2": 862.0
+      },
+      {
+        "muni_key": "mariagerfjord",
+        "municipality": "Mariagerfjord",
+        "rent_dkk_m2": 822.0
+      },
+      {
+        "muni_key": "middelfart",
+        "municipality": "Middelfart",
+        "rent_dkk_m2": 843.0
+      },
+      {
+        "muni_key": "morsoe",
+        "municipality": "Morsø",
+        "rent_dkk_m2": 751.0
+      },
+      {
+        "muni_key": "norddjurs",
+        "municipality": "Norddjurs",
+        "rent_dkk_m2": 804.0
+      },
+      {
+        "muni_key": "nordfyns",
+        "municipality": "Nordfyns",
+        "rent_dkk_m2": 852.0
+      },
+      {
+        "muni_key": "nyborg",
+        "municipality": "Nyborg",
+        "rent_dkk_m2": 847.0
+      },
+      {
+        "muni_key": "naestved",
+        "municipality": "Næstved",
+        "rent_dkk_m2": 917.0
+      },
+      {
+        "muni_key": "odder",
+        "municipality": "Odder",
+        "rent_dkk_m2": 926.0
+      },
+      {
+        "muni_key": "odense",
+        "municipality": "Odense",
+        "rent_dkk_m2": 795.0
+      },
+      {
+        "muni_key": "odsherred",
+        "municipality": "Odsherred",
+        "rent_dkk_m2": 871.0
+      },
+      {
+        "muni_key": "randers",
+        "municipality": "Randers",
+        "rent_dkk_m2": 781.0
+      },
+      {
+        "muni_key": "rebild",
+        "municipality": "Rebild",
+        "rent_dkk_m2": 864.0
+      },
+      {
+        "muni_key": "ringkoebingskjern",
+        "municipality": "Ringkøbing-Skjern",
+        "rent_dkk_m2": 820.0
+      },
+      {
+        "muni_key": "ringsted",
+        "municipality": "Ringsted",
+        "rent_dkk_m2": 906.0
+      },
+      {
+        "muni_key": "roskilde",
+        "municipality": "Roskilde",
+        "rent_dkk_m2": 1159.0
+      },
+      {
+        "muni_key": "rudersdal",
+        "municipality": "Rudersdal",
+        "rent_dkk_m2": 1016.0
+      },
+      {
+        "muni_key": "roedovre",
+        "municipality": "Rødovre",
+        "rent_dkk_m2": 971.0
+      },
+      {
+        "muni_key": "samsoe",
+        "municipality": "Samsø",
+        "rent_dkk_m2": 905.0
+      },
+      {
+        "muni_key": "silkeborg",
+        "municipality": "Silkeborg",
+        "rent_dkk_m2": 865.0
+      },
+      {
+        "muni_key": "skanderborg",
+        "municipality": "Skanderborg",
+        "rent_dkk_m2": 868.0
+      },
+      {
+        "muni_key": "skive",
+        "municipality": "Skive",
+        "rent_dkk_m2": 816.0
+      },
+      {
+        "muni_key": "slagelse",
+        "municipality": "Slagelse",
+        "rent_dkk_m2": 848.0
+      },
+      {
+        "muni_key": "solroed",
+        "municipality": "Solrød",
+        "rent_dkk_m2": null
+      },
+      {
+        "muni_key": "soroe",
+        "municipality": "Sorø",
+        "rent_dkk_m2": 903.0
+      },
+      {
+        "muni_key": "stevns",
+        "municipality": "Stevns",
+        "rent_dkk_m2": 975.0
+      },
+      {
+        "muni_key": "struer",
+        "municipality": "Struer",
+        "rent_dkk_m2": 781.0
+      },
+      {
+        "muni_key": "svendborg",
+        "municipality": "Svendborg",
+        "rent_dkk_m2": 858.0
+      },
+      {
+        "muni_key": "syddjurs",
+        "municipality": "Syddjurs",
+        "rent_dkk_m2": 887.0
+      },
+      {
+        "muni_key": "soenderborg",
+        "municipality": "Sønderborg",
+        "rent_dkk_m2": 727.0
+      },
+      {
+        "muni_key": "thisted",
+        "municipality": "Thisted",
+        "rent_dkk_m2": 737.0
+      },
+      {
+        "muni_key": "toender",
+        "municipality": "Tønder",
+        "rent_dkk_m2": 748.0
+      },
+      {
+        "muni_key": "taarnby",
+        "municipality": "Tårnby",
+        "rent_dkk_m2": 911.0
+      },
+      {
+        "muni_key": "vallensbaek",
+        "municipality": "Vallensbæk",
+        "rent_dkk_m2": 1041.0
+      },
+      {
+        "muni_key": "varde",
+        "municipality": "Varde",
+        "rent_dkk_m2": 810.0
+      },
+      {
+        "muni_key": "vejen",
+        "municipality": "Vejen",
+        "rent_dkk_m2": 758.0
+      },
+      {
+        "muni_key": "vejle",
+        "municipality": "Vejle",
+        "rent_dkk_m2": 860.0
+      },
+      {
+        "muni_key": "vesthimmerlands",
+        "municipality": "Vesthimmerlands",
+        "rent_dkk_m2": 842.0
+      },
+      {
+        "muni_key": "viborg",
+        "municipality": "Viborg",
+        "rent_dkk_m2": 826.0
+      },
+      {
+        "muni_key": "vordingborg",
+        "municipality": "Vordingborg",
+        "rent_dkk_m2": 872.0
+      },
+      {
+        "muni_key": "aeroe",
+        "municipality": "Ærø",
+        "rent_dkk_m2": 882.0
+      },
+      {
+        "muni_key": "aabenraa",
+        "municipality": "Aabenraa",
+        "rent_dkk_m2": 782.0
+      },
+      {
+        "muni_key": "aalborg",
+        "municipality": "Aalborg",
+        "rent_dkk_m2": 843.0
+      },
+      {
+        "muni_key": "aarhus",
+        "municipality": "Aarhus",
+        "rent_dkk_m2": 927.0
+      }
+    ],
+    "property": [
+      {
+        "muni_key": "regionhovedstaden",
+        "municipality": "Capital region",
+        "property_price_dkk_m2": 34660.0
+      },
+      {
+        "muni_key": "subregioncopenhagencity",
+        "municipality": "Subregion Copenhagen City",
+        "property_price_dkk_m2": 50011.0
+      },
+      {
+        "muni_key": "koebenhavn",
+        "municipality": "Copenhagen",
+        "property_price_dkk_m2": 53340.0
+      },
+      {
+        "muni_key": "frederiksberg",
+        "municipality": "Frederiksberg",
+        "property_price_dkk_m2": 77839.0
+      },
+      {
+        "muni_key": "dragoer",
+        "municipality": "Dragør",
+        "property_price_dkk_m2": 36617.0
+      },
+      {
+        "muni_key": "taarnby",
+        "municipality": "Tårnby",
+        "property_price_dkk_m2": 36665.0
+      },
+      {
+        "muni_key": "subregioncopenhagensuburbs",
+        "municipality": "Subregion Copenhagen suburbs",
+        "property_price_dkk_m2": 38414.0
+      },
+      {
+        "muni_key": "albertslund",
+        "municipality": "Albertslund",
+        "property_price_dkk_m2": 25238.0
+      },
+      {
+        "muni_key": "ballerup",
+        "municipality": "Ballerup",
+        "property_price_dkk_m2": 31012.0
+      },
+      {
+        "muni_key": "broendby",
+        "municipality": "Brøndby",
+        "property_price_dkk_m2": 30786.0
+      },
+      {
+        "muni_key": "gentofte",
+        "municipality": "Gentofte",
+        "property_price_dkk_m2": 59317.0
+      },
+      {
+        "muni_key": "gladsaxe",
+        "municipality": "Gladsaxe",
+        "property_price_dkk_m2": 41216.0
+      },
+      {
+        "muni_key": "glostrup",
+        "municipality": "Glostrup",
+        "property_price_dkk_m2": 31099.0
+      },
+      {
+        "muni_key": "herlev",
+        "municipality": "Herlev",
+        "property_price_dkk_m2": 32640.0
+      },
+      {
+        "muni_key": "hvidovre",
+        "municipality": "Hvidovre",
+        "property_price_dkk_m2": 36176.0
+      },
+      {
+        "muni_key": "hoejetaastrup",
+        "municipality": "Høje-Taastrup",
+        "property_price_dkk_m2": 26321.0
+      },
+      {
+        "muni_key": "ishoej",
+        "municipality": "Ishøj",
+        "property_price_dkk_m2": 25388.0
+      },
+      {
+        "muni_key": "lyngbytaarbaek",
+        "municipality": "Lyngby-Taarbæk",
+        "property_price_dkk_m2": 48344.0
+      },
+      {
+        "muni_key": "roedovre",
+        "municipality": "Rødovre",
+        "property_price_dkk_m2": 35638.0
+      },
+      {
+        "muni_key": "vallensbaek",
+        "municipality": "Vallensbæk",
+        "property_price_dkk_m2": 31083.0
+      },
+      {
+        "muni_key": "subregionnorthzealand",
+        "municipality": "Subregion North Zealand",
+        "property_price_dkk_m2": 29194.0
+      },
+      {
+        "muni_key": "alleroed",
+        "municipality": "Allerød",
+        "property_price_dkk_m2": 31284.0
+      },
+      {
+        "muni_key": "egedal",
+        "municipality": "Egedal",
+        "property_price_dkk_m2": 26359.0
+      },
+      {
+        "muni_key": "fredensborg",
+        "municipality": "Fredensborg",
+        "property_price_dkk_m2": 31517.0
+      },
+      {
+        "muni_key": "frederikssund",
+        "municipality": "Frederikssund",
+        "property_price_dkk_m2": 21200.0
+      },
+      {
+        "muni_key": "furesoe",
+        "municipality": "Furesø",
+        "property_price_dkk_m2": 37080.0
+      },
+      {
+        "muni_key": "gribskov",
+        "municipality": "Gribskov",
+        "property_price_dkk_m2": 19952.0
+      },
+      {
+        "muni_key": "halsnaes",
+        "municipality": "Halsnæs",
+        "property_price_dkk_m2": 17260.0
+      },
+      {
+        "muni_key": "helsingoer",
+        "municipality": "Helsingør",
+        "property_price_dkk_m2": 28304.0
+      },
+      {
+        "muni_key": "hilleroed",
+        "municipality": "Hillerød",
+        "property_price_dkk_m2": 26467.0
+      },
+      {
+        "muni_key": "hoersholm",
+        "municipality": "Hørsholm",
+        "property_price_dkk_m2": 39607.0
+      },
+      {
+        "muni_key": "rudersdal",
+        "municipality": "Rudersdal",
+        "property_price_dkk_m2": 43982.0
+      },
+      {
+        "muni_key": "subregionbornholm",
+        "municipality": "Subregion Bornholm",
+        "property_price_dkk_m2": 10386.0
+      },
+      {
+        "muni_key": "bornholm",
+        "municipality": "Bornholm",
+        "property_price_dkk_m2": 10386.0
+      },
+      {
+        "muni_key": "regionzealand",
+        "municipality": "Region Zealand",
+        "property_price_dkk_m2": 15080.0
+      },
+      {
+        "muni_key": "subregioneastzealand",
+        "municipality": "Subregion East Zealand",
+        "property_price_dkk_m2": 24883.0
+      },
+      {
+        "muni_key": "greve",
+        "municipality": "Greve",
+        "property_price_dkk_m2": 27221.0
+      },
+      {
+        "muni_key": "koege",
+        "municipality": "Køge",
+        "property_price_dkk_m2": 22917.0
+      },
+      {
+        "muni_key": "lejre",
+        "municipality": "Lejre",
+        "property_price_dkk_m2": 17863.0
+      },
+      {
+        "muni_key": "roskilde",
+        "municipality": "Roskilde",
+        "property_price_dkk_m2": 26779.0
+      },
+      {
+        "muni_key": "solroed",
+        "municipality": "Solrød",
+        "property_price_dkk_m2": 27263.0
+      },
+      {
+        "muni_key": "subregionwestandsouthzealand",
+        "municipality": "Subregion West and South Zealand",
+        "property_price_dkk_m2": 11507.0
+      },
+      {
+        "muni_key": "faxe",
+        "municipality": "Faxe",
+        "property_price_dkk_m2": 12602.0
+      },
+      {
+        "muni_key": "guldborgsund",
+        "municipality": "Guldborgsund",
+        "property_price_dkk_m2": 8137.0
+      },
+      {
+        "muni_key": "holbaek",
+        "municipality": "Holbæk",
+        "property_price_dkk_m2": 16450.0
+      },
+      {
+        "muni_key": "kalundborg",
+        "municipality": "Kalundborg",
+        "property_price_dkk_m2": 11429.0
+      },
+      {
+        "muni_key": "lolland",
+        "municipality": "Lolland",
+        "property_price_dkk_m2": 5285.0
+      },
+      {
+        "muni_key": "naestved",
+        "municipality": "Næstved",
+        "property_price_dkk_m2": 13656.0
+      },
+      {
+        "muni_key": "odsherred",
+        "municipality": "Odsherred",
+        "property_price_dkk_m2": 9677.0
+      },
+      {
+        "muni_key": "ringsted",
+        "municipality": "Ringsted",
+        "property_price_dkk_m2": 15475.0
+      },
+      {
+        "muni_key": "slagelse",
+        "municipality": "Slagelse",
+        "property_price_dkk_m2": 12096.0
+      },
+      {
+        "muni_key": "soroe",
+        "municipality": "Sorø",
+        "property_price_dkk_m2": 12425.0
+      },
+      {
+        "muni_key": "stevns",
+        "municipality": "Stevns",
+        "property_price_dkk_m2": 15112.0
+      },
+      {
+        "muni_key": "vordingborg",
+        "municipality": "Vordingborg",
+        "property_price_dkk_m2": 9256.0
+      },
+      {
+        "muni_key": "regionofsoutherndenmark",
+        "municipality": "Region of Southern Denmark",
+        "property_price_dkk_m2": 12084.0
+      },
+      {
+        "muni_key": "subregionfunen",
+        "municipality": "Subregion Funen",
+        "property_price_dkk_m2": 13139.0
+      },
+      {
+        "muni_key": "assens",
+        "municipality": "Assens",
+        "property_price_dkk_m2": 8444.0
+      },
+      {
+        "muni_key": "faaborgcentralfunen",
+        "municipality": "Faaborg-Central Funen",
+        "property_price_dkk_m2": 9162.0
+      },
+      {
+        "muni_key": "kerteminde",
+        "municipality": "Kerteminde",
+        "property_price_dkk_m2": 12285.0
+      },
+      {
+        "muni_key": "langeland",
+        "municipality": "Langeland",
+        "property_price_dkk_m2": 7697.0
+      },
+      {
+        "muni_key": "middelfart",
+        "municipality": "Middelfart",
+        "property_price_dkk_m2": 12417.0
+      },
+      {
+        "muni_key": "northfunen",
+        "municipality": "North Funen",
+        "property_price_dkk_m2": 8717.0
+      },
+      {
+        "muni_key": "nyborg",
+        "municipality": "Nyborg",
+        "property_price_dkk_m2": 10812.0
+      },
+      {
+        "muni_key": "odense",
+        "municipality": "Odense",
+        "property_price_dkk_m2": 18301.0
+      },
+      {
+        "muni_key": "svendborg",
+        "municipality": "Svendborg",
+        "property_price_dkk_m2": 15017.0
+      },
+      {
+        "muni_key": "aeroe",
+        "municipality": "Ærø",
+        "property_price_dkk_m2": 9594.0
+      },
+      {
+        "muni_key": "subregionsouthjutland",
+        "municipality": "Subregion South Jutland",
+        "property_price_dkk_m2": 11347.0
+      },
+      {
+        "muni_key": "billund",
+        "municipality": "Billund",
+        "property_price_dkk_m2": 12532.0
+      },
+      {
+        "muni_key": "esbjerg",
+        "municipality": "Esbjerg",
+        "property_price_dkk_m2": 14125.0
+      },
+      {
+        "muni_key": "fanoe",
+        "municipality": "Fanø",
+        "property_price_dkk_m2": 15873.0
+      },
+      {
+        "muni_key": "fredericia",
+        "municipality": "Fredericia",
+        "property_price_dkk_m2": 13698.0
+      },
+      {
+        "muni_key": "haderslev",
+        "municipality": "Haderslev",
+        "property_price_dkk_m2": 8908.0
+      },
+      {
+        "muni_key": "kolding",
+        "municipality": "Kolding",
+        "property_price_dkk_m2": 13111.0
+      },
+      {
+        "muni_key": "soenderborg",
+        "municipality": "Sønderborg",
+        "property_price_dkk_m2": 9799.0
+      },
+      {
+        "muni_key": "toender",
+        "municipality": "Tønder",
+        "property_price_dkk_m2": 5827.0
+      },
+      {
+        "muni_key": "varde",
+        "municipality": "Varde",
+        "property_price_dkk_m2": 10079.0
+      },
+      {
+        "muni_key": "vejen",
+        "municipality": "Vejen",
+        "property_price_dkk_m2": 8223.0
+      },
+      {
+        "muni_key": "vejle",
+        "municipality": "Vejle",
+        "property_price_dkk_m2": 14086.0
+      },
+      {
+        "muni_key": "aabenraa",
+        "municipality": "Aabenraa",
+        "property_price_dkk_m2": 8315.0
+      },
+      {
+        "muni_key": "centraldenmarkregion",
+        "municipality": "Central Denmark Region",
+        "property_price_dkk_m2": 14628.0
+      },
+      {
+        "muni_key": "subregioneastjutland",
+        "municipality": "Subregion East Jutland",
+        "property_price_dkk_m2": 17617.0
+      },
+      {
+        "muni_key": "favrskov",
+        "municipality": "Favrskov",
+        "property_price_dkk_m2": 13984.0
+      },
+      {
+        "muni_key": "hedensted",
+        "municipality": "Hedensted",
+        "property_price_dkk_m2": 10287.0
+      },
+      {
+        "muni_key": "horsens",
+        "municipality": "Horsens",
+        "property_price_dkk_m2": 14059.0
+      },
+      {
+        "muni_key": "norddjurs",
+        "municipality": "Norddjurs",
+        "property_price_dkk_m2": 7579.0
+      },
+      {
+        "muni_key": "odder",
+        "municipality": "Odder",
+        "property_price_dkk_m2": 16037.0
+      },
+      {
+        "muni_key": "randers",
+        "municipality": "Randers",
+        "property_price_dkk_m2": 11269.0
+      },
+      {
+        "muni_key": "samsoe",
+        "municipality": "Samsø",
+        "property_price_dkk_m2": 12977.0
+      },
+      {
+        "muni_key": "silkeborg",
+        "municipality": "Silkeborg",
+        "property_price_dkk_m2": 17006.0
+      },
+      {
+        "muni_key": "skanderborg",
+        "municipality": "Skanderborg",
+        "property_price_dkk_m2": 20182.0
+      },
+      {
+        "muni_key": "syddjurs",
+        "municipality": "Syddjurs",
+        "property_price_dkk_m2": 13414.0
+      },
+      {
+        "muni_key": "aarhus",
+        "municipality": "Århus",
+        "property_price_dkk_m2": 28072.0
+      },
+      {
+        "muni_key": "subregionwestjutland",
+        "municipality": "Subregion West Jutland",
+        "property_price_dkk_m2": 9641.0
+      },
+      {
+        "muni_key": "herning",
+        "municipality": "Herning",
+        "property_price_dkk_m2": 11154.0
+      },
+      {
+        "muni_key": "holstebro",
+        "municipality": "Holstebro",
+        "property_price_dkk_m2": 11875.0
+      },
+      {
+        "muni_key": "ikastbrande",
+        "municipality": "Ikast-Brande",
+        "property_price_dkk_m2": 10153.0
+      },
+      {
+        "muni_key": "lemvig",
+        "municipality": "Lemvig",
+        "property_price_dkk_m2": 6217.0
+      },
+      {
+        "muni_key": "ringkoebingskjern",
+        "municipality": "Ringkøbing-Skjern",
+        "property_price_dkk_m2": 8328.0
+      },
+      {
+        "muni_key": "skive",
+        "municipality": "Skive",
+        "property_price_dkk_m2": 6593.0
+      },
+      {
+        "muni_key": "struer",
+        "municipality": "Struer",
+        "property_price_dkk_m2": 7436.0
+      },
+      {
+        "muni_key": "viborg",
+        "municipality": "Viborg",
+        "property_price_dkk_m2": 10631.0
+      },
+      {
+        "muni_key": "regionofnorthjutland",
+        "municipality": "Region of North Jutland",
+        "property_price_dkk_m2": 10874.0
+      },
+      {
+        "muni_key": "subregionnorthjutland",
+        "municipality": "Subregion North Jutland",
+        "property_price_dkk_m2": 10874.0
+      },
+      {
+        "muni_key": "broenderslev",
+        "municipality": "Brønderslev",
+        "property_price_dkk_m2": 8347.0
+      },
+      {
+        "muni_key": "frederikshavn",
+        "municipality": "Frederikshavn",
+        "property_price_dkk_m2": 10212.0
+      },
+      {
+        "muni_key": "hjoerring",
+        "municipality": "Hjørring",
+        "property_price_dkk_m2": 8183.0
+      },
+      {
+        "muni_key": "jammerbugt",
+        "municipality": "Jammerbugt",
+        "property_price_dkk_m2": 9861.0
+      },
+      {
+        "muni_key": "laesoe",
+        "municipality": "Læsø",
+        "property_price_dkk_m2": 8737.0
+      },
+      {
+        "muni_key": "mariagerfjord",
+        "municipality": "Mariagerfjord",
+        "property_price_dkk_m2": 8828.0
+      },
+      {
+        "muni_key": "morsoe",
+        "municipality": "Morsø",
+        "property_price_dkk_m2": 6646.0
+      },
+      {
+        "muni_key": "rebild",
+        "municipality": "Rebild",
+        "property_price_dkk_m2": 11808.0
+      },
+      {
+        "muni_key": "thisted",
+        "municipality": "Thisted",
+        "property_price_dkk_m2": 8395.0
+      },
+      {
+        "muni_key": "vesthimmerlands",
+        "municipality": "Vesthimmerlands",
+        "property_price_dkk_m2": 7217.0
+      },
+      {
+        "muni_key": "aalborg",
+        "municipality": "Aalborg",
+        "property_price_dkk_m2": 16477.0
+      }
+    ],
+    "earnings_residence": [
+      {
+        "muni_key": "koebenhavn",
+        "municipality": "Copenhagen",
+        "earnings_residence_dkk": 53753.0
+      },
+      {
+        "muni_key": "frederiksberg",
+        "municipality": "Frederiksberg",
+        "earnings_residence_dkk": 59317.0
+      },
+      {
+        "muni_key": "dragoer",
+        "municipality": "Dragør",
+        "earnings_residence_dkk": 64427.0
+      },
+      {
+        "muni_key": "taarnby",
+        "municipality": "Tårnby",
+        "earnings_residence_dkk": 52448.0
+      },
+      {
+        "muni_key": "albertslund",
+        "municipality": "Albertslund",
+        "earnings_residence_dkk": 47528.0
+      },
+      {
+        "muni_key": "ballerup",
+        "municipality": "Ballerup",
+        "earnings_residence_dkk": 53404.0
+      },
+      {
+        "muni_key": "broendby",
+        "municipality": "Brøndby",
+        "earnings_residence_dkk": 46544.0
+      },
+      {
+        "muni_key": "gentofte",
+        "municipality": "Gentofte",
+        "earnings_residence_dkk": 72290.0
+      },
+      {
+        "muni_key": "gladsaxe",
+        "municipality": "Gladsaxe",
+        "earnings_residence_dkk": 56626.0
+      },
+      {
+        "muni_key": "glostrup",
+        "municipality": "Glostrup",
+        "earnings_residence_dkk": 51251.0
+      },
+      {
+        "muni_key": "herlev",
+        "municipality": "Herlev",
+        "earnings_residence_dkk": 52254.0
+      },
+      {
+        "muni_key": "hvidovre",
+        "municipality": "Hvidovre",
+        "earnings_residence_dkk": 52190.0
+      },
+      {
+        "muni_key": "hoejetaastrup",
+        "municipality": "Høje-Taastrup",
+        "earnings_residence_dkk": 48424.0
+      },
+      {
+        "muni_key": "ishoej",
+        "municipality": "Ishøj",
+        "earnings_residence_dkk": 45740.0
+      },
+      {
+        "muni_key": "lyngbytaarbaek",
+        "municipality": "Lyngby-Taarbæk",
+        "earnings_residence_dkk": 65200.0
+      },
+      {
+        "muni_key": "roedovre",
+        "municipality": "Rødovre",
+        "earnings_residence_dkk": 51424.0
+      },
+      {
+        "muni_key": "vallensbaek",
+        "municipality": "Vallensbæk",
+        "earnings_residence_dkk": 53304.0
+      },
+      {
+        "muni_key": "alleroed",
+        "municipality": "Allerød",
+        "earnings_residence_dkk": 63562.0
+      },
+      {
+        "muni_key": "egedal",
+        "municipality": "Egedal",
+        "earnings_residence_dkk": 56626.0
+      },
+      {
+        "muni_key": "fredensborg",
+        "municipality": "Fredensborg",
+        "earnings_residence_dkk": 56876.0
+      },
+      {
+        "muni_key": "frederikssund",
+        "municipality": "Frederikssund",
+        "earnings_residence_dkk": 52484.0
+      },
+      {
+        "muni_key": "furesoe",
+        "municipality": "Furesø",
+        "earnings_residence_dkk": 64276.0
+      },
+      {
+        "muni_key": "gribskov",
+        "municipality": "Gribskov",
+        "earnings_residence_dkk": 51509.0
+      },
+      {
+        "muni_key": "halsnaes",
+        "municipality": "Halsnæs",
+        "earnings_residence_dkk": 48645.0
+      },
+      {
+        "muni_key": "helsingoer",
+        "municipality": "Helsingør",
+        "earnings_residence_dkk": 54026.0
+      },
+      {
+        "muni_key": "hilleroed",
+        "municipality": "Hillerød",
+        "earnings_residence_dkk": 55937.0
+      },
+      {
+        "muni_key": "hoersholm",
+        "municipality": "Hørsholm",
+        "earnings_residence_dkk": 69324.0
+      },
+      {
+        "muni_key": "rudersdal",
+        "municipality": "Rudersdal",
+        "earnings_residence_dkk": 70986.0
+      },
+      {
+        "muni_key": "bornholm",
+        "municipality": "Bornholm",
+        "earnings_residence_dkk": 43550.0
+      },
+      {
+        "muni_key": "greve",
+        "municipality": "Greve",
+        "earnings_residence_dkk": 54584.0
+      },
+      {
+        "muni_key": "koege",
+        "municipality": "Køge",
+        "earnings_residence_dkk": 51510.0
+      },
+      {
+        "muni_key": "lejre",
+        "municipality": "Lejre",
+        "earnings_residence_dkk": 54098.0
+      },
+      {
+        "muni_key": "roskilde",
+        "municipality": "Roskilde",
+        "earnings_residence_dkk": 56723.0
+      },
+      {
+        "muni_key": "solroed",
+        "municipality": "Solrød",
+        "earnings_residence_dkk": 56567.0
+      },
+      {
+        "muni_key": "faxe",
+        "municipality": "Faxe",
+        "earnings_residence_dkk": 47628.0
+      },
+      {
+        "muni_key": "guldborgsund",
+        "municipality": "Guldborgsund",
+        "earnings_residence_dkk": 45182.0
+      },
+      {
+        "muni_key": "holbaek",
+        "municipality": "Holbæk",
+        "earnings_residence_dkk": 49763.0
+      },
+      {
+        "muni_key": "kalundborg",
+        "municipality": "Kalundborg",
+        "earnings_residence_dkk": 51251.0
+      },
+      {
+        "muni_key": "lolland",
+        "municipality": "Lolland",
+        "earnings_residence_dkk": 44544.0
+      },
+      {
+        "muni_key": "naestved",
+        "municipality": "Næstved",
+        "earnings_residence_dkk": 47790.0
+      },
+      {
+        "muni_key": "odsherred",
+        "municipality": "Odsherred",
+        "earnings_residence_dkk": 45960.0
+      },
+      {
+        "muni_key": "ringsted",
+        "municipality": "Ringsted",
+        "earnings_residence_dkk": 48874.0
+      },
+      {
+        "muni_key": "slagelse",
+        "municipality": "Slagelse",
+        "earnings_residence_dkk": 47171.0
+      },
+      {
+        "muni_key": "soroe",
+        "municipality": "Sorø",
+        "earnings_residence_dkk": 49639.0
+      },
+      {
+        "muni_key": "stevns",
+        "municipality": "Stevns",
+        "earnings_residence_dkk": 50121.0
+      },
+      {
+        "muni_key": "vordingborg",
+        "municipality": "Vordingborg",
+        "earnings_residence_dkk": 47305.0
+      },
+      {
+        "muni_key": "assens",
+        "municipality": "Assens",
+        "earnings_residence_dkk": 46637.0
+      },
+      {
+        "muni_key": "faaborgmidtfyn",
+        "municipality": "Faaborg-Midtfyn",
+        "earnings_residence_dkk": 46471.0
+      },
+      {
+        "muni_key": "kerteminde",
+        "municipality": "Kerteminde",
+        "earnings_residence_dkk": 48166.0
+      },
+      {
+        "muni_key": "langeland",
+        "municipality": "Langeland",
+        "earnings_residence_dkk": 43246.0
+      },
+      {
+        "muni_key": "middelfart",
+        "municipality": "Middelfart",
+        "earnings_residence_dkk": 50668.0
+      },
+      {
+        "muni_key": "nordfyns",
+        "municipality": "Nordfyns",
+        "earnings_residence_dkk": 46920.0
+      },
+      {
+        "muni_key": "nyborg",
+        "municipality": "Nyborg",
+        "earnings_residence_dkk": 47360.0
+      },
+      {
+        "muni_key": "odense",
+        "municipality": "Odense",
+        "earnings_residence_dkk": 48172.0
+      },
+      {
+        "muni_key": "svendborg",
+        "municipality": "Svendborg",
+        "earnings_residence_dkk": 47708.0
+      },
+      {
+        "muni_key": "aeroe",
+        "municipality": "Ærø",
+        "earnings_residence_dkk": 43147.0
+      },
+      {
+        "muni_key": "billund",
+        "municipality": "Billund",
+        "earnings_residence_dkk": 49545.0
+      },
+      {
+        "muni_key": "esbjerg",
+        "municipality": "Esbjerg",
+        "earnings_residence_dkk": 47283.0
+      },
+      {
+        "muni_key": "fanoe",
+        "municipality": "Fanø",
+        "earnings_residence_dkk": 49685.0
+      },
+      {
+        "muni_key": "fredericia",
+        "municipality": "Fredericia",
+        "earnings_residence_dkk": 49175.0
+      },
+      {
+        "muni_key": "haderslev",
+        "municipality": "Haderslev",
+        "earnings_residence_dkk": 45769.0
+      },
+      {
+        "muni_key": "kolding",
+        "municipality": "Kolding",
+        "earnings_residence_dkk": 49448.0
+      },
+      {
+        "muni_key": "soenderborg",
+        "municipality": "Sønderborg",
+        "earnings_residence_dkk": 48275.0
+      },
+      {
+        "muni_key": "toender",
+        "municipality": "Tønder",
+        "earnings_residence_dkk": 43350.0
+      },
+      {
+        "muni_key": "varde",
+        "municipality": "Varde",
+        "earnings_residence_dkk": 45592.0
+      },
+      {
+        "muni_key": "vejen",
+        "municipality": "Vejen",
+        "earnings_residence_dkk": 45617.0
+      },
+      {
+        "muni_key": "vejle",
+        "municipality": "Vejle",
+        "earnings_residence_dkk": 51031.0
+      },
+      {
+        "muni_key": "aabenraa",
+        "municipality": "Aabenraa",
+        "earnings_residence_dkk": 46088.0
+      },
+      {
+        "muni_key": "favrskov",
+        "municipality": "Favrskov",
+        "earnings_residence_dkk": 51065.0
+      },
+      {
+        "muni_key": "hedensted",
+        "municipality": "Hedensted",
+        "earnings_residence_dkk": 47354.0
+      },
+      {
+        "muni_key": "horsens",
+        "municipality": "Horsens",
+        "earnings_residence_dkk": 48274.0
+      },
+      {
+        "muni_key": "norddjurs",
+        "municipality": "Norddjurs",
+        "earnings_residence_dkk": 44435.0
+      },
+      {
+        "muni_key": "odder",
+        "municipality": "Odder",
+        "earnings_residence_dkk": 49125.0
+      },
+      {
+        "muni_key": "randers",
+        "municipality": "Randers",
+        "earnings_residence_dkk": 47173.0
+      },
+      {
+        "muni_key": "samsoe",
+        "municipality": "Samsø",
+        "earnings_residence_dkk": 44780.0
+      },
+      {
+        "muni_key": "silkeborg",
+        "municipality": "Silkeborg",
+        "earnings_residence_dkk": 50453.0
+      },
+      {
+        "muni_key": "skanderborg",
+        "municipality": "Skanderborg",
+        "earnings_residence_dkk": 53732.0
+      },
+      {
+        "muni_key": "syddjurs",
+        "municipality": "Syddjurs",
+        "earnings_residence_dkk": 48914.0
+      },
+      {
+        "muni_key": "aarhus",
+        "municipality": "Aarhus",
+        "earnings_residence_dkk": 50674.0
+      },
+      {
+        "muni_key": "herning",
+        "municipality": "Herning",
+        "earnings_residence_dkk": 46852.0
+      },
+      {
+        "muni_key": "holstebro",
+        "municipality": "Holstebro",
+        "earnings_residence_dkk": 46302.0
+      },
+      {
+        "muni_key": "ikastbrande",
+        "municipality": "Ikast-Brande",
+        "earnings_residence_dkk": 46884.0
+      },
+      {
+        "muni_key": "lemvig",
+        "municipality": "Lemvig",
+        "earnings_residence_dkk": 44655.0
+      },
+      {
+        "muni_key": "ringkoebingskjern",
+        "municipality": "Ringkøbing-Skjern",
+        "earnings_residence_dkk": 45790.0
+      },
+      {
+        "muni_key": "skive",
+        "municipality": "Skive",
+        "earnings_residence_dkk": 45000.0
+      },
+      {
+        "muni_key": "struer",
+        "municipality": "Struer",
+        "earnings_residence_dkk": 45848.0
+      },
+      {
+        "muni_key": "viborg",
+        "municipality": "Viborg",
+        "earnings_residence_dkk": 47567.0
+      },
+      {
+        "muni_key": "broenderslev",
+        "municipality": "Brønderslev",
+        "earnings_residence_dkk": 45908.0
+      },
+      {
+        "muni_key": "frederikshavn",
+        "municipality": "Frederikshavn",
+        "earnings_residence_dkk": 45625.0
+      },
+      {
+        "muni_key": "hjoerring",
+        "municipality": "Hjørring",
+        "earnings_residence_dkk": 45175.0
+      },
+      {
+        "muni_key": "jammerbugt",
+        "municipality": "Jammerbugt",
+        "earnings_residence_dkk": 45678.0
+      },
+      {
+        "muni_key": "laesoe",
+        "municipality": "Læsø",
+        "earnings_residence_dkk": 42528.0
+      },
+      {
+        "muni_key": "mariagerfjord",
+        "municipality": "Mariagerfjord",
+        "earnings_residence_dkk": 46386.0
+      },
+      {
+        "muni_key": "morsoe",
+        "municipality": "Morsø",
+        "earnings_residence_dkk": 44179.0
+      },
+      {
+        "muni_key": "rebild",
+        "municipality": "Rebild",
+        "earnings_residence_dkk": 49906.0
+      },
+      {
+        "muni_key": "thisted",
+        "municipality": "Thisted",
+        "earnings_residence_dkk": 44249.0
+      },
+      {
+        "muni_key": "vesthimmerlands",
+        "municipality": "Vesthimmerlands",
+        "earnings_residence_dkk": 44598.0
+      },
+      {
+        "muni_key": "aalborg",
+        "municipality": "Aalborg",
+        "earnings_residence_dkk": 47957.0
+      }
+    ],
+    "earnings_workplace": [
+      {
+        "muni_key": "koebenhavn",
+        "municipality": "Copenhagen",
+        "earnings_workplace_dkk": 56913.0
+      },
+      {
+        "muni_key": "frederiksberg",
+        "municipality": "Frederiksberg",
+        "earnings_workplace_dkk": 51524.0
+      },
+      {
+        "muni_key": "dragoer",
+        "municipality": "Dragør",
+        "earnings_workplace_dkk": 44416.0
+      },
+      {
+        "muni_key": "taarnby",
+        "municipality": "Tårnby",
+        "earnings_workplace_dkk": 52518.0
+      },
+      {
+        "muni_key": "albertslund",
+        "municipality": "Albertslund",
+        "earnings_workplace_dkk": 50354.0
+      },
+      {
+        "muni_key": "ballerup",
+        "municipality": "Ballerup",
+        "earnings_workplace_dkk": 61600.0
+      },
+      {
+        "muni_key": "broendby",
+        "municipality": "Brøndby",
+        "earnings_workplace_dkk": 53687.0
+      },
+      {
+        "muni_key": "gentofte",
+        "municipality": "Gentofte",
+        "earnings_workplace_dkk": 62236.0
+      },
+      {
+        "muni_key": "gladsaxe",
+        "municipality": "Gladsaxe",
+        "earnings_workplace_dkk": 62920.0
+      },
+      {
+        "muni_key": "glostrup",
+        "municipality": "Glostrup",
+        "earnings_workplace_dkk": 51149.0
+      },
+      {
+        "muni_key": "herlev",
+        "municipality": "Herlev",
+        "earnings_workplace_dkk": 52461.0
+      },
+      {
+        "muni_key": "hvidovre",
+        "municipality": "Hvidovre",
+        "earnings_workplace_dkk": 51489.0
+      },
+      {
+        "muni_key": "hoejetaastrup",
+        "municipality": "Høje-Taastrup",
+        "earnings_workplace_dkk": 53883.0
+      },
+      {
+        "muni_key": "ishoej",
+        "municipality": "Ishøj",
+        "earnings_workplace_dkk": 47931.0
+      },
+      {
+        "muni_key": "lyngbytaarbaek",
+        "municipality": "Lyngby-Taarbæk",
+        "earnings_workplace_dkk": 59657.0
+      },
+      {
+        "muni_key": "roedovre",
+        "municipality": "Rødovre",
+        "earnings_workplace_dkk": 45989.0
+      },
+      {
+        "muni_key": "vallensbaek",
+        "municipality": "Vallensbæk",
+        "earnings_workplace_dkk": 55340.0
+      },
+      {
+        "muni_key": "alleroed",
+        "municipality": "Allerød",
+        "earnings_workplace_dkk": 55608.0
+      },
+      {
+        "muni_key": "egedal",
+        "municipality": "Egedal",
+        "earnings_workplace_dkk": 51969.0
+      },
+      {
+        "muni_key": "fredensborg",
+        "municipality": "Fredensborg",
+        "earnings_workplace_dkk": 51790.0
+      },
+      {
+        "muni_key": "frederikssund",
+        "municipality": "Frederikssund",
+        "earnings_workplace_dkk": 47128.0
+      },
+      {
+        "muni_key": "furesoe",
+        "municipality": "Furesø",
+        "earnings_workplace_dkk": 50233.0
+      },
+      {
+        "muni_key": "gribskov",
+        "municipality": "Gribskov",
+        "earnings_workplace_dkk": 44186.0
+      },
+      {
+        "muni_key": "halsnaes",
+        "municipality": "Halsnæs",
+        "earnings_workplace_dkk": 45075.0
+      },
+      {
+        "muni_key": "helsingoer",
+        "municipality": "Helsingør",
+        "earnings_workplace_dkk": 46129.0
+      },
+      {
+        "muni_key": "hilleroed",
+        "municipality": "Hillerød",
+        "earnings_workplace_dkk": 54051.0
+      },
+      {
+        "muni_key": "hoersholm",
+        "municipality": "Hørsholm",
+        "earnings_workplace_dkk": 52862.0
+      },
+      {
+        "muni_key": "rudersdal",
+        "municipality": "Rudersdal",
+        "earnings_workplace_dkk": 56885.0
+      },
+      {
+        "muni_key": "bornholm",
+        "municipality": "Bornholm",
+        "earnings_workplace_dkk": 42932.0
+      },
+      {
+        "muni_key": "greve",
+        "municipality": "Greve",
+        "earnings_workplace_dkk": 45991.0
+      },
+      {
+        "muni_key": "koege",
+        "municipality": "Køge",
+        "earnings_workplace_dkk": 48167.0
+      },
+      {
+        "muni_key": "lejre",
+        "municipality": "Lejre",
+        "earnings_workplace_dkk": 47332.0
+      },
+      {
+        "muni_key": "roskilde",
+        "municipality": "Roskilde",
+        "earnings_workplace_dkk": 49957.0
+      },
+      {
+        "muni_key": "solroed",
+        "municipality": "Solrød",
+        "earnings_workplace_dkk": 43938.0
+      },
+      {
+        "muni_key": "faxe",
+        "municipality": "Faxe",
+        "earnings_workplace_dkk": 45065.0
+      },
+      {
+        "muni_key": "guldborgsund",
+        "municipality": "Guldborgsund",
+        "earnings_workplace_dkk": 44207.0
+      },
+      {
+        "muni_key": "holbaek",
+        "municipality": "Holbæk",
+        "earnings_workplace_dkk": 45965.0
+      },
+      {
+        "muni_key": "kalundborg",
+        "municipality": "Kalundborg",
+        "earnings_workplace_dkk": 55207.0
+      },
+      {
+        "muni_key": "lolland",
+        "municipality": "Lolland",
+        "earnings_workplace_dkk": 44661.0
+      },
+      {
+        "muni_key": "naestved",
+        "municipality": "Næstved",
+        "earnings_workplace_dkk": 45519.0
+      },
+      {
+        "muni_key": "odsherred",
+        "municipality": "Odsherred",
+        "earnings_workplace_dkk": 43790.0
+      },
+      {
+        "muni_key": "ringsted",
+        "municipality": "Ringsted",
+        "earnings_workplace_dkk": 47890.0
+      },
+      {
+        "muni_key": "slagelse",
+        "municipality": "Slagelse",
+        "earnings_workplace_dkk": 45918.0
+      },
+      {
+        "muni_key": "soroe",
+        "municipality": "Sorø",
+        "earnings_workplace_dkk": 46045.0
+      },
+      {
+        "muni_key": "stevns",
+        "municipality": "Stevns",
+        "earnings_workplace_dkk": 43159.0
+      },
+      {
+        "muni_key": "vordingborg",
+        "municipality": "Vordingborg",
+        "earnings_workplace_dkk": 44982.0
+      },
+      {
+        "muni_key": "assens",
+        "municipality": "Assens",
+        "earnings_workplace_dkk": 44994.0
+      },
+      {
+        "muni_key": "faaborgmidtfyn",
+        "municipality": "Faaborg-Midtfyn",
+        "earnings_workplace_dkk": 44450.0
+      },
+      {
+        "muni_key": "kerteminde",
+        "municipality": "Kerteminde",
+        "earnings_workplace_dkk": 47695.0
+      },
+      {
+        "muni_key": "langeland",
+        "municipality": "Langeland",
+        "earnings_workplace_dkk": 44128.0
+      },
+      {
+        "muni_key": "middelfart",
+        "municipality": "Middelfart",
+        "earnings_workplace_dkk": 47682.0
+      },
+      {
+        "muni_key": "nordfyns",
+        "municipality": "Nordfyns",
+        "earnings_workplace_dkk": 45062.0
+      },
+      {
+        "muni_key": "nyborg",
+        "municipality": "Nyborg",
+        "earnings_workplace_dkk": 44191.0
+      },
+      {
+        "muni_key": "odense",
+        "municipality": "Odense",
+        "earnings_workplace_dkk": 48089.0
+      },
+      {
+        "muni_key": "svendborg",
+        "municipality": "Svendborg",
+        "earnings_workplace_dkk": 45886.0
+      },
+      {
+        "muni_key": "aeroe",
+        "municipality": "Ærø",
+        "earnings_workplace_dkk": 41963.0
+      },
+      {
+        "muni_key": "billund",
+        "municipality": "Billund",
+        "earnings_workplace_dkk": 58855.0
+      },
+      {
+        "muni_key": "esbjerg",
+        "municipality": "Esbjerg",
+        "earnings_workplace_dkk": 48241.0
+      },
+      {
+        "muni_key": "fanoe",
+        "municipality": "Fanø",
+        "earnings_workplace_dkk": 39863.0
+      },
+      {
+        "muni_key": "fredericia",
+        "municipality": "Fredericia",
+        "earnings_workplace_dkk": 52937.0
+      },
+      {
+        "muni_key": "haderslev",
+        "municipality": "Haderslev",
+        "earnings_workplace_dkk": 43397.0
+      },
+      {
+        "muni_key": "kolding",
+        "municipality": "Kolding",
+        "earnings_workplace_dkk": 49220.0
+      },
+      {
+        "muni_key": "soenderborg",
+        "municipality": "Sønderborg",
+        "earnings_workplace_dkk": 47794.0
+      },
+      {
+        "muni_key": "toender",
+        "municipality": "Tønder",
+        "earnings_workplace_dkk": 43353.0
+      },
+      {
+        "muni_key": "varde",
+        "municipality": "Varde",
+        "earnings_workplace_dkk": 43089.0
+      },
+      {
+        "muni_key": "vejen",
+        "municipality": "Vejen",
+        "earnings_workplace_dkk": 45782.0
+      },
+      {
+        "muni_key": "vejle",
+        "municipality": "Vejle",
+        "earnings_workplace_dkk": 47784.0
+      },
+      {
+        "muni_key": "aabenraa",
+        "municipality": "Aabenraa",
+        "earnings_workplace_dkk": 47760.0
+      },
+      {
+        "muni_key": "favrskov",
+        "municipality": "Favrskov",
+        "earnings_workplace_dkk": 46695.0
+      },
+      {
+        "muni_key": "hedensted",
+        "municipality": "Hedensted",
+        "earnings_workplace_dkk": 45800.0
+      },
+      {
+        "muni_key": "horsens",
+        "municipality": "Horsens",
+        "earnings_workplace_dkk": 47043.0
+      },
+      {
+        "muni_key": "norddjurs",
+        "municipality": "Norddjurs",
+        "earnings_workplace_dkk": 44412.0
+      },
+      {
+        "muni_key": "odder",
+        "municipality": "Odder",
+        "earnings_workplace_dkk": 44012.0
+      },
+      {
+        "muni_key": "randers",
+        "municipality": "Randers",
+        "earnings_workplace_dkk": 46229.0
+      },
+      {
+        "muni_key": "samsoe",
+        "municipality": "Samsø",
+        "earnings_workplace_dkk": 45039.0
+      },
+      {
+        "muni_key": "silkeborg",
+        "municipality": "Silkeborg",
+        "earnings_workplace_dkk": 49169.0
+      },
+      {
+        "muni_key": "skanderborg",
+        "municipality": "Skanderborg",
+        "earnings_workplace_dkk": 48305.0
+      },
+      {
+        "muni_key": "syddjurs",
+        "municipality": "Syddjurs",
+        "earnings_workplace_dkk": 43672.0
+      },
+      {
+        "muni_key": "aarhus",
+        "municipality": "Aarhus",
+        "earnings_workplace_dkk": 51518.0
+      },
+      {
+        "muni_key": "herning",
+        "municipality": "Herning",
+        "earnings_workplace_dkk": 46109.0
+      },
+      {
+        "muni_key": "holstebro",
+        "municipality": "Holstebro",
+        "earnings_workplace_dkk": 45418.0
+      },
+      {
+        "muni_key": "ikastbrande",
+        "municipality": "Ikast-Brande",
+        "earnings_workplace_dkk": 50739.0
+      },
+      {
+        "muni_key": "lemvig",
+        "municipality": "Lemvig",
+        "earnings_workplace_dkk": 43932.0
+      },
+      {
+        "muni_key": "ringkoebingskjern",
+        "municipality": "Ringkøbing-Skjern",
+        "earnings_workplace_dkk": 46890.0
+      },
+      {
+        "muni_key": "skive",
+        "municipality": "Skive",
+        "earnings_workplace_dkk": 45270.0
+      },
+      {
+        "muni_key": "struer",
+        "municipality": "Struer",
+        "earnings_workplace_dkk": 45508.0
+      },
+      {
+        "muni_key": "viborg",
+        "municipality": "Viborg",
+        "earnings_workplace_dkk": 47711.0
+      },
+      {
+        "muni_key": "broenderslev",
+        "municipality": "Brønderslev",
+        "earnings_workplace_dkk": 43803.0
+      },
+      {
+        "muni_key": "frederikshavn",
+        "municipality": "Frederikshavn",
+        "earnings_workplace_dkk": 45005.0
+      },
+      {
+        "muni_key": "hjoerring",
+        "municipality": "Hjørring",
+        "earnings_workplace_dkk": 44802.0
+      },
+      {
+        "muni_key": "jammerbugt",
+        "municipality": "Jammerbugt",
+        "earnings_workplace_dkk": 41949.0
+      },
+      {
+        "muni_key": "laesoe",
+        "municipality": "Læsø",
+        "earnings_workplace_dkk": 43074.0
+      },
+      {
+        "muni_key": "mariagerfjord",
+        "municipality": "Mariagerfjord",
+        "earnings_workplace_dkk": 46152.0
+      },
+      {
+        "muni_key": "morsoe",
+        "municipality": "Morsø",
+        "earnings_workplace_dkk": 44022.0
+      },
+      {
+        "muni_key": "rebild",
+        "municipality": "Rebild",
+        "earnings_workplace_dkk": 45653.0
+      },
+      {
+        "muni_key": "thisted",
+        "municipality": "Thisted",
+        "earnings_workplace_dkk": 44267.0
+      },
+      {
+        "muni_key": "vesthimmerlands",
+        "municipality": "Vesthimmerlands",
+        "earnings_workplace_dkk": 44113.0
+      },
+      {
+        "muni_key": "aalborg",
+        "municipality": "Aalborg",
+        "earnings_workplace_dkk": 48537.0
+      }
+    ],
+    "LABY32": [
+      {
+        "group": "Capital municipalities",
+        "rent_index_2021_100": 107.1
+      },
+      {
+        "group": "Metropolitan municipalities",
+        "rent_index_2021_100": 106.5
+      },
+      {
+        "group": "Provincial municipalities",
+        "rent_index_2021_100": 106.6
+      },
+      {
+        "group": "Commuter municipalities",
+        "rent_index_2021_100": 106.5
+      },
+      {
+        "group": "Rural municipalities",
+        "rent_index_2021_100": 105.6
+      }
+    ],
+    "LABY45": [
+      {
+        "group": "Capital municipalities",
+        "share_renters_pct": 57.4
+      },
+      {
+        "group": "Metropolitan municipalities",
+        "share_renters_pct": 52.8
+      },
+      {
+        "group": "Provincial municipalities",
+        "share_renters_pct": 38.0
+      },
+      {
+        "group": "Commuter municipalities",
+        "share_renters_pct": 29.6
+      },
+      {
+        "group": "Rural municipalities",
+        "share_renters_pct": 32.7
+      }
+    ],
+    "HUS1": [
+      {
+        "region": "Region Hovedstaden",
+        "rent_index_private_2021_100": 108.7
+      },
+      {
+        "region": "Region Sjælland",
+        "rent_index_private_2021_100": 106.5
+      },
+      {
+        "region": "Region Syddanmark",
+        "rent_index_private_2021_100": 105.9
+      },
+      {
+        "region": "Region Midtjylland",
+        "rent_index_private_2021_100": 105.3
+      },
+      {
+        "region": "Region Nordjylland",
+        "rent_index_private_2021_100": 105.6
+      }
+    ]
+  }
+}

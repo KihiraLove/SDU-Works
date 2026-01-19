@@ -1,51 +1,10 @@
-#!/usr/bin/env python3
-"""
-TempleOSRS batch fetch + CSV formatter in one script.
-
-Usage:
-    python temple_combined.py usernames.txt output.csv
-
-Defaults:
-    input:  usernames.txt
-    output: temple_stats_formatted.csv
-
-Input file: one username per line (names may contain spaces).
-
-For each username:
-  - Calls add_datapoint.php to update data.
-  - Calls player_info.php?player=<name> to get Game mode & GIM.
-  - Calls player_stats.php?player=<name>&duration=alltime to get EHP/EHB stats.
-
-Output CSV columns:
-  Username,
-  Gamemode,
-  EHP,
-  IM EHP,
-  LVL3 EHP,
-  UIM EHP,
-  1 DEF EHP,
-  GIM EHP,
-  EHB,
-  IM EHB,
-  UIM EHB,
-  1 DEF EHB
-
-Gamemode rules:
-- If GIM != 0:
-    * First digit: 1 = Regular, 2 = Hardcore
-    * Second digit: team size (2..5)
-    * Example: 12 -> "Regular GIM 2-player", 25 -> "Hardcore GIM 5-player"
-- If GIM == 0:
-    * game_mode: 0 = Main, 1 = IM, 2 = UIM, 3 = HCIM
-"""
-
 import csv
 import sys
 import time
 from typing import Optional, Tuple, Dict, Any
 
 import requests
-UPDATE = False
+UPDATE = True
 
 ADD_DATAPOINT_URL = "https://templeosrs.com/php/add_datapoint.php"
 PLAYER_INFO_URL = "https://templeosrs.com/api/player_info.php"
@@ -93,7 +52,6 @@ def fetch_player_info(username: str) -> Tuple[Optional[int], Optional[int]]:
     Fetch Game mode and GIM from the Player Information endpoint.
     Game mode: 0 = Main, 1 = IM, 2 = UIM, 3 = HCIM
     GIM: 0, 12, 13, 14, 15, 22, 23, 24, 25
-    Includes bosses=1 param as requested.
     """
     try:
         resp = get_with_429_retry(

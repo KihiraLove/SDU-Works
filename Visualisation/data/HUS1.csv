@@ -1,0 +1,12 @@
+"Rent indices for housing (2021=100) by unit, time, region and category"
+"of real property"
+
+" "," "," ","Privately owned housing","Social housing","Cooperative housing"
+"Index"
+" ","2024Q2"
+" "," ","Region Hovedstaden",108.7,107.5,..
+" "," ","Region Sjælland",106.5,107.3,..
+" "," ","Region Syddanmark",105.9,107.6,..
+" "," ","Region Midtjylland",105.3,108.5,..
+" "," ","Region Nordjylland",105.6,106.3,..
+
